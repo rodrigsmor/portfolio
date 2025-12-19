@@ -85,12 +85,12 @@
           "level": "Nativo"
         },
         "en-US": {
-          "name": "Inglés",
-          "level": "Intermedio alto (B2)"
+          "name": "Inglês",
+          "level": "Intermediário-alto (B2)"
         },
         "es-419": {
-          "name": "Español",
-          "level": "Principiante (A1)"
+          "name": "Espanhol",
+          "level": "Iniciante (A1)"
         }
       },
       "Technologies": {

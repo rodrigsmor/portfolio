@@ -1,5 +1,5 @@
 .scrollDownIndicator {
-  display: flex;
+  display: none;
   gap: 1.125rem;
   align-items: flex-end;
   height: fit-content;
@@ -23,6 +23,10 @@
   animation-iteration-count: infinite;
   animation-direction: normal;
   animation-fill-mode: forwards;
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
 
   @media (min-width: 1024px) {
     inset: auto 7.84dvw 2.375rem auto;
