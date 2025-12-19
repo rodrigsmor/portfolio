@@ -2,17 +2,17 @@
 
 import { Metadata } from "next";
 import Portfolio from "@/views/portfolio"
-import { LanguageCode } from "@/utils/@types/lang";
 import { getDictionary } from "../../utils/functions/dictionaries";
+import { LanguageCode } from "@/utils/@types/lang";
 
 export type LangPageProps = {
-  params: Promise<{ lang: LanguageCode }>;
+  params: Promise<{ lang: string }>;
 };
 
 export async function generateMetadata({ params }: LangPageProps): Promise<Metadata> {
   const { lang } = await params;
 
-  const dict = await getDictionary(lang);
+  const dict = await getDictionary(lang as LanguageCode);
 
   return {
     title: dict.Metadata.title,

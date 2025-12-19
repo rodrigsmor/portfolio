@@ -1,6 +1,5 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { LanguageCode } from "@/utils/@types/lang";
 
 export const metadata: Metadata = {
   title: "Rodrigo Moreira | Software Developer's Portfolio",
@@ -11,11 +10,8 @@ export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-  params: { lang?: LanguageCode }
 }>) {
   return (
-    // <LanguageProvider initialLocale="en-US" dictionary={dictionary}>
      <>{children}</>
-    // </LanguageProvider>
   );
 }

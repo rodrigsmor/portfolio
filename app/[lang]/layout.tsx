@@ -1,9 +1,9 @@
 import { ReactNode } from "react";
 import { LangPageProps } from "./page";
 import { notFound } from "next/navigation";
+import { Prompt, Turret_Road } from "next/font/google";
 import { LanguageProvider } from "@/utils/hooks/useTranslate";
 import { getDictionary, hasLocale } from "@/utils/functions/dictionaries";
-import { Prompt, Turret_Road } from "next/font/google";
 
 const prompt = Prompt({
   variable: '--font-prompt',
@@ -29,7 +29,7 @@ export default async function LangLayout({
   children,
   params,
 }: LayoutProps) {
-  const { lang } = await params;
+  const { lang } = (await params);
 
   if (!hasLocale(lang)) notFound()
   
