@@ -1,11 +1,11 @@
 .aboutMeContainer {
   gap: 4.25rem;
   display: flex;
-  align-items: center;
   width: 100%;
   max-width: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
   min-height: 100dvh;
+  align-items: center;
   height: max-content;
   flex-direction: column;
   padding: 5.25rem 1.75rem;

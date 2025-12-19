@@ -4,7 +4,7 @@ import { useTranslate } from "@/utils/hooks/useTranslate";
 import { Button } from "@/components/buttons/button";
 import { Check, DownloadSimple, StarFour } from "phosphor-react";
 
-import ProfileImage from "@/public/MyProfile.png";
+import ProfileImage from "@/assets/MyProfile.png";
 
 export function CareerOverview() {
   const { t, getObject } = useTranslate();

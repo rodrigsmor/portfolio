@@ -59,6 +59,9 @@
   --gradient-primaryToSecondary-x-dark: linear-gradient(90deg, #450396 0%, #BC109A 100%);
   --gradient-metalic-style: linear-gradient(90deg, #0C0816 0%, #231A3C 50%, #0C0816 100%);
   --gradient-typographyToOpacity-x: linear-gradient(90deg, #F0ECF8 0%, rgba(240, 236, 248, 0) 100%);
+  --gradient-typographyToOpacity-d:  linear-gradient(329.93deg, rgba(240, 236, 248, 0.1) 0%, rgba(240, 236, 248, 0.01) 100%);
+  --gradient-opacityToTypography-d:  linear-gradient(329.93deg, rgba(240, 236, 248, 0.01)  0%, rgba(240, 236, 248, 0.1) 100%);
+  
   /* media sizes */
   /* --media-mobile: 320px;
   --media-tablet: 768px;
@@ -67,12 +70,21 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-y: overlay; 
+  overflow-x: hidden;
 }
 
 body {
-  background: var(--background-extradark);
+  width: 100%;
+  max-width: 100dvw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: var(--typography-extralight);
+  background: var(--background-extradark);
   font-family: "Prompt", Helvetica, sans-serif;
+  background-color: var(--background-extradark);
+
 }
 
 * {

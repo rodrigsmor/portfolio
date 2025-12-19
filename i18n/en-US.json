@@ -92,11 +92,35 @@
           "name": "Spanish",
           "level": "Beginner (A1)"
         }
+      },
+      "Technologies": {
+        "Sections": {
+          "ProgrammingLanguages": "Programming Languages",
+          "BackEnd": "Back-End Development",
+          "FrontEnd": "Front-End Development",
+          "Databases": "Databases & Data Storage",
+          "Devops&Cloud": "DevOps, Cloud & Infraestructure",
+          "Testing&QA": "Testing & Quality Assurance",
+          "DesignSystems": "UI / Styling & Design Systems",
+          "Messaging": "Messaging, Streaming & Async Systems",
+          "Mobile": "Mobile Development",
+          "Documentation": "API Design & Documentation",
+          "CodeVersioning": "Code Versioning"
+        },
+        "detailsLabel": "Details for ",
+        "skillLevelLabel": "Skill Level: ",
+        "TechProficiencyLevels": {
+          "basic": "Basic",
+          "intermediate": "Intermediate",
+          "advanced": "Advanced",
+          "expert": "Expert"
+        }
       }
     }
   },
   "ScreenReader": {
     "languageLevelLabel": "Level: ",
-    "ProficiencyLevel": "Proficiency on "
+    "ProficiencyLevel": "Proficiency on ",
+    "techStack": "My Tech Stack"
   }
 }

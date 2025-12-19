@@ -23,10 +23,11 @@
       "@/i18n/*": ["./i18n/*"],
       "@/hooks/*": ["./utils/hooks/*"],
       "@/types/*": ["./utils/@types/*"],
+      "@/assets/*": ["./assets/*"],
       "@/functions/*": ["./utils/functions/*"],
-      "@/consts/*": ["./utils/consts"],
+      "@/consts/*": ["./utils/consts/*"],
+      "@/sections/*": ["./components/sections/*"],
       "@/components/*": ["./components/*"],
-      "@/sections/*": ["./components/sections/*"]
     }
   },
   "include": [
@@ -35,7 +36,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
-, "views/portfolio"  ],
+    "**/*.mts",
+    "views/portfolio"
+  ],
   "exclude": ["node_modules"]
 }
