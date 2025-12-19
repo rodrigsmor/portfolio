@@ -18,7 +18,7 @@ const turret = Turret_Road({
 });
 
 export async function generateStaticParams() {
-  return [{ lang: 'en-US' }, { lang: 'pt-BR' }, { lang: 'es-149' }]
+  return [{ lang: 'en-US' }, { lang: 'pt-BR' }, { lang: 'es-419' }]
 }
 
 type LayoutProps = LangPageProps & {

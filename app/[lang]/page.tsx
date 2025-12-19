@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: LangPageProps): Promise<Metad
       languages: {
         'en-US': '/en-US',
         'pt-BR': '/pt-BR',
-        'es-149': '/es-149',
+        'es-419': '/es-419',
       },
     },
   };
