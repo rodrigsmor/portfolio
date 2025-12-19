@@ -46,19 +46,25 @@
 .technologyCard {
   display: grid;
   gap: 0 .875rem;
+  position: relative;
   min-width: max-content;
   position: relative;
   align-items: center;
+  overflow: hidden;
   padding: .5rem 1rem;
   border-radius: 1.5rem;
   flex-direction: row;
-  grid-template-rows: 1.688rem 1.313rem;
+  grid-template-rows: 1.5rem 1.313rem;
   grid-template-columns: 1.75rem fit-content;
   grid-template-areas:
     'icon title'
     'icon summary'
   ;
   background: var(--gradient-typographyToOpacity-d);
+
+  > * {
+    z-index: 2;
+  }
 
   img {
     grid-area: icon;
@@ -72,6 +78,7 @@
     inset: 0 0 0 0;
     border-radius: 1.5rem;
     position: absolute;
+    pointer-events: none;
     width: 100%;
     height: 100%;
     border: 2px solid transparent;
@@ -80,6 +87,23 @@
       linear-gradient(#000 0 0) padding-box, 
       linear-gradient(#000 0 0);
     mask-composite: exclude;
+  }
+
+  &::after,
+  &::before {
+    z-index: 1;
+    content: '';
+    height: 3rem;
+    width: 3rem;
+    position: absolute;
+    border-radius: 3rem;
+    filter: blur(30px);
+    inset: -1.125rem auto auto -.5rem;
+    background-color: var(--primary-light);
+  }
+
+  &::after {
+    inset: auto 0 -2.375rem auto;
   }
 }
 
@@ -113,7 +137,17 @@
 
 .technologyTitle {
   grid-area: title;
-  font-size: var(--font-h5);
+  font-size: var(--font-h6);
   color: var(--typography-main);
   font-weight: var(--font-semibold);
+}
+
+@media (min-width: 768px) {
+  .technologyCard {
+    grid-template-rows: 1.688rem 1.313rem;
+  }
+
+  .technologyTitle {
+    font-size: var(--font-h5);
+  }
 }

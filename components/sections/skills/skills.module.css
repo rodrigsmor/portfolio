@@ -87,7 +87,9 @@
 .listOfSkills {
   display: flex;
   gap: 2.25rem;
-  height: 200dvh;
+  height: max-content;
+  flex-direction: column;
+  max-width: 100%;
 }
 
 @media (min-width: 1024px) {
