@@ -92,11 +92,35 @@
           "name": "Español",
           "level": "Principiante (A1)"
         }
+      },
+      "Technologies": {
+        "Sections": {
+          "ProgrammingLanguages": "Linguagens de Programação",
+          "BackEnd": "Desenvolvimento Back-End",
+          "FrontEnd": "Desenvolvimento Front-End",
+          "Databases": "Bancos de Dados & Armazenamento",
+          "Devops&Cloud": "DevOps, Nuvem & Infraestrutura",
+          "Testing&QA": "Testes & Garantia de Qualidade",
+          "DesignSystems": "UI / Estilização & Design Systems",
+          "Messaging": "Mensageria, Streaming & Sistemas Assíncronos",
+          "Mobile": "Desenvolvimento Mobile",
+          "Documentation": "Design de API & Documentação",
+          "CodeVersioning": "Versionamento de Código"
+        },
+        "detailsLabel": "Detalhes de ",
+        "skillLevelLabel": "Nível de habilidade: ",
+        "TechProficiencyLevels": {
+          "basic": "Básico",
+          "intermediate": "Intermediário",
+          "advanced": "Avançado",
+          "expert": "Especialista"
+        }
       }
     }
   },
   "ScreenReader": {
     "languageLevelLabel": "Nível: ",
-    "ProficiencyLevel": "Proficiência em "
+    "ProficiencyLevel": "Proficiência em ",
+    "techStack": "Meu Arsenal de Tecnologias"
   }
 }

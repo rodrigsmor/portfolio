@@ -6,13 +6,13 @@ import { CarouselDivider } from "@/components/layout/carousel-divider";
 
 export default function Portfolio() {
   return (
-    <div className={styles.pageLayout}>
+    <>
       <Header />
-      <main>
+      <main className={styles.mainPageLayout}>
         <Home />
         <CarouselDivider/>
         <AboutMe />
       </main>
-    </div>
+    </>
   );
 }

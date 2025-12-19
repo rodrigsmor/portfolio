@@ -85,15 +85,17 @@
 }
 
 .listOfSkills {
-  height: 200dvh;
-  background-color: violet;
+  display: flex;
+  gap: 2.25rem;
+  height: max-content;
+  flex-direction: column;
+  max-width: 100%;
 }
 
 @media (min-width: 1024px) {
   .contentWrapper {
     display: grid;
     gap: 3rem;
-    border: 5px solid red;
     align-items: start;
     overflow: visible;
     grid-template-columns: repeat(2, 1fr);
@@ -105,7 +107,6 @@
     height: auto;
     align-self: baseline;
     position: -webkit-sticky;
-    outline: 5px solid yellow;
   }
 
   .languagesSection {

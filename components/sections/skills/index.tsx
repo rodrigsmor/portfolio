@@ -3,6 +3,8 @@ import { PathToDot, useTranslate } from '@/utils/hooks/useTranslate';
 import { SubsectionTitle } from '@/components/textual/subsection-title';
 import { Dictionary } from '@/utils/functions/dictionaries';
 import { LanguageCard } from '@/components/cards/language-card';
+import { groupedSkills } from '@/consts/technologies';
+import { TechnologySection } from '../technology';
 
 type Language = {
   percentage: number;
@@ -10,13 +12,6 @@ type Language = {
   level: PathToDot<Dictionary>;
   title: 'english' | 'spanish' | 'portuguese';
 }
-
-// type Skill = {
-//   name: string;
-//   title: string;
-//   src: string;
-//   yearsOfExperience: number;
-// };
 
 export function Skills() {
   const { t } = useTranslate();
@@ -45,8 +40,8 @@ export function Skills() {
   return (
     <section aria-labelledby="AboutMe_Skills" className={styles.skillsContainer}>
       <SubsectionTitle id="AboutMe_Skills" title={t('AboutMe.Skills.title')} />
-      <div className={styles.contentWrapper}>
-        <div className={styles.abilitiesOverview}>
+      <div className={styles.contentWrapper} aria-describedby="skills-overview-text">
+        <section id="skills-overview-text" className={styles.abilitiesOverview}>
           <p>{t('AboutMe.Skills.content')}</p>
           <section aria-labelledby="languages-title" className={styles.languagesSection}>
             <h5 id="languages-title" className="languages-title">
@@ -65,10 +60,17 @@ export function Skills() {
               })}
             </ul>
           </section>
-        </div>
-        <div className={styles.listOfSkills}>
-
-        </div>
+        </section>
+        <section aria-label={t('ScreenReader.techStack')} className={styles.listOfSkills}>
+          {groupedSkills.map((skill) => (
+            <TechnologySection
+              id={skill.name}
+              key={skill.name}
+              title={t(skill.title)}
+              skills={skill.skills}
+            />
+          ))}
+        </section>
       </div>
       <div style={{ width: "100%", height: '100dvh', background: 'red' }} ></div>
     </section>
