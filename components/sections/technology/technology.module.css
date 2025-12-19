@@ -14,7 +14,7 @@
   text-wrap: wrap;
   width: fit-content;
   z-index: 1;
-  font-size: var(--font-h4);
+  font-size: var(--font-h5);
   font-weight: var(--font-bold);
   color: var(--typography-extralight);
 
@@ -143,6 +143,10 @@
 }
 
 @media (min-width: 768px) {
+  .technologySectionTitle {
+    font-size: var(--font-h4);
+  }
+
   .technologyCard {
     grid-template-rows: 1.688rem 1.313rem;
   }
