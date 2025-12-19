@@ -1,0 +1,102 @@
+{
+  "Metadata": {
+    "title": "Rodrigo Moreira | Portafolio de Desarrollador de Software",
+    "description": "Desarrollador Freelance y Diseñador UI/UX con más de 4 años de experiencia. Construyo plataformas SaaS, aplicaciones potenciadas por IA y soluciones web responsivas enfocadas en usabilidad, rendimiento y seguridad."
+  },
+  "Home": {
+    "Header": {
+      "home": "Inicio",
+      "aboutMe": "Sobre mí",
+      "services": "Servicios",
+      "projects": "Proyectos",
+      "contacts": "Contacto"
+    },
+    "Title": {
+      "greetings": "¡Hola! Soy",
+      "role": "Ingeniero",
+      "highlightRole": "de Software",
+      "secondaryRole": "diseñador UI/UX"
+    },
+    "Description": "¡Estoy entusiasmado por desarrollar soluciones innovadoras y sólidas a tu lado! Explora mis trabajos y descubre cómo puedo potenciar tu proyecto.",
+    "PrimaryButton": "¡Trabajemos juntos!",
+    "SecondaryButton": "Checa mis proyectos",
+    "scrollDown": "Sigue bajando",
+    "Carousel": {
+      "sectionLabel": "Resumen de Habilidades",
+      "Group": {
+        "web": "Desarrollo Web",
+        "uiux": "Diseño UI/UX",
+        "devops": "DevOps",
+        "api": "Diseño e Integración de APIs",
+        "architecture": "Arquitectura de Software",
+        "cloud": "Computación en la Nube",
+        "cicd": "CI/CD",
+        "database": "Gestión de Bases de Datos",
+        "mobile": "Desarollo Mobile",
+        "agile": "Metodologías Ágiles",
+        "ai": "Inteligencia Artificial"
+      }
+    }
+  },
+  "AboutMe": {
+    "SectionTitle": "Sobre Mí",
+    "SectionSubtitle": {
+      "prefix": "¡Buenas! ¿Todo bien?",
+      "label": "Mi nombre es"
+    },
+    "Greetings": "¡Es un placer tenerte aquí!",
+    "introductionText": "Con más de cuatro años de experiencia en aplicaciones web y móviles, he trabajado en proyectos SaaS, soluciones impulsadas por IA y plataformas en diversos sectores, incluidos los mercados inmobiliario y financiero de EE. UU. Mi trabajo combina habilidades de diseño profesional con experiencia en desarrollo de software, centrándose siempre en la usabilidad, accesibilidad, rendimiento y seguridad.",
+    "conclusiveText": "Como profesional, estoy comprometido con el crecimiento constante. Actualmente estoy ampliando mis conocimientos en escalabilidad, estructuras de datos, rendimiento y seguridad de la información, buscando entregar soluciones cada vez más robustas y de primer nivel. Mi camino se define por el aprendizaje continuo y la pasión por transformar ideas en software que genere un impacto real en las empresas y en las personas.",
+    "Achievements": {
+      "title": "Mis Logros",
+      "Items": {
+        "yearsOfExperience": {
+          "title": "4+ Años de Experiencia",
+          "description": "Sólida trayectoria en desarrollo de software, entregando soluciones de excelencia;"
+        },
+        "solutionsDelivered": {
+          "title": "8+ Aplicaciones Entregadas",
+          "description": "Experiencia comprobada en el diseño, construcción y lanzamiento de productos digitales exitosos;"
+        },
+        "performanceOptimization": {
+          "title": "Optimización de Rendimiento",
+          "description": "Logré tiempos de carga hasta un 98% más rápidos en aplicaciones con gran volumen de datos."
+        },
+        "aiIntegration": {
+          "title": "Integración de IA",
+          "description": "Creación de aplicaciones potenciadas por machine learning e IA generativa."
+        },
+        "creativity": {
+          "title": "Creatividad y Diseño",
+          "description": "Soluciones centradas en el usuario para diversos sectores, desde apps de delivery hasta CRMs."
+        }
+      }
+    },
+    "downloadButton": "Descargar Currículo",
+    "closingParagraph": "Párrafo de conclusión",
+    "altText": "Fotografía en blanco y negro de Rodrigo Moreira, desarrollador de software Full Stack brasileño, mirando ligeramente hacia un lado con una expresión serena, sobre un fondo desenfocado. Joven afrobrasileño de piel morena clara, con labios ligeramente carnosos y una nariz de base más ancha, con la punta suavemente achatada. Su cabello es rizado, con una textura cercana al crespo, en un largo equilibrado.\n\nLa ausencia de color transmite una estética sobria y profesional, que refleja enfoque, madurez y apertura a nuevas oportunidades. Rodrigo Moreira es un desarrollador de software Full Stack con base en Brasil, preparado para participar en nuevos proyectos y aportar valor mediante sus conocimientos en desarrollo de software, buenas prácticas y soluciones escalables.",
+    "Skills": {
+      "title": "Habilidades",
+      "content": "Como Desarrollador de Software Full Stack, cuento con experiencia práctica en todas las etapas del ciclo de desarrollo de software, desde el análisis de requisitos y el diseño de sistemas hasta la implementación, el despliegue y el mantenimiento a largo plazo. Trabajo con seguridad tanto en el front-end como en el back-end, garantizando soluciones escalables, mantenibles y bien probadas.\n\nCon varios años de experiencia profesional, participo activamente en la toma de decisiones técnicas, equilibrando las buenas prácticas de arquitectura con enfoques pragmáticos. Me siento cómodo evaluando tecnologías, diseñando APIs, optimizando el rendimiento y resolviendo problemas complejos, siempre con foco en la confiabilidad, el impacto en el negocio y la calidad del software.\n\nMe adapto rápidamente a nuevas herramientas y frameworks, aplicando principios sólidos de ingeniería de software en lugar de seguir tendencias pasajeras. Valoro la comunicación clara y el trabajo colaborativo, participando en discusiones técnicas para alinear las soluciones con los objetivos del producto y entregar resultados medibles. A continuación, presento algunas de mis principales áreas de especialización.",
+      "Languages": {
+        "title": "Idiomas",
+        "pt-BR": {
+          "name": "Portugués",
+          "level": "Nativo"
+        },
+        "en-US": {
+          "name": "Inglés",
+          "level": "Intermedio alto (B2)"
+        },
+        "es-419": {
+          "name": "Español",
+          "level": "Principiante (A1)"
+        }
+      }
+    }
+  },
+  "ScreenReader": {
+    "languageLevelLabel": "Nível: ",
+    "ProficiencyLevel": "Competencia en "
+  }
+}

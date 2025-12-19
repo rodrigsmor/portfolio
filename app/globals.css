@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  /* background colors */
+  --background-extradark: #0C0816;
+  --background-dark: #1B1231;
+  --background-main: #291B4B;
+  --background-light: #372565;
+  --background-extralight: #493187;
+
+  /* typography colors */
+  --typography-extradark: #B2A2DD;
+  --typography-dark: #C2B4E4;
+  --typography-main: #D1C7EB;
+  --typography-light: #E0DAF1;
+  --typography-extralight: #F0ECF8;
+
+  /* primary colors */
+  --primary-extradark: #23024B;
+  --primary-dark: #450396;
+  --primary-main: #6805E0;
+  --primary-light: #8F33FF;
+  --primary-extralight: #C799FF;
+
+  /* secondary colors */
+  --secondary-extradark: #760A60;
+  --secondary-dark: #BC109A;
+  --secondary-main: #ED2BC6;
+  --secondary-light: #F372D9;
+  --secondary-extralight: #F9B8EC;
+
+  /* ----------- */
+
+  /* font sizes */
+  --font-h1: 3rem;
+  --font-h2: 2.25rem;
+  --font-h3: 1.5rem;
+  --font-h4: 1.25rem;
+  --font-h5: 1.125rem;
+  --font-h6: 1rem;
+  --font-h7: .875rem;
+
+  /* font weights */
+  --font-light: 200;
+  --font-regular: 300;
+  --font-medium: 400;
+  --font-semibold: 500;
+  --font-bold: 600;
+  --font-extrabold: 700;
+
+  /* shadows */
+  --shadow-header: 0px 0px 8px 1px rgba(0,0,0,0.4);
+  --shadow-primary-main: 0 0 1.75rem .5rem rgba(104, 5, 224, .4);
+  --text-shadow-primary-main: 0px 0px 28px rgba(104, 5, 224, .4);
+
+  /* gradients */
+  --gradient-primaryToSecondary-x-main: linear-gradient(90deg, #6805E0 0%, #ED2BC6 100%);
+  --gradient-primaryToSecondary-y-main: linear-gradient(180deg, #6805E0 0%, #ED2BC6 100%);
+  --gradient-primaryToSecondary-x-dark: linear-gradient(90deg, #450396 0%, #BC109A 100%);
+  --gradient-metalic-style: linear-gradient(90deg, #0C0816 0%, #231A3C 50%, #0C0816 100%);
+  --gradient-typographyToOpacity-x: linear-gradient(90deg, #F0ECF8 0%, rgba(240, 236, 248, 0) 100%);
+  /* media sizes */
+  /* --media-mobile: 320px;
+  --media-tablet: 768px;
+  --media-desktop: 1024px; */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background-extradark);
+  color: var(--typography-extralight);
+  font-family: "Prompt", Helvetica, sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Prompt", Helvetica, sans-serif;
+}

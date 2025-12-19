@@ -1,0 +1,102 @@
+{
+  "Metadata": {
+    "title": "Rodrigo Moreira | Portfólio de Desenvolvedor de Software",
+    "description": "Desenvolvedor Freelance & UI/UX Designer com mais de 4 anos de experiência. Construo plataformas SaaS, aplicativos baseados em IA e soluções web responsivas focadas em usabilidade, performance e segurança."
+  },
+  "Home": {
+    "Header": {
+      "home": "Início",
+      "aboutMe": "Sobre mim",
+      "services": "Serviços",
+      "projects": "Projetos",
+      "contacts": "Contatos"
+    },
+    "Title": {
+      "greetings": "Olá! Sou um",
+      "role": "Engenheiro",
+      "highlightRole": "de Software",
+      "secondaryRole": "UI/UX Designer"
+    },
+    "Description": "Não vejo a hora de codar soluções robustas e inovadoras com você! Veja meu portfólio e ateste como posso elevar o nível do seu negócio.",
+    "PrimaryButton": "Fechar Parceria!",
+    "SecondaryButton": "Explorar Projetos",
+    "scrollDown": "Veja mais",
+    "Carousel": {
+      "sectionLabel": "Visão Geral de Habilidades",
+      "Group": {
+        "web": "Desenvolvimento Web",
+        "uiux": "Design UI/UX",
+        "devops": "DevOps",
+        "api": "Design e Integração de APIs",
+        "architecture": "Arquitetura de Software",
+        "cloud": "Computação em Nuvem",
+        "cicd": "CI/CD",
+        "database": "Gerenciamento de Bancos de Dados",
+        "mobile": "Desenvolvimento Mobile",
+        "agile": "Metodologias Ágeis",
+        "ai": "Inteligência Artificial"
+      }
+    }
+  },
+  "AboutMe": {
+    "SectionTitle": "Sobre Mim",
+    "SectionSubtitle": {
+      "prefix": "Salve! Tudo bem?",
+      "label": "Me chamo"
+    },
+    "Greetings": "Que bom te ver por aqui!",
+    "introductionText": "Com mais de quatro anos de experiência em aplicações web e mobile, trabalhei em projetos SaaS, soluções baseadas em IA e plataformas em diversos setores, incluindo os mercados imobiliário e financeiro dos EUA. Meu trabalho combina habilidades de design profissional com experiência em desenvolvimento de software, focando sempre em usabilidade, acessibilidade, performance e segurança.",
+    "conclusiveText": "Como profissional, tenho um compromisso com a evolução contínua. Atualmente, busco aprimorar minha expertise em escalabilidade, estruturas de dados, performance e segurança da informação, visando entregar soluções cada vez mais robustas e de alto nível. Minha trajetória é movida pelo aprendizado constante e pela paixão em transformar ideias em softwares que gerem um impacto real em negócios e pessoas.",
+    "Achievements": {
+      "title": "Minhas Conquistas",
+      "Items": {
+        "yearsOfExperience": {
+          "title": "4+ Anos de Experiência",
+          "description": "Sólida experiência em desenvolvimento de software, entregando soluções de alto nível;"
+        },
+        "solutionsDelivered": {
+          "title": "8+ Aplicações Entregues",
+          "description": "Experiência comprovada no design, construção e lançamento de produtos digitais de sucesso;"
+        },
+        "performanceOptimization": {
+          "title": "Otimização de Performance",
+          "description": "Alcancei carregamentos até 98% mais rápidos em aplicações com alto volume de dados."
+        },
+        "aiIntegration": {
+          "title": "Integração de IA",
+          "description": "Desenvolvimento de aplicações potencializadas por machine learning e IA generativa."
+        },
+        "creativity": {
+          "title": "Criatividade e Design",
+          "description": "Soluções focadas no usuário para diversos setores, de apps de delivery a CRMs."
+        }
+      }
+    },
+    "downloadButton": "Baixar Currículo",
+    "closingParagraph": "Parágrafo final",
+    "altText": "Fotografia em preto e branco de Rodrigo Moreira, olhando levemente para o lado, com um semblante sereno, sobre um fundo desfocado. Jovem afro-brasileiro de pele parda, com lábios levemente carnudos e nariz de base mais larga, com a ponta suavemente achatada. Seus cabelos são cacheados, com textura próxima ao crespo, em um comprimento equilibrado, nem muito alto nem muito baixo.\n\nA ausência de cores reforça uma estética sóbria e profissional, transmitindo foco, maturidade e abertura a novas oportunidades. Rodrigo Moreira é um desenvolvedor de software Full Stack, preparado para atuar em novos projetos e agregar valor por meio de seus conhecimentos em desenvolvimento de software, boas práticas e soluções escaláveis.",
+    "Skills": {
+      "title": "Habilidades",
+      "content": "Como Desenvolvedor de Software Full Stack, possuo experiência prática em todas as etapas do ciclo de desenvolvimento de software, desde a análise de requisitos e o design de sistemas até a implementação, o deploy e a manutenção de longo prazo. Atuo com segurança tanto no front-end quanto no back-end, garantindo soluções escaláveis, sustentáveis e bem testadas.\n\nCom vários anos de experiência profissional, contribuo ativamente para a tomada de decisões técnicas, equilibrando boas práticas de arquitetura com escolhas pragmáticas. Tenho facilidade em avaliar tecnologias, projetar APIs, otimizar desempenho e resolver problemas complexos, sempre com foco em confiabilidade, impacto no negócio e qualidade do software.\n\nAdapto-me rapidamente a novas ferramentas e frameworks, aplicando princípios sólidos de engenharia de software em vez de seguir tendências passageiras. Valorizo a comunicação clara e o trabalho colaborativo, participando de discussões técnicas para alinhar soluções aos objetivos do produto e entregar resultados mensuráveis. A seguir, apresento algumas das minhas principais áreas de especialidade.",
+      "Languages": {
+        "title": "Idiomas",
+        "pt-BR": {
+          "name": "Português",
+          "level": "Nativo"
+        },
+        "en-US": {
+          "name": "Inglés",
+          "level": "Intermedio alto (B2)"
+        },
+        "es-419": {
+          "name": "Español",
+          "level": "Principiante (A1)"
+        }
+      }
+    }
+  },
+  "ScreenReader": {
+    "languageLevelLabel": "Nível: ",
+    "ProficiencyLevel": "Proficiência em "
+  }
+}
