@@ -1,8 +1,9 @@
 .projectsContainer {
   width: 100%;
   gap: 4.25rem;
-  max-width: 100%;
   display: flex;
+  max-width: 100%;
+  min-height: 100dvh;
   position: relative;
   height: max-content;
   align-items: center;
