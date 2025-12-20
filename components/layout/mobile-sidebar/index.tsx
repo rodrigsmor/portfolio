@@ -8,6 +8,7 @@ import { IconButton } from '@/components/buttons/icon-button';
 import { Logo } from '@/components/textual/logo';
 import { useBlur } from '@/hooks/useBlur';
 import { OutlineSelect } from '@/components/forms/outline-select';
+import { useTranslate } from '@/hooks/useTranslate';
 
 interface MobileSidebarProps {
   isOpen: boolean;
@@ -15,9 +16,10 @@ interface MobileSidebarProps {
 }
 
 export function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
+  const { t } = useTranslate()
   const { activeSection } = useScroll();
   const sidebarRef = useBlur(onClose);
-  
+
   return (
     <>
       <div onClick={onClose} className={`${styles.backdropBlur} ${isOpen ? styles.show : ''} `} aria-hidden></div>
@@ -31,7 +33,9 @@ export function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
         aria-labelledby="sidebar-title"
       >
         <header className={styles.sidebarHeader}>
-          <h2 id="sidebar-title" className="sr-only">Menu de Navegação</h2>
+          <h2 id="sidebar-title" className="sr-only">
+            {t('Accessibility.sideBarTitle')}
+          </h2>
           <Logo />
           <IconButton
             onClick={onClose}
@@ -59,7 +63,7 @@ export function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
 
         <footer className={styles.sidebarFooter}>
           <OutlineSelect />
-          <p className="sr-only">Our social media channels:</p>
+          <p className="sr-only">{t('Accessibility.socialMediaArea')}</p>
           <SocialLinks />
         </footer>
       </aside>

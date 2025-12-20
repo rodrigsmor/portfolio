@@ -23,8 +23,10 @@ export function Header() {
     <>
       <header className={`${styles.header} ${isSticky ? 'scrolled' : ''}`}>
         <Logo />
-        <IconButton onClick={() => toggleSidebarVisibility(true)}>
-          <List size={24} weight="bold" />
+        <IconButton
+          onClick={() => toggleSidebarVisibility(true)}
+        >
+          <List size={24} weight="bold" aria-hidden />
         </IconButton>
         <nav className={`navbar ${styles.navbar}`}>
           <ul>

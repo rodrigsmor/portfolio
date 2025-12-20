@@ -61,7 +61,7 @@ export function Skills() {
             </ul>
           </section>
         </section>
-        <section aria-label={t('ScreenReader.techStack')} className={styles.listOfSkills}>
+        <section aria-label={t('Accessibility.techStack')} className={styles.listOfSkills}>
           {groupedSkills.map((skill) => (
             <TechnologySection
               id={skill.name}

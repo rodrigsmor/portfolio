@@ -9,7 +9,7 @@ export function CareerTimeline() {
   const { t, locale: lang } = useTranslate();
 
   const locales = { 'en-US': enUS, 'pt-BR': ptBR, 'es-419': es };
-  
+
   return (
     <section aria-labelledby="ProfessionalExperiences" className={styles.careerTimelineContainer}>
       <SubsectionTitle id="ProfessionalExperiences" title={t('ProfessionalJourney.sectionTitle')} />
@@ -34,13 +34,13 @@ export function CareerTimeline() {
                 <header className={styles.experienceHeader}>
                   <h5>{t(position.position)}</h5>
                   <p className={styles.companyName}>
-                    <span className="sr-only">{t('ScreenReader.companyPrefix')}</span>
+                    <span className="sr-only">{t('Accessibility.companyPrefix')}</span>
                     {typeof position.company === 'number' ? t('ProfessionalJourney.Experiences.various') : position.company}
                   </p>
                 </header>
 
                 <div className={styles.dateContainer}>
-                  <span className="sr-only">{t('ScreenReader.durationPrefix')}</span>
+                  <span className="sr-only">{t('Accessibility.durationPrefix')}</span>
                   <time dateTime={position.startDate}>{startDate}</time>
                   <span aria-hidden="true"> — </span>
                   <time dateTime={position.endDate}>{endDate}</time>

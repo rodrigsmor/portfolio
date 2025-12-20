@@ -194,11 +194,17 @@
     "title": "Proyectos",
     "sectionDescription": "Estos son algunos de los proyectos que he desarrollado, cada uno diseñado para combinar funcionalidad con una excelente experiencia de usuario."
   },
-  "ScreenReader": {
+  "Accessibility": {
     "languageLevelLabel": "Nível: ",
     "ProficiencyLevel": "Competencia en ",
     "techStack": "Mi Stack Tecnológico",
     "companyPrefix": "Empresa: ",
-    "durationPrefix": "Duración: "
+    "durationPrefix": "Duración: ",
+    "openMenu": "Abrir menú de navegación",
+    "closeMenu": "Cerrar menú de navegación",
+    "sideBarTitle": "Menú lateral",
+    "socialMediaArea": "Enlaces de redes sociales",
+    "languageSelector": "Seleccionar idioma",
+    "currentLanguage": "Idioma actual:"
   }
 }
