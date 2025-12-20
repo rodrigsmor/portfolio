@@ -7,6 +7,7 @@ import { useScroll } from '@/hooks/useScrollNavigation';
 import { IconButton } from '@/components/buttons/icon-button';
 import { Logo } from '@/components/textual/logo';
 import { useBlur } from '@/hooks/useBlur';
+import { OutlineSelect } from '@/components/forms/outline-select';
 
 interface MobileSidebarProps {
   isOpen: boolean;
@@ -57,6 +58,7 @@ export function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
         </nav>
 
         <footer className={styles.sidebarFooter}>
+          <OutlineSelect />
           <p className="sr-only">Our social media channels:</p>
           <SocialLinks />
         </footer>
