@@ -72,7 +72,6 @@ export function Skills() {
           ))}
         </section>
       </div>
-      <div style={{ width: "100%", height: '100dvh', background: 'red' }} ></div>
     </section>
   );
 }

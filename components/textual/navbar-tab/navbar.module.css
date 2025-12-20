@@ -8,6 +8,7 @@
   align-items: center;
   text-decoration: none;
   justify-content: center;
+  transition: all .3s ease-in-out;
   font-size: var(--font-h6);
   color: var(--typography-light);
   font-weight: var(--font-regular);
@@ -36,5 +37,34 @@
 
   &:not(&[aria-current="page"]):hover {
     color: color-mix(in srgb, var(--typography-extralight) 50%, transparent);
+  }
+
+  &:global(.mobileView) {
+    width: 100%;
+    min-width: 100%;
+    height: 2.75rem;
+    text-align: start;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: .75rem;
+    flex-direction: row;
+    padding: 0 .875rem;
+    outline: 1px solid color-mix(in srgb, var(--typography-extralight) 20%, transparent);
+
+    &::after {
+      display: none;
+    }
+
+    &[aria-current="page"]  {
+      font-weight: var(--font-semibold);
+      outline: 0px solid transparent;
+      background: var(--gradient-primaryToSecondary-x-main);
+    }
+
+    &:not(&[aria-current="page"]):hover {
+      color: var(--typography-extralight);
+      background-color: color-mix(in srgb, var(--typography-extralight) 10%, transparent);
+    }
   }
 }

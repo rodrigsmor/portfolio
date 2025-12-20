@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { Prompt, Turret_Road } from "next/font/google";
 import { LanguageProvider } from "@/utils/hooks/useTranslate";
 import { getDictionary, hasLocale } from "@/utils/functions/dictionaries";
+import { ScrollProvider } from "@/utils/hooks/useScrollNavigation";
 
 const prompt = Prompt({
   variable: '--font-prompt',
@@ -41,7 +42,9 @@ export default async function LangLayout({
     <html lang={lang}>
       <body className={`${prompt.variable} ${turret.variable} antialiased`}>
         <LanguageProvider initialLocale={lang} dictionary={dictionary}>
-          {children}
+          <ScrollProvider>
+            {children}
+          </ScrollProvider>
         </LanguageProvider>
       </body>
     </html>

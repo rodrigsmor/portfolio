@@ -6,11 +6,12 @@ import { ArrowUpRight, RocketLaunch } from "phosphor-react";
 import { SocialLinks } from "@/components/layout/social-links";
 import { ScrollDownIndicator } from "@/components/textual/scroll-down-indicator";
 import { useTranslate } from "@/utils/hooks/useTranslate";
+import { memo } from "react";
 
-export function Home() {
+function HomeSectionContent() {
   const { t } = useTranslate();
   return (
-    <section className={`${styles.home}`}>
+    <section id="home" className={`${styles.home}`}>
       <header className={styles.homeContent}>
         <h1 className={styles.homeGreetings}>
           {t('Home.Title.greetings')}
@@ -47,3 +48,5 @@ export function Home() {
     </section>
   );
 }
+
+export const Home = memo(HomeSectionContent);

@@ -1,0 +1,160 @@
+.myServicesContainer {
+  width: 100%;
+  height: max-content;
+  max-width: 100%;
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+  gap: 4.25rem;
+  /* padding: 5.25rem 1.5rem; */
+  padding: 5.25rem 0;
+  background-color: var(--background-extradark);
+
+  :global(.blurEllipses) {
+    z-index: 1;
+    filter: blur(122px);
+    position: absolute;
+
+    &:nth-of-type(1) {
+      top: 17.25rem;
+      right: -8rem;
+    }
+
+    &:nth-of-type(2) {
+      top: 27.063rem;
+      left: -32rem;
+    }
+
+    &:nth-of-type(3) {
+      top: 60rem;
+      right: 10.25rem;
+      opacity: .5;
+    }
+  }
+
+  > * {
+    z-index: 2;
+  }
+}
+
+.ctaText {
+  gap: 0;
+  font-size: var(--font-h5);
+  font-weight: var(--font-regular);
+  color: var(--typography-dark);
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  text-wrap: wrap;
+
+  strong {
+    font-size: var(--font-h3);
+    font-weight: var(--font-extrabold);
+    color: var(--typography-main);
+  }
+}
+
+.sectionHeader {
+  width: 100%;
+  gap: 4.25rem;
+  display: flex;
+  max-width: 100%;
+  align-items: center;
+  flex-direction: column;
+
+  p {
+    width: 100%;
+    text-align: center;
+    max-width: 48.625rem;
+    font-size: var(--font-h6);
+    color: var(--typography-main);
+    font-weight: var(--font-regular);
+  }
+}
+
+.scrollLine {
+  width: 1px;
+  height: 20.75rem;
+  min-height: 20.75rem;
+  border-radius: .63rem;
+  display: block;
+  opacity: .2;
+  position: relative;
+  background-color: var(--typography-extralight);
+}
+
+.servicesGroup {
+  gap: 1.75rem;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  -ms-overflow-style: none;
+  scrollbar-width: none
+}
+
+.ctaText,
+.sectionHeader,
+.servicesGroup {
+  padding: 0 1.5rem;
+  min-width: 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .myServicesContainer {
+    :global(.blurEllipses) {
+      &:nth-of-type(1) {
+        right: -1.75rem;
+      }
+
+      &:nth-of-type(2) {
+        left: -14rem;
+        filter: blur(200px);
+      }
+
+      &:nth-of-type(3) {
+        opacity: 1;
+      }
+    }
+  }
+
+  .ctaText,
+  .sectionHeader,
+  .servicesGroup {
+    padding: 0 3rem;
+  }
+
+  .sectionHeader {
+    width: 100%;
+    gap: 4.25rem;
+    display: flex;
+    max-width: 100%;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 1024px) {
+  .myServicesContainer {
+    /* padding: 7.5rem 7.84dvw; */
+    padding: 7.5rem 0;
+  }
+
+  .ctaText,
+  .sectionHeader,
+  .servicesGroup {
+    padding: 0 7.84dvw;
+  }
+
+  .sectionHeader {
+    p {
+      font-size: var(--font-h5);
+    }
+  }
+}

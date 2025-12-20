@@ -141,6 +141,59 @@
       }
     }
   },
+  "Services": {
+    "title": "My Services",
+    "sectionDescription": "My work combines creativity, usability, and performance to deliver impactful digital solutions. Check out the services I offer below to turn your ideas into reality.",
+    "ctaQuestion": "Are you looking for a complete professional?",
+    "ctaSubtitle": "So check out my main services!",
+    "requestQuoteLabel": "Request a Quote",
+    "items": {
+      "web_development": {
+        "title": "Web & Mobile Development",
+        "description": "Delivering high-performance, responsive, and scalable web and mobile applications focused on exceptional UX."
+      },
+      "api_development": {
+        "title": "API Development",
+        "description": "Creation of Robust REST APIs using modern tools, ensuring efficiency, security, and easy maintenance."
+      },
+      "database_management": {
+        "title": "Database Management",
+        "description": "SQL and NoSQL database modeling and management, focused on integrity, scalability, and query optimization for peak performance."
+      },
+      "uiux_design": {
+        "title": "UI/UX Design",
+        "description": "Design of modern and accessible interfaces, applying usability and user experience (UX) principles to create intuitive and appealing solutions."
+      },
+      "performance_optimization": {
+        "title": "Performance Optimization",
+        "description": "Optimizing systems and pages dealing with high data volume, ensuring stability and an improved experience for the end-user."
+      },
+      "testing_qa": {
+        "title": "Testing & Quality Assurance",
+        "description": "Comprehensive unit and end-to-end testing to guarantee application quality, reliability, and stability."
+      },
+      "security": {
+        "title": "Security & Scalability",
+        "description": "Designing applications with clean architectures, ensuring best practices for security, scalability, and robust reliability."
+      },
+      "saas_solutions": {
+        "title": "Saas Solutions",
+        "description": "Delivering innovative solutions designed to solve challenges within modern and dynamic software environments."
+      },
+      "ai_integration": {
+        "title": "AI Integration",
+        "description": "Seamless integration of Machine Learning and Generative AI to automate processes and drive business value."
+      },
+      "containerization_deployment": {
+        "title": "Containerization & Deployment",
+        "description": "CContainerization and application orchestration, enabling scalability, portability, and more agile development environments."
+      }
+    }
+  },
+  "Projects": {
+    "title": "Projects",
+    "sectionDescription": "Here are some of the projects I’ve built, each designed to combine functionality with great user experience."
+  },
   "ScreenReader": {
     "languageLevelLabel": "Level: ",
     "ProficiencyLevel": "Proficiency on ",

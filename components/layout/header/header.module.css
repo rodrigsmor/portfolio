@@ -14,7 +14,7 @@
     display: none; 
   }
 
-  &.scrolled {
+  &:global(.scrolled) {
     /* box-shadow: var(--shadow-primary-main); */
     backdrop-filter: blur(20px);
     background: color-mix(in srgb, var(--typography-extralight) 10%, transparent);
@@ -50,6 +50,14 @@
 @media (min-width: 1024px) {
   .header {
     padding: 0 7.84dvw;
+
+    &:global(.scrolled) {
+      height: 4.25rem;
+      border-radius: 1.125rem;
+      inset: 1.75rem auto auto;
+      width: calc(100dvw - 3.5rem);
+      padding: 0 calc(7.84dvw - 1.75rem);
+    }
   }
 
   .header > :global(.outline-select),
@@ -59,16 +67,5 @@
 
   .header > :global(.icon-button) {
     display: none; 
-  }
-}
-
-@media (min-width: 1024px) {
-  .header {
-    &.scrolled {
-      height: 4.25rem;
-      border-radius: 1.125rem;
-      inset: 1.75rem auto auto;
-      width: calc(100dvw - 3.5rem);
-    }
   }
 }
