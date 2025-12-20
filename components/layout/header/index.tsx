@@ -28,6 +28,9 @@ export function Header() {
         <IconButton
           onClick={() => toggleSidebarVisibility(true)}
           aria-label={t('Accessibility.openMenu')}
+          aria-controls="MobileSideBar"
+          aria-expanded={shouldRenderSidebar}
+          aria-haspopup="true"
         >
           <List size={24} weight="bold" aria-hidden />
         </IconButton>

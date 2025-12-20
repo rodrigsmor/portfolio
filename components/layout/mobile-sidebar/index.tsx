@@ -25,7 +25,7 @@ export function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
       <div onClick={onClose} className={`${styles.backdropBlur} ${isOpen ? styles.show : ''} `} aria-hidden></div>
       <aside
         ref={sidebarRef}
-        id="main-sidebar"
+        id="MobileSideBar"
         className={`${styles.sidebar} ${isOpen ? styles.show : ''}`}
         aria-hidden={!isOpen}
         aria-modal="true"
