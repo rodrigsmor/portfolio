@@ -5,6 +5,7 @@
   height: 4.625rem;
   inset: 0 0 auto 0;
   padding: 0 1.75rem;
+  max-width: 100%;
   align-items: center;
   transition: all .3s ease;
   justify-content: space-between;
