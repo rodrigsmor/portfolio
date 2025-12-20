@@ -118,9 +118,34 @@
       }
     }
   },
+  "ProfessionalJourney": {
+    "sectionTitle": "My Professional Journey",
+    "Experiences": {
+      "various": "Various Clients",
+      "technologiesLabel": "Technologies",
+      "BeginnerFreelancer": {
+        "position": "Full Stack Developer (Freelancer)",
+        "description": "As a freelancer, I have built digital solutions for multiple clients, ranging from REST APIs in Java and Node.js to managing MySQL and PostgreSQL databases. I designed responsive web applications using React, Next.js, TypeScript, HTML, CSS, Styled Components, and Tailwind, and implemented automated testing with Jest, Cypress, and JUnit. My work also included containerized applications with Docker and Kubernetes."
+      },
+      "ClearCloudIntern": {
+        "position": "Programming & Software Development Intern",
+        "description": "During this experience, I developed and maintained web applications using HTML, CSS, and JavaScript, built REST APIs with Node.js and Express, integrated Stripe payments, and worked with SQL and NoSQL databases. On the frontend, I built responsive React applications using Bootstrap and Redux, implemented real-time features with Firebase, and collaborated in agile Kanban workflows using Git and GitHub."
+      },
+      "ClearCloudFullTime": {
+        "position": "Full Stack Software Developer",
+        "description": "Worked on web and mobile applications, contributing across the full product lifecycle — from Figma prototyping to production delivery — with a focus on usability, accessibility, and SEO. Participated in projects such as marketplaces, delivery platforms, job applications, and collaborative management systems.\n\nBuilt solutions using React, Next.js, and React Native, integrated APIs with Node.js and Ruby on Rails, managed state with Redux/Context API, worked with SQL and NoSQL databases, and implemented CI/CD pipelines using Heroku and Vercel, within agile, cross-functional teams."
+      },
+      "LoanOfficerEngineer": {
+        "position": "Full Stack Software Engineer",
+        "description": "I contributed to the development of a CRM for Loan Officers and Mortgage Brokers, designed for the U.S. real estate and financial markets, integrating generative AI to streamline processes and deliver business value."
+      }
+    }
+  },
   "ScreenReader": {
     "languageLevelLabel": "Level: ",
     "ProficiencyLevel": "Proficiency on ",
-    "techStack": "My Tech Stack"
+    "techStack": "My Tech Stack",
+    "companyPrefix": "Company: ",
+    "durationPrefix": "Duration: "
   }
 }
