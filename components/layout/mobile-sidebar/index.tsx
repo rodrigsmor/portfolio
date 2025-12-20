@@ -6,6 +6,7 @@ import { NavbarTab } from '@/components/textual/navbar-tab';
 import { useScroll } from '@/hooks/useScrollNavigation';
 import { IconButton } from '@/components/buttons/icon-button';
 import { Logo } from '@/components/textual/logo';
+import { useBlur } from '@/hooks/useBlur';
 
 interface MobileSidebarProps {
   isOpen: boolean;
@@ -14,12 +15,13 @@ interface MobileSidebarProps {
 
 export function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
   const { activeSection } = useScroll();
+  const sidebarRef = useBlur(onClose);
   
   return (
     <>
       <div onClick={onClose} className={`${styles.backdropBlur} ${isOpen ? styles.show : ''} `} aria-hidden></div>
       <aside
-        // ref={sidebarRef}
+        ref={sidebarRef}
         id="main-sidebar"
         className={`${styles.sidebar} ${isOpen ? styles.show : ''}`}
         aria-hidden={!isOpen}
