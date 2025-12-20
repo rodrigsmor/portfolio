@@ -6,6 +6,7 @@ import { SectionTitle } from "@/components/layout/section-title";
 
 import { Skills } from "../skills";
 import { CareerOverview } from "../career-overview";
+import { CareerTimeline } from "../career-timeline";
 
 export function AboutMe() {
   const { t } = useTranslate();
@@ -20,6 +21,7 @@ export function AboutMe() {
       <span aria-hidden className={styles.scrollLine}></span>
       <SectionTitle title="AboutMe.SectionTitle" sectionKey="about_me" />
       <CareerOverview />
+      <CareerTimeline />
       <Skills />
     </section>
   );

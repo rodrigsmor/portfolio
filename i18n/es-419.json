@@ -118,9 +118,34 @@
       }
     }
   },
+  "ProfessionalJourney": {
+    "sectionTitle": "Mi Trayectoria Profesional",
+    "Experiences": {
+      "various": "Varios Clientes",
+      "technologiesLabel": "Tecnologías",
+      "BeginnerFreelancer": {
+        "position": "Desarrollador Full Stack (Freelancer)",
+        "description": "Como freelancer, he desarrollado soluciones digitales para múltiples clientes, abarcando desde APIs REST en Java y Node.js hasta la gestión de bases de datos MySQL y PostgreSQL. Diseñé aplicaciones web responsivas utilizando React, Next.js, TypeScript, HTML, CSS, Styled Components y Tailwind, e implementé pruebas automatizadas con Jest, Cypress y JUnit. Mi trabajo también incluyó la contenerización de aplicaciones con Docker y Kubernetes."
+      },
+      "ClearCloudIntern": {
+        "position": "Pasante de Programación y Desarrollo de Software",
+        "description": "Durante esta experiencia, desarrollé y mantuve aplicaciones web utilizando HTML, CSS y JavaScript, construí APIs REST con Node.js y Express, integré pagos con Stripe y trabajé con bases de datos SQL y NoSQL. En el frontend, creé aplicaciones en React utilizando Bootstrap y Redux, implementé funciones en tiempo real con Firebase y colaboré en flujos de trabajo ágiles (Kanban) utilizando Git y GitHub."
+      },
+      "ClearCloudFullTime": {
+        "position": "Desarrollador de Software Full Stack",
+        "description": "Trabajé en aplicaciones web y móviles, contribuyendo en todo el ciclo de vida del producto — desde el prototipado en Figma hasta la entrega en producción — con un enfoque en usabilidad, accesibilidad y SEO. Participé en proyectos como marketplaces, plataformas de delivery, sistemas de reclutamiento y sistemas de gestión colaborativa.\n\nDesarrollé soluciones usando React, Next.js y React Native, integré APIs con Node.js y Ruby on Rails, gestioné estados con Redux/Context API, trabajé con bases de datos SQL y NoSQL e implementé pipelines de CI/CD usando Heroku y Vercel, dentro de equipos ágiles y multifuncionales."
+      },
+      "LoanOfficerEngineer": {
+        "position": "Ingeniero de Software Full Stack",
+        "description": "Contribuí al desarrollo de un CRM para Agentes de Préstamos (Loan Officers) y Agentes Hipotecarios, diseñado para los mercados inmobiliario y financiero de EE. UU., integrando IA generativa para optimizar procesos y entregar valor empresarial."
+      }
+    }
+  },
   "ScreenReader": {
     "languageLevelLabel": "Nível: ",
     "ProficiencyLevel": "Competencia en ",
-    "techStack": "Mi Stack Tecnológico"
+    "techStack": "Mi Stack Tecnológico",
+    "companyPrefix": "Empresa: ",
+    "durationPrefix": "Duración: "
   }
 }

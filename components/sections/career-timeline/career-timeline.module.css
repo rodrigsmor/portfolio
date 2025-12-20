@@ -1,0 +1,225 @@
+.careerTimelineContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  gap: 4.25rem;
+  overflow: hidden;
+}
+
+.experiencesWrapper {
+  gap: 0;
+  width: 100%;
+  display: flex;
+  max-width: 100%;
+  flex-direction: column;
+}
+
+/* Experience Card */
+
+.experienceItem {
+  width: 100%;
+  display: grid;
+  max-width: 100%;
+  list-style: none;
+
+  &:last-of-type {
+
+    .experienceContent {
+      .timelineColumn {
+        :global(.line) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.experienceContent {
+  width: 100%;
+  display: grid;
+  max-width: 100%;
+  gap: .875rem 1.5rem;
+  grid-template-columns: 1.75rem 1fr;
+  grid-template-rows: 2.125rem repeat(3, fit-content);
+  grid-template-areas:
+    'line-column duration'
+    'line-column header'
+    'line-column description'
+    'line-column technologies'
+  ;
+}
+
+.experienceHeader {
+  grid-area: header;
+  padding: .875rem 0 0;
+
+  h5 {
+    font-size: var(--font-h5);
+    font-weight: var(--font-semibold);
+    color: var(--typography-light);
+  }
+
+  p {
+    font-size: var(--font-h6);
+    font-weight: var(--font-regular);
+    color: var(--typography-extradark);
+    position: relative;
+
+    :global(.sr-only) {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+}
+
+.companyName {
+  display: flex;
+  position: relative;
+}
+
+.dateContainer {
+  display: flex;
+  flex-direction: row;
+  grid-area: duration;
+  /* height: 100%; */
+  gap: .375rem;
+  height: 2.125rem;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  padding: 0 .875rem;
+  position: relative;
+  border-radius: .75rem;
+  background-color: var(--primary-dark);
+
+  > * {
+    text-transform: capitalize;
+    font-size: var(--font-h7);
+    font-weight: var(--font-semibold);
+  }
+
+  :global(.sr-only) {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.timelineColumn {
+  height: 100%;
+  display: flex;
+  width: 1.75rem;
+  min-height: 100%;
+  min-width: 1.75rem;
+  align-items: center;
+
+  flex-direction: column;
+  grid-area: line-column;
+
+  :global(.line) {
+    width: 1px;
+    flex-grow: 1;
+    background: color-mix(in srgb, var(--typography-extralight) 10%, transparent);
+  }
+
+  :global(.dot) {
+    display: flex;
+    width: 1.75rem;
+    height: 1.75rem;
+    position: relative;
+    align-items: center;
+    min-height: 1.75rem;
+    flex-shrink: 0;
+    border-radius: 1.75rem;
+    justify-content: center;
+    border: 1px solid color-mix(in srgb, var(--typography-extralight) 10%, transparent);
+
+    &::after {
+      content: '';
+      width: 1.25rem;
+      height: 1.25rem;
+      position: absolute;
+      border-radius: 1.25rem;
+      background-color: color-mix(in srgb, var(--typography-extralight) 10%, transparent);
+    }
+  }
+}
+
+.description {
+  width: 100%;
+  max-width: 100%;
+  grid-area: description;
+  font-size: var(--font-h7);
+  font-weight: var(--font-light);
+  color: var(--typography-light);
+}
+
+.technologiesSection {
+  padding: 0 0 2rem;
+  grid-area: technologies;
+
+  h6 {
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 .375rem;
+    font-size: var(--font-h7);
+    font-weight: var(--font-medium);
+    color: var(--typography-extralight);
+
+    &::before {
+      content: "";
+      display: inline-block;
+      margin-right: 0.5rem;
+      background-color: var(--typography-extralight);
+      font-weight: bold;
+      height: .313rem;
+      width: .313rem;
+      border-radius: .313rem;
+    }
+  }
+
+  p {
+    color: var(--typography-dark);
+    font-size: var(--font-h7);
+    font-weight: var(--font-regular);
+  }
+}
+
+@media (min-width: 1024px) {
+  .experienceContent {
+    grid-template-columns: 1fr 1.75rem 1fr;
+    grid-template-rows: 2.125rem repeat(2, fit-content);
+    grid-template-areas:
+      'duration line-column header'
+      '. line-column description'
+      '. line-column technologies'
+    ;
+  }
+
+  .experienceItem {
+    &:nth-of-type(odd) {
+      .experienceContent {
+        grid-template-areas:
+          'header line-column duration'
+          'description line-column .'
+          'technologies line-column .'
+        ;
+
+        > * > * {
+          justify-self: flex-end;
+          text-align: right;
+        }
+      }
+    }
+
+    &:nth-of-type(even) {
+      .experienceContent {
+        .dateContainer {
+          justify-self: flex-end;
+        }
+      }
+    }
+  }
+}
