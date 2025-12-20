@@ -17,8 +17,8 @@ interface MobileSidebarProps {
 
 export function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
   const { t } = useTranslate()
-  const { activeSection } = useScroll();
   const sidebarRef = useBlur(onClose);
+  const { activeSection } = useScroll();
 
   return (
     <>

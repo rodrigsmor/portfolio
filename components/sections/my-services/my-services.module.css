@@ -5,6 +5,7 @@
   display: flex;
   position: relative;
   align-items: center;
+  overflow: hidden;
   flex-direction: column;
   gap: 4.25rem;
   /* padding: 5.25rem 1.5rem; */
