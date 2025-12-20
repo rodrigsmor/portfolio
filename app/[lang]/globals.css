@@ -52,6 +52,7 @@
   --shadow-header: 0px 0px 8px 1px rgba(0,0,0,0.4);
   --shadow-primary-main: 0 0 1.75rem .5rem rgba(104, 5, 224, .4);
   --text-shadow-primary-main: 0px 0px 28px rgba(104, 5, 224, .4);
+  --shadow-background-extradark: 0px 0px 8px rgba(12, 8, 22, 0.4);
 
   /* gradients */
   --gradient-primaryToSecondary-x-main: linear-gradient(90deg, #6805E0 0%, #ED2BC6 100%);
@@ -62,6 +63,7 @@
   --gradient-typographyToOpacity-d:  linear-gradient(329.93deg, rgba(240, 236, 248, 0.1) 0%, rgba(240, 236, 248, 0.01) 100%);
   --gradient-opacityToTypography-d:  linear-gradient(329.93deg, rgba(240, 236, 248, 0.01)  0%, rgba(240, 236, 248, 0.1) 100%);
   
+  --gradient-backgroundToOpacity-y: linear-gradient(0deg, rgba(12, 8, 22, 0) 0%, rgba(12, 8, 22, 1) 100%);
   /* media sizes */
   /* --media-mobile: 320px;
   --media-tablet: 768px;
@@ -84,7 +86,6 @@ body {
   background: var(--background-extradark);
   font-family: "Prompt", Helvetica, sans-serif;
   background-color: var(--background-extradark);
-
 }
 
 * {
@@ -92,4 +93,18 @@ body {
   margin: 0;
   box-sizing: border-box;
   font-family: "Prompt", Helvetica, sans-serif;
+}
+
+.sectionTransition {
+  height: 6.25rem;
+  width: 100%;
+  min-width: 100%;
+  position: absolute;
+  inset: 0 0 0 auto;
+  background: var(--gradient-backgroundToOpacity-y);
+
+  &.bottom {
+    inset: auto 0 0 0;
+    transform: scaleY(-1);
+  }
 }
