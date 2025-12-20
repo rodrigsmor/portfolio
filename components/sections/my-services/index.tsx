@@ -5,12 +5,13 @@ import styles from './my-services.module.css';
 import { SectionTitle } from '@/components/layout/section-title';
 import { services } from '@/consts/services';
 import { ServiceCard } from '@/components/cards/service-card';
+import { memo } from 'react';
 
-export function MyServices() {
+function MyServicesSectionContent() {
   const { t } = useTranslate();
   
   return (
-    <section aria-labelledby="services" className={styles.myServicesContainer}>
+    <section id="services" aria-labelledby="services" className={styles.myServicesContainer}>
       <p role="doc-subtitle" className={styles.ctaText}>
         {t('Services.ctaQuestion')}
         <strong>{t('Services.ctaSubtitle')}</strong>
@@ -57,3 +58,5 @@ const TopEllipse = () => {
     </svg>
   );
 }
+
+export const MyServices = memo(MyServicesSectionContent);

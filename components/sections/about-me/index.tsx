@@ -7,12 +7,13 @@ import { SectionTitle } from "@/components/layout/section-title";
 import { Skills } from "../skills";
 import { CareerOverview } from "../career-overview";
 import { CareerTimeline } from "../career-timeline";
+import { memo } from "react";
 
-export function AboutMe() {
+function AboutMeSectionContent() {
   const { t } = useTranslate();
 
   return (
-    <section className={styles.aboutMeContainer} aria-labelledby="about_me">
+    <section id="about_me" className={styles.aboutMeContainer} aria-labelledby="about_me">
       <p role="doc-subtitle" className={styles.aboutMeGreetings}>
         <span aria-hidden></span>
         {t('AboutMe.Greetings')}
@@ -28,3 +29,5 @@ export function AboutMe() {
     </section>
   );
 }
+
+export const AboutMe = memo(AboutMeSectionContent);
