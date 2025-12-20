@@ -23,6 +23,8 @@ export function AboutMe() {
       <CareerOverview />
       <CareerTimeline />
       <Skills />
+
+      <span aria-hidden className="sectionTransition bottom"></span>
     </section>
   );
 }
