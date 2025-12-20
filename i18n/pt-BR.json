@@ -190,6 +190,10 @@
       }
     }
   },
+  "Projects": {
+    "title": "Projetos",
+    "sectionDescription": "Estes são alguns dos projetos que desenvolvi, cada um projetado para unir funcionalidade a uma excelente experiência do usuário."
+  },
   "ScreenReader": {
     "languageLevelLabel": "Nível: ",
     "ProficiencyLevel": "Proficiência em ",

@@ -190,6 +190,10 @@
       }
     }
   },
+  "Projects": {
+    "title": "Projects",
+    "sectionDescription": "Here are some of the projects I’ve built, each designed to combine functionality with great user experience."
+  },
   "ScreenReader": {
     "languageLevelLabel": "Level: ",
     "ProficiencyLevel": "Proficiency on ",
