@@ -1,3 +1,5 @@
+'use client';
+
 import { Home } from "@/sections/home";
 import styles from "./portfolio.module.css";
 import { AboutMe } from "@/sections/about-me";
