@@ -39,7 +39,7 @@ export function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
           <Logo />
           <IconButton
             onClick={onClose}
-            aria-label="Fechar menu"
+            aria-label={t('Accessibility.closeMenu')}
           >
             <X size={24} aria-hidden="true" weight="bold" />
           </IconButton>
