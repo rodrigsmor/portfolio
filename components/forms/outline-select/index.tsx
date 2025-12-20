@@ -3,16 +3,18 @@
 import { useParams, useRouter } from 'next/navigation';
 import styles from './outline-select.module.css';
 import { ComponentPropsWithoutRef } from 'react';
-import { languages } from '@/utils/consts/languages';
-import { LanguageCode, LanguageData } from '@/utils/@types/lang';
+import { languages } from '@/consts/languages';
+import { LanguageCode, LanguageData } from '@/types/lang';
 import { CaretDown } from 'phosphor-react';
+import { useTranslate } from '@/hooks/useTranslate';
 
 type HTMLSelectProps = ComponentPropsWithoutRef<'select'>;
 
 type OutlineSelectProps = HTMLSelectProps;
 
-export function OutlineSelect({}: OutlineSelectProps) {
+export function OutlineSelect({ }: OutlineSelectProps) {
   const router = useRouter();
+  const { t } = useTranslate();
   const params = useParams<{ lang: LanguageCode | undefined }>();
 
   const langSlug = params?.lang ?? 'en-US';
@@ -24,6 +26,7 @@ export function OutlineSelect({}: OutlineSelectProps) {
       <select
         name="language"
         value={value}
+        aria-label={t('Accessibility.languageSelector')}
         onChange={(event) => {
           router.push(`/${event.target.value}`);
         }}
@@ -37,8 +40,13 @@ export function OutlineSelect({}: OutlineSelectProps) {
           </option>
         ))}
       </select>
-      <p>{label}</p>
-      <CaretDown size={20} weight="bold"/>
+      <p>
+        <span className="sr-only">
+          {t('Accessibility.currentLanguage')}
+        </span>
+        {label}
+      </p>
+      <CaretDown size={20} weight="bold" />
     </div>
   );
 }

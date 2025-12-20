@@ -95,6 +95,12 @@ body {
   font-family: "Prompt", Helvetica, sans-serif;
 }
 
+.sr-only {
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .sectionTransition {
   height: 6.25rem;
   width: 100%;

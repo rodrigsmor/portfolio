@@ -6,7 +6,7 @@
   height: 100dvh;
   width: 80dvw;
   position: fixed;
-  gap: 1.125rem;
+  gap: 2rem;
   inset: 0 -80dvw 0 auto;
   padding: 2rem;
   transition: all .3s ease;
@@ -76,12 +76,19 @@
 }
 
 .sidebarFooter {
+  gap: 1.75rem;
   display: flex;
+  min-width: 100%;
   align-items: center;
   flex-direction: column;
 
+  > div {
+    min-width: 100%;
+  }
+
   :global(.sr-only) {
     visibility: hidden;
+    position: absolute;
   }
 }
 

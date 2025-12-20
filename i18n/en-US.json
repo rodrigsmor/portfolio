@@ -186,7 +186,7 @@
       },
       "containerization_deployment": {
         "title": "Containerization & Deployment",
-        "description": "CContainerization and application orchestration, enabling scalability, portability, and more agile development environments."
+        "description": "Containerization and application orchestration, enabling scalability, portability, and more agile development environments."
       }
     }
   },
@@ -194,11 +194,17 @@
     "title": "Projects",
     "sectionDescription": "Here are some of the projects I’ve built, each designed to combine functionality with great user experience."
   },
-  "ScreenReader": {
+  "Accessibility": {
     "languageLevelLabel": "Level: ",
     "ProficiencyLevel": "Proficiency on ",
     "techStack": "My Tech Stack",
     "companyPrefix": "Company: ",
-    "durationPrefix": "Duration: "
+    "durationPrefix": "Duration: ",
+    "openMenu": "Open Navigation menu",
+    "closeMenu": "Close Navigation menu",
+    "sideBarTitle": "Sidebar menu",
+    "socialMediaArea": "Social Media Links",
+    "languageSelector": "Select language",
+    "currentLanguage": "Current language:"
   }
 }

@@ -194,11 +194,17 @@
     "title": "Projetos",
     "sectionDescription": "Estes são alguns dos projetos que desenvolvi, cada um projetado para unir funcionalidade a uma excelente experiência do usuário."
   },
-  "ScreenReader": {
+  "Accessibility": {
     "languageLevelLabel": "Nível: ",
     "ProficiencyLevel": "Proficiência em ",
     "techStack": "Meu Arsenal de Tecnologias",
     "companyPrefix": "Empresa: ",
-    "durationPrefix": "Duração: "
+    "durationPrefix": "Duração: ",
+    "openMenu": "Abrir menu de navegação",
+    "closeMenu": "Fechar menu de navegação",
+    "sideBarTitle": "Menu lateral",
+    "socialMediaArea": "Links para redes sociais",
+    "languageSelector": "Selecione o idioma",
+    "currentLanguage": "Idioma atual:"
   }
 }

@@ -11,8 +11,10 @@ import { useScroll } from '@/hooks/useScrollNavigation';
 import { MobileSidebar } from '../mobile-sidebar';
 
 import { useTransition } from '@/hooks/useTransition';
+import { useTranslate } from '@/hooks/useTranslate';
 
 export function Header() {
+  const { t } = useTranslate();
   const { activeSection, isSticky } = useScroll();
 
   const [shouldRenderSidebar, toggleSidebarVisibility, isTransitioning] = useTransition(false, 300);
@@ -23,8 +25,14 @@ export function Header() {
     <>
       <header className={`${styles.header} ${isSticky ? 'scrolled' : ''}`}>
         <Logo />
-        <IconButton onClick={() => toggleSidebarVisibility(true)}>
-          <List size={24} weight="bold" />
+        <IconButton
+          onClick={() => toggleSidebarVisibility(true)}
+          aria-label={t('Accessibility.openMenu')}
+          aria-controls="MobileSideBar"
+          aria-expanded={shouldRenderSidebar}
+          aria-haspopup="true"
+        >
+          <List size={24} weight="bold" aria-hidden />
         </IconButton>
         <nav className={`navbar ${styles.navbar}`}>
           <ul>

@@ -16,7 +16,7 @@ export function LanguageCard({ level, name, percentage }: LanguageCardProps) {
       <h5>{name}</h5>
 
       <p>
-        <span className="sr-only">{t('ScreenReader.languageLevelLabel')}</span>
+        <span className="sr-only">{t('Accessibility.languageLevelLabel')}</span>
         {level}
       </p>
 
@@ -26,7 +26,7 @@ export function LanguageCard({ level, name, percentage }: LanguageCardProps) {
         aria-valuemin={0}
         aria-valuemax={100}
         aria-valuenow={percentage}
-        aria-label={`${t('ScreenReader.ProficiencyLevel')} ${name}: ${percentageParsed}`}
+        aria-label={`${t('Accessibility.ProficiencyLevel')} ${name}: ${percentageParsed}`}
       >
         <div
           className="progress-bar"
