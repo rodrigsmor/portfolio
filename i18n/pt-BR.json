@@ -141,6 +141,55 @@
       }
     }
   },
+  "Services": {
+    "title": "Meus Serviços",
+    "sectionDescription": "Meu trabalho combina criatividade, usabilidade e performance para entregar soluções digitais de impacto. Confira abaixo os serviços que ofereço para transformar suas ideias em realidade.",
+    "ctaQuestion": "Você está procurando um profissional completo?",
+    "ctaSubtitle": "Então confira os meus principais serviços!",
+    "requestQuoteLabel": "Solicitar Orçamento",
+    "items": {
+      "web_development": {
+        "title": "Desenvolvimento Web & Mobile",
+        "description": "Aplicações web e móveis de alta performance, responsivas e escaláveis, com foco em experiência do usuário (UX)."
+      },
+      "api_development": {
+        "title": "Desenvolvimento de APIs",
+        "description": "Criação de APIs REST robustas utilizando ferramentas modernas, garantindo eficiência, segurança e fácil manutenção."
+      },
+      "database_management": {
+        "title": "Gerenciamento de Bancos de Dados",
+        "description": "Modelagem de bancos de dados SQL e NoSQL, focado em integridade, escalabilidade e consultas de máxima performance."
+      },
+      "uiux_design": {
+        "title": "Design UI/UX",
+        "description": "Design de interfaces modernas e acessíveis, aplicando usabilidade e experiência do usuário em soluções intuitivas e atraentes."
+      },
+      "performance_optimization": {
+        "title": "Otimização de Performance",
+        "description": "Otimização de sistemas com alto volume de dados, garantindo estabilidade e uma experiência aprimorada para o usuário final."
+      },
+      "testing_qa": {
+        "title": "Testes & Quality Assurance",
+        "description": "Testes unitários e de ponta a ponta (E2E) abrangentes para garantir a qualidade, confiabilidade e estabilidade."
+      },
+      "security": {
+        "title": "Segurança & Escalabilidade",
+        "description": "Arquitetura de aplicações com foco em código limpo, garantindo boas práticas de segurança, escalabilidade e confiabilidade."
+      },
+      "saas_solutions": {
+        "title": "Soluções SaaS",
+        "description": "Entrega de soluções inovadoras projetadas para resolver desafios em ambientes de software modernos e dinâmicos."
+      },
+      "ai_integration": {
+        "title": "Integração de IA",
+        "description": "Integração fluida de Machine Learning e IA Generativa para automatizar processos e impulsionar o valor de negócio."
+      },
+      "containerization_deployment": {
+        "title": "Conteinerização & Deployment",
+        "description": "Aplicações escaláveis e portáteis através de conteinerização e orquestração de fluxos de desenvolvimento ágeis"
+      }
+    }
+  },
   "ScreenReader": {
     "languageLevelLabel": "Nível: ",
     "ProficiencyLevel": "Proficiência em ",

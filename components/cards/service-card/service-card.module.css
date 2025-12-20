@@ -1,0 +1,104 @@
+.serviceCard {
+  width: 17.5rem;
+  display: flex;
+  min-width: 17.5rem;
+  padding: 3rem 1.5rem;
+  border-radius: 1.5rem;
+  align-items: center;
+  min-height: 23rem;
+  max-height: 23rem;
+  height: 23rem;
+  overflow: hidden;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--gradient-typographyToOpacity-d);
+
+  :global(.outlineBackground) {
+    inset: 0 0 0 0;
+    border-radius: 1.5rem;
+    position: absolute;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    flex-basis: 100%;
+    border: 2px solid transparent;
+    background: var(--gradient-opacityToTypography-d) border-box;
+    mask:
+      linear-gradient(#000 0 0) padding-box, 
+      linear-gradient(#000 0 0);
+    mask-composite: exclude;
+  }
+
+  :global(.blurEffect) {
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    position: absolute;
+    filter: blur(72px);
+    top: 11.375rem;
+  }
+}
+
+.serviceContent {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.serviceTitle {
+  z-index: 2;
+  text-align: center;
+  font-size: var(--font-h4);
+  font-weight: var(--font-semibold);
+  color: var(--typography-light);
+  text-shadow: var(--shadow-background-extradark);
+}
+
+.serviceDescription {
+  z-index: 2;
+  text-align: center;
+  max-width: 100%;
+  overflow: hidden;
+  margin: .5rem 0 1.5rem;
+  font-size: var(--font-h7);
+  font-weight: var(--font-light);
+  color: var(--typography-dark);
+  text-shadow: var(--shadow-background-extradark);
+}
+
+.ctaButton {
+  z-index: 2;
+  gap: .5rem;
+  display: flex;
+  position: relative;
+  align-items: center;
+  cursor: pointer;
+  justify-content: center;
+  border: 0px solid transparent;
+  background-color: transparent;
+  color: var(--typography-extralight);
+
+  font-size: var(--font-h7);
+  font-weight: var(--font-medium);
+
+  &::after {
+    content: '';
+    display: inline-block;
+    height: 1px;
+    bottom: -8px;
+    width: 0%;
+    flex-basis: 0%;
+    transition: all .3s ease-in-out;
+    background-color: var(--typography-extralight);
+    position: absolute;
+  }
+
+  &:hover {
+    &::after {
+      width: 80%;
+      flex-basis: 80%;  
+    }
+  }
+}
