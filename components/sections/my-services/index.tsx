@@ -11,14 +11,14 @@ function MyServicesSectionContent() {
   const { t } = useTranslate();
   
   return (
-    <section id="services" aria-labelledby="services" className={styles.myServicesContainer}>
+    <section id="services" aria-labelledby="services_title" className={styles.myServicesContainer}>
       <p role="doc-subtitle" className={styles.ctaText}>
         {t('Services.ctaQuestion')}
         <strong>{t('Services.ctaSubtitle')}</strong>
       </p>
       <span aria-hidden className={styles.scrollLine}></span>
       <header className={styles.sectionHeader}>
-        <SectionTitle title="Services.title" sectionKey="services" />
+        <SectionTitle title="Services.title" sectionKey="services_title" />
         <p>{t('Services.sectionDescription')}</p>
       </header>
       <div className={styles.servicesGroup}>

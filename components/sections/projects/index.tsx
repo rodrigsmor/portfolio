@@ -9,10 +9,10 @@ function ProjectsSectionContent() {
   const { t } = useTranslate();
 
   return (
-    <section id="projects" className={styles.projectsContainer}>
+    <section id="projects" className={styles.projectsContainer} aria-labelledby="projects_title">
       <span aria-hidden className="sectionTransition"></span>
       <header className={styles.sectionHeader}>
-        <SectionTitle title="Projects.title" sectionKey="projects" />
+        <SectionTitle title="Projects.title" sectionKey="projects_title" />
         <p>{t('Projects.sectionDescription')}</p>
       </header>
       <span aria-hidden className="sectionTransition bottom"></span>
