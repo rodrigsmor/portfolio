@@ -3,7 +3,6 @@
   display: flex;
   width: 100%;
   max-width: 100%;
-  /* overflow: hidden; */
   min-height: 100dvh;
   align-items: center;
   height: max-content;

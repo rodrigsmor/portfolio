@@ -1,5 +1,3 @@
-// You now have access to the current locale
-
 import { Metadata } from "next";
 import Portfolio from "@/views/portfolio"
 import { getDictionary } from "../../utils/functions/dictionaries";

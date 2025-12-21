@@ -8,7 +8,6 @@
   overflow: hidden;
   flex-direction: column;
   gap: 4.25rem;
-  /* padding: 5.25rem 1.5rem; */
   padding: 5.25rem 0;
   background-color: var(--background-extradark);
 
@@ -143,7 +142,6 @@
 
 @media (min-width: 1024px) {
   .myServicesContainer {
-    /* padding: 7.5rem 7.84dvw; */
     padding: 7.5rem 0;
   }
 

@@ -1,9 +1,9 @@
 'use client';
 
-import { PathToDot, useTranslate } from '@/hooks/useTranslate';
-import styles from './carousel-divider.module.css';
 import React from 'react';
+import styles from './carousel-divider.module.css';
 import { Dictionary } from '@/utils/functions/dictionaries';
+import { PathToDot, useTranslate } from '@/hooks/useTranslate';
 
 export function CarouselDivider() {
   const { t } = useTranslate();
@@ -32,8 +32,8 @@ export function CarouselDivider() {
           <React.Fragment key={item}>
             <li key={item} className={styles.carouselItem}>
               {t(item)}
+              <span aria-hidden className={styles.separatorDot}></span>
             </li>
-            <span className={styles.separatorDot}></span>
           </React.Fragment>
         ))}
       </ul>
@@ -42,8 +42,8 @@ export function CarouselDivider() {
           <React.Fragment key={item}>
             <li key={item} className={styles.carouselItem}>
               {t(item)}
+              <span aria-hidden className={styles.separatorDot}></span>
             </li>
-            <span aria-hidden className={styles.separatorDot}></span>
           </React.Fragment>
         ))}
       </ul>
