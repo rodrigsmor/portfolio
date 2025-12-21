@@ -9,6 +9,7 @@ export type LangPageProps = {
 
 export async function generateMetadata({ params }: LangPageProps): Promise<Metadata> {
   const { lang } = await params;
+  const baseUrl = process.env.BASE_URL;
 
   const dict = await getDictionary(lang as LanguageCode);
 
@@ -21,11 +22,12 @@ export async function generateMetadata({ params }: LangPageProps): Promise<Metad
       locale: lang,
     },
     alternates: {
-      canonical: `/${lang}`,
+      canonical: `${baseUrl}/${baseUrl}`,
       languages: {
-        'en-US': '/en-US',
-        'pt-BR': '/pt-BR',
-        'es-419': '/es-419',
+        'en-US': `${baseUrl}/en-US`,
+        'pt-BR': `${baseUrl}/pt-BR`,
+        'es-419': `${baseUrl}/es-419`,
+        'x-default': `${baseUrl}/en-US`,
       },
     },
   };
