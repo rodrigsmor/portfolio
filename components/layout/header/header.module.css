@@ -16,7 +16,6 @@
   }
 
   &:global(.scrolled) {
-    /* box-shadow: var(--shadow-primary-main); */
     backdrop-filter: blur(20px);
     background: color-mix(in srgb, var(--typography-extralight) 10%, transparent);
     -webkit-box-shadow: var(--shadow-header); 

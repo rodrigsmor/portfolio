@@ -20,7 +20,6 @@
   > span {
     background: var(--gradient-primaryToSecondary-y-main);
     background-clip: text;
-    /* text-fill-color: transparent; */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }

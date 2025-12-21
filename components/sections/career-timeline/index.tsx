@@ -46,7 +46,6 @@ export function CareerTimeline() {
                   <time dateTime={position.endDate}>{endDate}</time>
                 </div>
 
-                {/* Descrição */}
                 <div className={styles.description}>
                   <p>{t(position.description)}</p>
                 </div>

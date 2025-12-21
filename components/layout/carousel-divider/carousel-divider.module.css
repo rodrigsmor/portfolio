@@ -26,6 +26,7 @@
 }
 
 .carouselItem {
+  gap: 1.75rem;
   display: flex;
   align-items: center;
   min-width: max-content;

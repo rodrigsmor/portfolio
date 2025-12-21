@@ -5,7 +5,7 @@ import { SectionsKey } from '@/utils/@types/sections';
 
 interface SectionTitleProps {
   title: PathToDot<Dictionary>;
-  sectionKey: SectionsKey;
+  sectionKey: `${SectionsKey}_title`;
 }
 
 export function SectionTitle({ title, sectionKey }: SectionTitleProps) {
