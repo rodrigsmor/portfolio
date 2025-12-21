@@ -1,13 +1,13 @@
 'use client';
 
 import styles from "./about-me.module.css";
-import { useTranslate } from "@/utils/hooks/useTranslate";
+import { useTranslate } from "@/hooks/useTranslate";
 import { SectionTitle } from "@/components/layout/section-title";
 
+import { memo } from "react";
 import { Skills } from "../skills";
 import { CareerOverview } from "../career-overview";
 import { CareerTimeline } from "../career-timeline";
-import { memo } from "react";
 
 function AboutMeSectionContent() {
   const { t } = useTranslate();
