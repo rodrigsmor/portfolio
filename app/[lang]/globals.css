@@ -60,8 +60,9 @@
   --gradient-primaryToSecondary-x-dark: linear-gradient(90deg, #450396 0%, #BC109A 100%);
   --gradient-metalic-style: linear-gradient(90deg, #0C0816 0%, #231A3C 50%, #0C0816 100%);
   --gradient-typographyToOpacity-x: linear-gradient(90deg, #F0ECF8 0%, rgba(240, 236, 248, 0) 100%);
-  --gradient-typographyToOpacity-d:  linear-gradient(329.93deg, rgba(240, 236, 248, 0.1) 0%, rgba(240, 236, 248, 0.01) 100%);
-  --gradient-opacityToTypography-d:  linear-gradient(329.93deg, rgba(240, 236, 248, 0.01)  0%, rgba(240, 236, 248, 0.1) 100%);
+  --gradient-typographyToOpacity-d: linear-gradient(329.93deg, rgba(240, 236, 248, 0.1) 0%, rgba(240, 236, 248, 0.01) 100%);
+  --gradient-opacityToTypography-d: linear-gradient(329.93deg, rgba(240, 236, 248, 0.01)  0%, rgba(240, 236, 248, 0.1) 100%);
+  --gradient-backgroundContrast-y: linear-gradient(180deg, rgba(12, 8, 22, 0) 10%, rgba(12, 8, 22, 0.8) 70%, #0C0816 100%);
   
   --gradient-backgroundToOpacity-y: linear-gradient(0deg, rgba(12, 8, 22, 0) 0%, rgba(12, 8, 22, 1) 100%);
   /* media sizes */
