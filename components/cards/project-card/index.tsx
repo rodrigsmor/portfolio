@@ -9,7 +9,7 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
-  const id = `${project.title}_title`;
+  const id = `${project.id}_title`;
 
   return (
     <article className={styles.projectCardContainer} aria-labelledby={id}>

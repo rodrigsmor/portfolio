@@ -1,12 +1,8 @@
-import Cover from '@/public/covers/CurrencyConverter.png';
-
-import { summarizeProject } from '@/functions/summarizeProjects';
+import { currencyConverter } from './summary';
 import { Project, Platform, ProjectCategory, ProjectNature } from '@/types/project';
 
-export const currencyConverter: Project = {
-  id: 'currency_converter',
-  slug: 'currency-converter',
-  title: 'Currency Converter',
+export const fullCurrencyConverter: Project = {
+  ...currencyConverter,
   content: '',
   readingTime: 10,
   nature: ProjectNature.PERSONAL,
@@ -17,26 +13,6 @@ export const currencyConverter: Project = {
     ProjectCategory.FRONTEND,
     ProjectCategory.UI_UX
   ],
-  technologies: [
-    'Next.js',
-    'Docker',
-    'NPM',
-    'Node.js',
-    'Figma',
-    'TypeScript',
-    'NestJS',
-    'Jest',
-    'StoryBook',
-    'Cypress',
-    'React Query',
-    'Swagger',
-    'Styled-components',
-    'i18n'
-  ],
-  coverImage: {
-    url: Cover.src,
-    alt: '',
-  },
   links: [
     {
       label: 'Github',
@@ -65,5 +41,3 @@ export const currencyConverter: Project = {
   createdAt: '2023-09-10T00:00:00.000Z',
   finishedAt: '',
 };
-
-export const currencyConverterSummary = summarizeProject(currencyConverter);
