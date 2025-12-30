@@ -194,6 +194,16 @@
     "title": "Proyectos",
     "sectionDescription": "Estos son algunos de los proyectos que he desarrollado, cada uno diseñado para combinar funcionalidad con una excelente experiencia de usuario."
   },
+  "Contact": {
+    "headingPrimary": "¿Tienes una idea brillante?",
+    "headingSecondary": "¡Hagámosla realidad!",
+    "callToAction": "Entre em contato!",
+    "AddressLabels": {
+      "phone": "Teléfono",
+      "email": "Correo electrónico",
+      "location": "Dirección"
+    }
+  },
   "Accessibility": {
     "languageLevelLabel": "Nível: ",
     "ProficiencyLevel": "Competencia en ",
@@ -205,6 +215,9 @@
     "sideBarTitle": "Menú lateral",
     "socialMediaArea": "Enlaces de redes sociales",
     "languageSelector": "Seleccionar idioma",
-    "currentLanguage": "Idioma actual:"
+    "currentLanguage": "Idioma actual:",
+    "callPhone": "Llamar a Rodrigo: {replace}",
+    "sendEmail": "Enviar correo electrónico a {replace}",
+    "viewMap": "Ver ubicación de {replace} en Google Maps"
   }
 }

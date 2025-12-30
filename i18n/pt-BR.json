@@ -194,6 +194,16 @@
     "title": "Projetos",
     "sectionDescription": "Estes são alguns dos projetos que desenvolvi, cada um projetado para unir funcionalidade a uma excelente experiência do usuário."
   },
+  "Contact": {
+    "headingPrimary": "Uma idéia brilhante surgiu?",
+    "headingSecondary": "Vamos torná-la realidade!",
+    "callToAction": "Entre em contato!",
+    "AddressLabels": {
+      "phone": "Telefone",
+      "email": "E-mail",
+      "location": "Endereço"
+    }
+  },
   "Accessibility": {
     "languageLevelLabel": "Nível: ",
     "ProficiencyLevel": "Proficiência em ",
@@ -205,6 +215,9 @@
     "sideBarTitle": "Menu lateral",
     "socialMediaArea": "Links para redes sociais",
     "languageSelector": "Selecione o idioma",
-    "currentLanguage": "Idioma atual:"
+    "currentLanguage": "Idioma atual:",
+    "callPhone": "Ligar para Rodrigo: {replace}",
+    "sendEmail": "Enviar e-mail para {replace}",
+    "viewMap": "Ver localização de {replace} no Google Maps"
   }
 }
