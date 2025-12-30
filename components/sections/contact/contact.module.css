@@ -1,0 +1,111 @@
+.contactContainer {
+  gap: 4.25rem;
+  width: 100%;
+  display: flex;
+  max-width: 100%;
+  /* overflow: hidden; */
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6.125rem 2.375rem;
+  background-color: var(--background-extradark);
+}
+
+.footerHeading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: var(--font-h4);
+  font-weight: var(--font-regular);
+  color: var(--typography-main);
+
+  strong {
+    font-size: var(--font-h3);
+    font-weight: var(--font-semibold);
+    color: var(--typography-extralight);
+  }
+}
+
+.callToAction {
+  z-index: 2;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  font-size: var(--font-h3);
+  text-transform: uppercase;
+  font-weight: var(--font-semibold);
+  color: var(--typography-extralight);
+  text-shadow: var(--text-shadow-primary-main);
+  
+  svg {
+    top: 1.5rem;
+    z-index: -1;
+    position: absolute;
+    filter:
+      drop-shadow(0 0 1.75rem rgba(104, 5, 224, .4)) 
+      drop-shadow(0 0 2rem rgba(104, 5, 224, .4))
+    ;
+  }
+}
+
+.contactsMethodsWrapper {
+  gap: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.contactItem {
+  gap: 1.5rem;
+  width: 100%;
+  display: flex;
+  max-width: 100%;
+  overflow: hidden;
+
+  :global(.icon) {
+    height: 2.625rem;
+    width: 2.625rem;
+    min-width: 2.625rem;
+    min-height: 2.625rem;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    color: var(--typography-extralight);
+    border-radius: 100%;
+    border: 1px solid color-mix(in srgb, var(--typography-extralight) 10%, transparent);
+  }
+
+  :global(.info) {
+    gap: 0;
+    display: flex;
+    flex-direction: column;
+
+    :global(.label) {
+      font-style: normal;
+      font-size: var(--font-h6);
+      font-weight: var(--font-light);
+      text-transform: uppercase;
+      color: var(--typography-extradark);
+    }
+
+    a {
+      font-style: normal;
+      font-size: var(--font-h4);
+      font-weight: var(--font-medium);
+      text-decoration: none;
+      color: var(--typography-extralight);
+    }
+  }
+}
+
+.contactForm {
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 100%;
+  /* overflow: hidden; */
+  display: flex;
+  flex-direction: column;
+}
