@@ -31,7 +31,7 @@ function ContactFormContent() {
       <FormField
         variant="input"
         id="Contact_FirstName"
-        label="First Name"
+        label={t('Contact.Form.FormLabels.firstName')}
         value={values.firstName}
         onChange={(event) => {
           onChange('firstName', event.target.value);
@@ -41,7 +41,7 @@ function ContactFormContent() {
       <FormField
         variant="input"
         id="Contact_LastName"
-        label="Last Name"
+        label={t('Contact.Form.FormLabels.lastName')}
         value={values.lastName}
         onChange={(event) => {
           onChange('lastName', event.target.value);
@@ -51,7 +51,7 @@ function ContactFormContent() {
       <FormField
         variant="input"
         id="Contact_Email"
-        label="Email"
+        label={t('Contact.Form.FormLabels.email')}
         onChange={(event) => {
           onChange('email', event.target.value);
         }}
@@ -61,7 +61,7 @@ function ContactFormContent() {
       <FormField
         variant="input"
         id="Contact_Phone"
-        label="Phone"
+        label={t('Contact.Form.FormLabels.phone')}
         value={values.phoneNumber ?? ''}
         onChange={(event) => {
           onChange('phoneNumber', event.target.value);
@@ -70,7 +70,7 @@ function ContactFormContent() {
       />
       <FormField
         id="Contact_Budget"
-        label="Budget"
+        label={t('Contact.Form.FormLabels.budget')}
         variant="select"
         value={values.budgetRange}
         onChange={(event) => {

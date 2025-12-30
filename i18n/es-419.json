@@ -204,6 +204,16 @@
       "location": "Dirección"
     },
     "Form": {
+      "FormLabels": {
+        "firstName": "Nombre",
+        "lastName": "Apellido",
+        "email": "E-mail",
+        "phone": "Teléfono",
+        "budget": "Presupuesto del proyecto",
+        "currency": "Moneda de preferencia",
+        "duration": "Duración estimada",
+        "projectDescription": "Descripción del proyecto"
+      },
       "Placeholders": {
         "firstName": "¿Cómo te gustaría que te llame?",
         "lastName": "¿Y tu apellido? (¡Solo si quieres!)",

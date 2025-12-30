@@ -204,6 +204,16 @@
       "location": "Address"
     },
     "Form": {
+      "FormLabels": {
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "email": "E-mail",
+        "phone": "Phone",
+        "budget": "Budget",
+        "currency": "Currency",
+        "duration": "Duration",
+        "projectDescription": "Description"
+      },
       "Placeholders": {
         "firstName": "Tell me the name that feels most you!",
         "lastName": "And your last name? (Optional, only if you want!)",

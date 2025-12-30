@@ -204,6 +204,16 @@
       "location": "Endereço"
     },
     "Form": {
+      "FormLabels": {
+        "firstName": "Nome",
+        "lastName": "Sobrenome",
+        "email": "E-mail",
+        "phone": "Telefone",
+        "budget": "Orçamento do Projeto",
+        "currency": "Moeda Preferida",
+        "duration": "Duração Estimada",
+        "projectDescription": "Descrição do Projeto"
+      },
       "Placeholders": {
         "firstName": "Me diga o nome que melhor te atende!",
         "lastName": "E seu sobrenome? (Só se quiser!)",
