@@ -202,6 +202,44 @@
       "phone": "Teléfono",
       "email": "Correo electrónico",
       "location": "Dirección"
+    },
+    "Form": {
+      "Placeholders": {
+        "firstName": "¿Cómo te gustaría que te llame?",
+        "lastName": "¿Y tu apellido? (¡Solo si quieres!)",
+        "email": "¡Tu mejor e-mail para que estemos en contacto!",
+        "phoneNumber": "WhatsApp o Teléfono (Opcional, ¡pero ayuda!)",
+        "budgetRange": "¿Cuál es tu presupuesto estimado? Me ayuda a guiar la propuesta.",
+        "currency": "¿Qué moneda prefieres para el proyecto?",
+        "estimatedDuration": "¿Para cuándo lo necesitas aproximadamente?",
+        "projectDescription": "¿Cuál es la visión? Cuéntame todo sobre tu proyecto — ¡No olvides que ser amable es clave! 😉"
+      },
+      "BudgetRange": {
+        "under_100": "Menos de $100",
+        "100_500": "$100 – $500",
+        "500_1000": "$500 – $1.000",
+        "1000_2000": "$1.000 – $2.000",
+        "2000_5000": "$2.000 – $5.000",
+        "over_5000": "Más de $5.000",
+        "negotiable": "Abierto a discusión"
+      },
+      "ProjectDuration": {
+        "under_1_week": "Express (Menos de 1 semana)",
+        "1_2_week": "Entre 1 y 2 semanas",
+        "2_4_week": "De 2 a 4 semanas",
+        "1_3_months": "De 1 a 3 meses",
+        "over_3_months": "Proyecto largo (3+ meses)",
+        "long_term": "Alianza a largo plazo",
+        "fixed_contract": "Contrato por proyecto",
+        "to_be_defined": "Lo definimos juntos"
+      },
+      "Currency": {
+        "USD": "Dólar Americano ($)",
+        "BRL": "Real Brasileño (R$)",
+        "EUR": "Euro (€)",
+        "GBP": "Libra Esterlina (£)",
+        "Other": "Otra moneda (especifícala luego)"
+      }
     }
   },
   "Accessibility": {

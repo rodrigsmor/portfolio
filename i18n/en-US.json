@@ -202,6 +202,44 @@
       "phone": "Phone",
       "email": "Email",
       "location": "Address"
+    },
+    "Form": {
+      "Placeholders": {
+        "firstName": "Tell me the name that feels most you!",
+        "lastName": "And your last name? (Optional, only if you want!)",
+        "email": "Your best email so I can reach you!",
+        "phoneNumber": "Your WhatsApp / Phone (optional, but helpful)",
+        "budgetRange": "Share your budget range! No stress, just a guide.",
+        "currency": "Which currency works best for you? (e.g., USD, EUR, BRL)",
+        "estimatedDuration": "How long should this project take? (Weeks? Months?)",
+        "projectDescription": "What's on your mind? Describe your project in your own words — Don’t forget to be kind! 😉"
+      },
+      "BudgetRange": {
+        "under_100": "Under $ 100",
+        "100_500": "$ 100 – $ 500",
+        "500_1000": "$ 500 – $ 1000",
+        "1000_2000": "$ 1000 – $ 2000",
+        "2000_5000": "$ 2000 – $ 5000",
+        "over_5000": "Over $ 5000",
+        "negotiable": "Open to discussion"
+      },
+      "ProjectDuration": {
+        "under_1_week": "Under 1 week",
+        "1_2_week": "About 1 to 2 weeks",
+        "2_4_week": "2 to 4 weeks",
+        "1_3_months": "1 to 3 months",
+        "over_3_months": "Large project (3+ months)",
+        "long_term": "Long Term",
+        "fixed_contract": "Fixed-scope contract",
+        "to_be_defined": "Let's figure it out together"
+      },
+      "Currency": {
+        "USD": "US Dollars (USD)",
+        "BRL": "Brazilian Reais (BRL)",
+        "EUR": "Euros (EUR)",
+        "GBP": "Pounds (GBP)",
+        "Other": "Something else (let's talk!)"
+      }
     }
   },
   "Accessibility": {
