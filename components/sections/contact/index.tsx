@@ -1,10 +1,10 @@
+import Link from 'next/link';
 import { ReactNode } from 'react';
 import styles from './contact.module.css';
-import { EnvelopeSimple, MapPin, Phone } from 'phosphor-react';
 import { Dictionary } from '@/functions/dictionaries';
+import { EnvelopeSimple, MapPin, Phone } from 'phosphor-react';
 import { PathToDot, useTranslate } from '@/hooks/useTranslate';
-import Link from 'next/link';
-import { FormField } from '@/components/forms/form-field';
+import { ContactForm } from '@/components/layout/contact-form';
 
 const UnderlineSVG = () => (
   <svg width="128" height="25" viewBox="0 0 128 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -92,24 +92,7 @@ export function Contact() {
           );
         })}
       </address>
-      <form action="" className={styles.contactForm}>
-        <FormField
-          id="Contact_FirstName"
-          label="First Name"
-          placeholder="Tell me the name that feels most you!"
-        />
-        <FormField
-          id="Contact_LastName"
-          label="Last Name"
-          placeholder="Tell me the name that feels most you!"
-        />
-        <FormField
-          id="Contact_Budget"
-          label="Budget"
-          type="select"
-          placeholder="Tell me the name that feels most you!"
-        />
-      </form>
+      <ContactForm />
     </footer>
   );
 }

@@ -1,42 +1,59 @@
-import { ChangeEvent } from 'react';
+import { useTranslate } from '@/hooks/useTranslate';
 import styles from './form-field.module.css';
+import { FormFieldProps } from '@/types/form-field';
 
-interface FormFieldProps {
-  id: string;
-  error?: string;
-  label: string;
-  value: string;
-  placeholder: string;
-  onChange: (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void;
-  type?: 'select' | 'input' | 'text-area';
-}
-
-export function FormField({
-  id,
-  label,
-  type = 'input',
-  placeholder,
-  error,
-  onChange
-}: FormFieldProps) {
+export function FormField<K extends string | number>(props: FormFieldProps<K>) {
   return (
     <div className={`form-field ${styles.formFieldContainer}`}>
       <div className={styles.fieldHeader}>
         <label
-          htmlFor={id}
+          htmlFor={props.id}
           className={styles.formLabel}
         >
-          {label}
+          {props.label}
         </label>
-        {error && <p className="error">{error}</p>}
+        {props.error && <p className="error">{props.error}</p>}
       </div>
-      <input
-        id={id}
-        onChange={onChange}
-        placeholder={placeholder}
-        className={styles.formInput}
-      />
+      <Input {...props} />
       <span aria-hidden></span>
     </div>
+  );
+}
+
+function Input<K extends string | number>(props: FormFieldProps<K>) {
+  const { t } = useTranslate();
+  const { id, value, variant, placeholder, onChange } = props;
+
+  if (variant === 'select') {
+    return (
+      <select
+        id={id}
+        value={value}
+        defaultValue=""
+        onChange={onChange}
+        className={`${styles.formInput} ${value ?? styles.placeHolder}`}
+      >
+        <option className={styles.placeHolder} value="" disabled hidden>{placeholder}</option>
+        {props.options.map((option) => {
+          const label = t(option.label);
+          return (
+            <option key={option.value} value={option.value}>
+              {label}
+            </option>
+          );
+        })}
+      </select>
+    )
+  }
+
+  return (
+    <input
+      id={id}
+      value={value}
+      onChange={onChange}
+      autoComplete="off"
+      placeholder={placeholder}
+      className={styles.formInput}
+    />
   );
 }
