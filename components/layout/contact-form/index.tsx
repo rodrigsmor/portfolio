@@ -1,8 +1,8 @@
 import styles from './contact-form.module.css';
 import { Form, Formik, useFormikContext } from 'formik';
-import { BudgetRange, ContactFormData } from '@/types/contact';
+import { BudgetRange, ContactFormData, Currency, ProjectDuration } from '@/types/contact';
 import { FormField } from '@/components/forms/form-field';
-import { budgetRangeOptions } from '@/consts/contact-form';
+import { budgetRangeOptions, currencyOptions, durationOptions } from '@/consts/contact-form';
 import { useTranslate } from '@/hooks/useTranslate';
 
 const initialValues: ContactFormData = {
@@ -79,6 +79,40 @@ function ContactFormContent() {
         }}
         options={budgetRangeOptions}
         placeholder={t('Contact.Form.Placeholders.budgetRange')}
+      />
+      <FormField
+        id="Contact_Currency"
+        label={t('Contact.Form.FormLabels.currency')}
+        variant="select"
+        value={values.currency}
+        onChange={(event) => {
+          const newValue = event.target.value as Currency;
+          onChange('currency', newValue);
+        }}
+        options={currencyOptions}
+        placeholder={t('Contact.Form.Placeholders.currency')}
+      />
+      <FormField
+        id="Contact_Duration"
+        label={t('Contact.Form.FormLabels.duration')}
+        variant="select"
+        value={values.estimatedDuration}
+        onChange={(event) => {
+          const newValue = event.target.value as ProjectDuration;
+          onChange('estimatedDuration', newValue);
+        }}
+        options={durationOptions}
+        placeholder={t('Contact.Form.Placeholders.estimatedDuration')}
+      />
+      <FormField
+        id="Contact_Description"
+        label={t('Contact.Form.FormLabels.projectDescription')}
+        variant="text-area"
+        value={values.projectDescription}
+        onChange={(event) => {
+          onChange('projectDescription', event.target.value);
+        }}
+        placeholder={t('Contact.Form.Placeholders.projectDescription')}
       />
       <button type="submit" disabled={isSubmitting}>
         Submit

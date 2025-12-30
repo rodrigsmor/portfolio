@@ -1,4 +1,4 @@
-import { BudgetRange } from '@/types/contact';
+import { BudgetRange, Currency, ProjectDuration } from '@/types/contact';
 import { SelectOption } from '@/types/form-field';
 
 export const budgetRangeOptions: SelectOption<BudgetRange>[] = [
@@ -30,4 +30,62 @@ export const budgetRangeOptions: SelectOption<BudgetRange>[] = [
     label: 'Contact.Form.BudgetRange.negotiable',
     value: BudgetRange.NEGOTIABLE
   }
+];
+
+export const currencyOptions: SelectOption<Currency>[] = [
+  {
+    value: Currency.USD,
+    label: 'Contact.Form.Currency.USD'
+  },
+  {
+    value: Currency.BRL,
+    label: 'Contact.Form.Currency.BRL'
+  },
+  {
+    value: Currency.EUR,
+    label: 'Contact.Form.Currency.EUR'
+  },
+  {
+    value: Currency.GBP,
+    label: 'Contact.Form.Currency.GBP'
+  },
+  {
+    value: Currency.OTHER,
+    label: 'Contact.Form.Currency.Other'
+  }
+];
+
+export const durationOptions: SelectOption<ProjectDuration>[] = [
+  {
+    value: ProjectDuration.UNDER_ONE_WEEK,
+    label: 'Contact.Form.ProjectDuration.under_1_week'
+  },
+  {
+    value: ProjectDuration.ONE_TO_TWO_WEEKS,
+    label: 'Contact.Form.ProjectDuration.1_2_week'
+  },
+  {
+    value: ProjectDuration.TWO_TO_FOUR_WEEKS,
+    label: 'Contact.Form.ProjectDuration.2_4_week'
+  },
+  {
+    value: ProjectDuration.ONE_TO_THREE_MONTHS,
+    label: 'Contact.Form.ProjectDuration.1_3_months'
+  },
+  {
+    value: ProjectDuration.OVER_THREE_MONTHS,
+    label: 'Contact.Form.ProjectDuration.over_3_months'
+  },
+  {
+    value: ProjectDuration.LONG_TERM,
+    label: 'Contact.Form.ProjectDuration.long_term'
+  },
+  {
+    value: ProjectDuration.FIXED_CONTRACT,
+    label: 'Contact.Form.ProjectDuration.fixed_contract'
+  },
+  {
+    value: ProjectDuration.TO_BE_DEFINED,
+    label: 'Contact.Form.ProjectDuration.to_be_defined'
+  },
 ];
