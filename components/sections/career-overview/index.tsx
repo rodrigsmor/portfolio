@@ -24,12 +24,11 @@ export function CareerOverview() {
       <figure className={styles.profileImage}>
         <Image
           src={ProfileImage}
-          width="382"
-          height="430"
           alt={t('AboutMe.altText')}
           placeholder="blur"
-          loading="lazy"
-          preload
+          priority
+          width={382}
+          height={430}
         />
       </figure>
       <div className={styles.introductionText} aria-describedby="AboutMe-description">

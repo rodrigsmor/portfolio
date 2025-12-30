@@ -68,3 +68,6 @@ dist-ssr
 yarn.lock
 
 vite.config.js.*
+
+
+*.example.ts
