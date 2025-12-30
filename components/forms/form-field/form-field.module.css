@@ -112,6 +112,11 @@
   }
 }
 
+textarea.formInput {
+  padding: .5rem;
+  min-height: 6.75rem;
+}
+
 .placeHolder {
   font-size: var(--font-h6);
   font-weight: var(--font-light);

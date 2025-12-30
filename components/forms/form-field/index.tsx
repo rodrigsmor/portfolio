@@ -46,6 +46,19 @@ function Input<K extends string | number>(props: FormFieldProps<K>) {
     )
   }
 
+  if (variant === 'text-area') {
+    return (
+      <textarea
+        id={id}
+        value={value}
+        onChange={onChange}
+        autoComplete="off"
+        placeholder={placeholder}
+        className={styles.formInput}
+      />
+    );
+  }
+
   return (
     <input
       id={id}
