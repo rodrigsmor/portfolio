@@ -43,7 +43,7 @@
   color: var(--typography-extralight);
   text-shadow: var(--text-shadow-primary-main);
   
-  svg {
+  :global(.underline-svg) {
     top: 1.5rem;
     z-index: -1;
     position: absolute;
@@ -52,6 +52,13 @@
       drop-shadow(0 0 2rem rgba(104, 5, 224, .4))
     ;
   }
+}
+
+.arrowIllustration {
+  top: -2.375rem;
+  position: absolute;
+  display: none;
+  right: calc(100% + 2.25rem);
 }
 
 .contactsMethodsWrapper {
@@ -188,6 +195,15 @@
       font-size: var(--font-h2);
       font-weight: var(--font-semibold);
     }
+  }
+
+  .callToAction {
+    justify-self: center;
+    max-width: fit-content;
+  }
+
+  .arrowIllustration {
+    display: block;
   }
 
   .copyrightsFooter {
