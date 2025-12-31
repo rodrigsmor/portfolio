@@ -1,6 +1,10 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, ComponentPropsWithoutRef } from 'react';
 import { PathToDot } from '../hooks/useTranslate';
 import { Dictionary } from '../functions/dictionaries';
+
+type HTMLInputProps = ComponentPropsWithoutRef<'input'>;
+type HTMLTextAreaProps = ComponentPropsWithoutRef<'textarea'>;
+type HTMLSelectProps = ComponentPropsWithoutRef<'select'>;
 
 export interface SelectOption<K> {
   value: K;
@@ -17,12 +21,22 @@ interface BaseProps<K> {
 }
 
 interface InputProps<K> extends BaseProps<K> {
-  variant: 'input' | 'text-area';
+  variant: 'input';
+  inputProps?: HTMLInputProps;
+}
+
+interface TextAreaProps<K> extends BaseProps<K> {
+  variant: 'text-area';
+  inputProps?: HTMLTextAreaProps;
 }
 
 interface SelectProps<K> extends BaseProps<K> {
   variant: 'select';
   options: SelectOption<K>[];
+  inputProps?: HTMLSelectProps;
 }
 
-export type FormFieldProps<K extends string | number> = InputProps<K> | SelectProps<K>;
+export type FormFieldProps<K extends string | number> =
+  | InputProps<K>
+  | TextAreaProps<K>
+  | SelectProps<K>;

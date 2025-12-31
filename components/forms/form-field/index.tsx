@@ -31,6 +31,7 @@ function Input<K extends string | number>(props: FormFieldProps<K>) {
         value={value}
         defaultValue=""
         onChange={onChange}
+        {...props.inputProps}
         className={`${styles.formInput} ${value ?? styles.placeHolder}`}
       >
         <option className={styles.placeHolder} value="" disabled hidden>{placeholder}</option>
@@ -53,6 +54,7 @@ function Input<K extends string | number>(props: FormFieldProps<K>) {
         value={value}
         onChange={onChange}
         autoComplete="off"
+        {...props.inputProps}
         placeholder={placeholder}
         className={styles.formInput}
       />
@@ -65,6 +67,7 @@ function Input<K extends string | number>(props: FormFieldProps<K>) {
       value={value}
       onChange={onChange}
       autoComplete="off"
+      {...props.inputProps}
       placeholder={placeholder}
       className={styles.formInput}
     />

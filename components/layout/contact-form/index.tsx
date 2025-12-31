@@ -6,6 +6,8 @@ import { budgetRangeOptions, currencyOptions, durationOptions } from '@/consts/c
 import { useTranslate } from '@/hooks/useTranslate';
 import { Button } from '@/components/buttons/button';
 import { RocketLaunch } from 'phosphor-react';
+import { contactFormSchema } from '@/utils/validations/contact-form';
+import { LoadingSpinner } from '@/components/textual/loading-spinner';
 
 const initialValues: ContactFormData = {
   firstName: '',
@@ -16,9 +18,9 @@ const initialValues: ContactFormData = {
 
 function ContactFormContent() {
   const { t } = useTranslate()
-  const { values, setValues, isSubmitting, dirty, isValid } = useFormikContext<ContactFormData>();
+  const { touched, errors, values, setValues, setFieldTouched, isSubmitting, dirty, isValid } = useFormikContext<ContactFormData>();
 
-  function onChange<K extends keyof ContactFormData>(
+  function handleChange<K extends keyof ContactFormData>(
     key: K,
     newValue: ContactFormData[K]
   ) {
@@ -27,6 +29,10 @@ function ContactFormContent() {
       [key]: newValue,
     }));
   }
+
+  function handleBlur<K extends keyof ContactFormData>(key: K) {
+    setFieldTouched(key, true, true);
+  };
 
   return (
     <Form className={styles.contactFormContainer}>
@@ -37,9 +43,18 @@ function ContactFormContent() {
           label={t('Contact.Form.FormLabels.firstName')}
           value={values.firstName}
           onChange={(event) => {
-            onChange('firstName', event.target.value);
+            handleChange('firstName', event.target.value);
+          }}
+          inputProps={{
+            onBlur: () => handleBlur('firstName')
           }}
           placeholder={t('Contact.Form.Placeholders.firstName')}
+          {...
+            (touched.firstName && errors.firstName
+              ? { error: errors.firstName }
+              : {}
+            )
+          }
         />
         <FormField
           variant="input"
@@ -47,19 +62,37 @@ function ContactFormContent() {
           label={t('Contact.Form.FormLabels.lastName')}
           value={values.lastName}
           onChange={(event) => {
-            onChange('lastName', event.target.value);
+            handleChange('lastName', event.target.value);
+          }}
+          inputProps={{
+            onBlur: () => handleBlur('lastName')
           }}
           placeholder={t('Contact.Form.Placeholders.lastName')}
+          {...
+            (touched.lastName && errors.lastName
+              ? { error: errors.lastName }
+              : {}
+            )
+          }
         />
         <FormField
           variant="input"
           id="Contact_Email"
           label={t('Contact.Form.FormLabels.email')}
           onChange={(event) => {
-            onChange('email', event.target.value);
+            handleChange('email', event.target.value);
+          }}
+          inputProps={{
+            onBlur: () => handleBlur('email')
           }}
           value={values.email ?? ''}
           placeholder={t('Contact.Form.Placeholders.email')}
+          {...
+            (touched.email && errors.email
+              ? { error: errors.email }
+              : {}
+            )
+          }
         />
         <FormField
           variant="input"
@@ -67,9 +100,18 @@ function ContactFormContent() {
           label={t('Contact.Form.FormLabels.phone')}
           value={values.phoneNumber ?? ''}
           onChange={(event) => {
-            onChange('phoneNumber', event.target.value);
+            handleChange('phoneNumber', event.target.value);
+          }}
+          inputProps={{
+            onBlur: () => handleBlur('phoneNumber')
           }}
           placeholder={t('Contact.Form.Placeholders.phoneNumber')}
+          {...
+            (touched.phoneNumber && errors.phoneNumber
+              ? { error: errors.phoneNumber }
+              : {}
+            )
+          }
         />
         <FormField
           id="Contact_Budget"
@@ -78,10 +120,19 @@ function ContactFormContent() {
           value={values.budgetRange}
           onChange={(event) => {
             const newValue = event.target.value as BudgetRange;
-            onChange('budgetRange', newValue);
+            handleChange('budgetRange', newValue);
+          }}
+          inputProps={{
+            onBlur: () => handleBlur('budgetRange')
           }}
           options={budgetRangeOptions}
           placeholder={t('Contact.Form.Placeholders.budgetRange')}
+          {...
+            (touched.budgetRange && errors.budgetRange
+              ? { error: errors.budgetRange }
+              : {}
+            )
+          }
         />
         <FormField
           id="Contact_Currency"
@@ -90,10 +141,19 @@ function ContactFormContent() {
           value={values.currency}
           onChange={(event) => {
             const newValue = event.target.value as Currency;
-            onChange('currency', newValue);
+            handleChange('currency', newValue);
+          }}
+          inputProps={{
+            onBlur: () => handleBlur('currency')
           }}
           options={currencyOptions}
           placeholder={t('Contact.Form.Placeholders.currency')}
+          {...
+            (touched.currency && errors.currency
+              ? { error: errors.currency }
+              : {}
+            )
+          }
         />
         <FormField
           id="Contact_Duration"
@@ -102,10 +162,19 @@ function ContactFormContent() {
           value={values.estimatedDuration}
           onChange={(event) => {
             const newValue = event.target.value as ProjectDuration;
-            onChange('estimatedDuration', newValue);
+            handleChange('estimatedDuration', newValue);
+          }}
+          inputProps={{
+            onBlur: () => handleBlur('estimatedDuration')
           }}
           options={durationOptions}
           placeholder={t('Contact.Form.Placeholders.estimatedDuration')}
+          {...
+            (touched.estimatedDuration && errors.estimatedDuration
+              ? { error: errors.estimatedDuration }
+              : {}
+            )
+          }
         />
         <FormField
           id="Contact_Description"
@@ -113,17 +182,34 @@ function ContactFormContent() {
           variant="text-area"
           value={values.projectDescription}
           onChange={(event) => {
-            onChange('projectDescription', event.target.value);
+            handleChange('projectDescription', event.target.value);
+          }}
+          inputProps={{
+            onBlur: () => handleBlur('projectDescription')
           }}
           placeholder={t('Contact.Form.Placeholders.projectDescription')}
+          {...
+            (touched.projectDescription && errors.projectDescription
+              ? { error: errors.projectDescription }
+              : {}
+            )
+          }
         />
       </div>
       <footer className={styles.submitDetails}>
         <Button
-          disabled={isSubmitting || !dirty || !isValid}
+          theme="gradient"
+          disabled={!dirty || isSubmitting || (dirty && !isValid)}
         >
-          <RocketLaunch size={24} />
-          {t('Contact.Form.submitLabel')}
+          {isSubmitting ? (
+            <LoadingSpinner />
+          ) : (
+            <RocketLaunch size={24} />
+          )}
+          {isSubmitting
+            ? t('Contact.Form.submittingLabel')
+            : t('Contact.Form.submitLabel')
+          }
         </Button>
         <p>{t('Contact.Form.submittedMessage')}</p>
       </footer>
@@ -134,10 +220,10 @@ function ContactFormContent() {
 export function ContactForm() {
   return (
     <Formik
+      validationSchema={contactFormSchema}
       initialValues={initialValues}
-      // validate={(values) => {
-      //   // 
-      // }}
+      validateOnMount={true}
+      validateOnBlur={true}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
           alert(JSON.stringify(values, null, 2));

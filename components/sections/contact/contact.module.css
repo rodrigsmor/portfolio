@@ -146,5 +146,12 @@
 
   .footerHeading {
     margin: 0 0 3.125rem 0;
+    font-size: var(--font-h3);
+    font-weight: var(--font-regular);
+
+    strong {
+      font-size: var(--font-h2);
+      font-weight: var(--font-semibold);
+    }
   }
 }
