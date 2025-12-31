@@ -1,13 +1,17 @@
 .contactContainer {
   gap: 4.25rem;
-  width: 100%;
   display: flex;
-  max-width: 100%;
+  width: 100dvw;
+  max-width: 100dvw;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   padding: 6.125rem 2.375rem;
   background-color: var(--background-extradark);
+
+  > * {
+    max-width: 100%;
+  }
 }
 
 .footerHeading {
@@ -107,6 +111,36 @@
   }
 }
 
+.copyrightsFooter {
+  width: 100%;
+  gap: 2.375rem;
+  grid-area: footer;
+  max-width: 100%;
+  margin: 0 0 0;
+  position: relative;
+  padding: 4.25rem 0 0;
+  display: flex;
+  margin: 3.125rem 0 0;
+  flex-direction: column;
+  align-items: center;
+
+  small {
+    font-style: normal;
+    font-size: var(--font-h7);
+    font-weight: var(--font-regular);
+  }
+
+  &::after {
+    content: '';
+    height: .063rem;
+    width: 100%;
+    min-width: 100%;
+    position: absolute;
+    inset: 0 0 auto;
+    background: linear-gradient(90deg, rgba(240, 236, 248, 0) 0%, rgba(240, 236, 248, 0.5) 50%, rgba(240, 236, 248, 0) 100%);
+  }
+}
+
 @media (min-width: 768px) {
   .contactContainer {
     padding: 5.25rem 3rem;
@@ -141,6 +175,7 @@
       'heading heading'
       'addresses cta'
       'addresses form'
+      'footer footer'
     ;
   }
 
@@ -152,6 +187,16 @@
     strong {
       font-size: var(--font-h2);
       font-weight: var(--font-semibold);
+    }
+  }
+
+  .copyrightsFooter {
+    flex-direction: row-reverse;
+    margin: 4.25rem 0 0;
+    justify-content: space-between;
+
+    small {
+      font-size: var(--font-h6);
     }
   }
 }

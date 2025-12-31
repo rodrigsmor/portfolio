@@ -5,6 +5,7 @@ import { Dictionary } from '@/functions/dictionaries';
 import { EnvelopeSimple, MapPin, Phone } from 'phosphor-react';
 import { PathToDot, useTranslate } from '@/hooks/useTranslate';
 import { ContactForm } from '@/components/layout/contact-form';
+import { SocialLinks } from '@/components/layout/social-links';
 
 const UnderlineSVG = () => (
   <svg width="128" height="25" viewBox="0 0 128 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -93,6 +94,12 @@ export function Contact() {
         })}
       </address>
       <ContactForm />
+      <footer className={styles.copyrightsFooter}>
+        <SocialLinks />
+        <small>
+          Copyrights &copy; {new Date().getFullYear()} <strong>Rodrigo</strong>. All Rights Reserved.
+        </small>
+      </footer>
     </footer>
   );
 }
