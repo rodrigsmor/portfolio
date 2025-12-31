@@ -249,7 +249,10 @@
         "EUR": "Euro (EUR)",
         "GBP": "Libra Esterlina (GBP)",
         "Other": "Outra (especificar na descrição)"
-      }
+      },
+      "submitLabel": "Enviar Mensagem",
+      "submittingLabel": "Enviando...",
+      "submittedMessage": "Fico muito feliz com seu interesse em trabalharmos juntos! Tenho certeza que faremos um ótimo trabalho. Entrarei em contato com você em breve. Até logo! 👋🏽"
     }
   },
   "Accessibility": {
