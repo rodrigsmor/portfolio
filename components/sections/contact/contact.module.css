@@ -3,7 +3,6 @@
   width: 100%;
   display: flex;
   max-width: 100%;
-  /* overflow: hidden; */
   align-items: center;
   flex-direction: column;
   justify-content: center;
@@ -12,6 +11,7 @@
 }
 
 .footerHeading {
+  grid-area: heading;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,6 +30,7 @@
 .callToAction {
   z-index: 2;
   display: flex;
+  grid-area: cta;
   position: relative;
   justify-content: center;
   font-size: var(--font-h3);
@@ -52,6 +53,7 @@
 .contactsMethodsWrapper {
   gap: 1.75rem;
   display: flex;
+  grid-area: addresses;
   flex-direction: column;
   width: 100%;
   max-width: 100%;
@@ -96,7 +98,53 @@
       font-size: var(--font-h4);
       font-weight: var(--font-medium);
       text-decoration: none;
+      width: 100%;
+      max-width: 100%;
+      hyphens: auto;
+      overflow-wrap: break-word;
       color: var(--typography-extralight);
     }
+  }
+}
+
+@media (min-width: 768px) {
+  .contactContainer {
+    padding: 5.25rem 3rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .contactsMethodsWrapper {
+    display: flex;
+    flex-direction: row;
+
+    div {
+      flex: 1 1 0;
+    }
+  }
+
+  .contactItem {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contactContainer {
+    display: grid;
+    gap: 3rem 4.25rem;
+    padding: 7.5rem 7.84dvw;
+    align-content: baseline;
+    align-items: start;
+    grid-template-columns: 19.625rem 1fr;
+    grid-template-rows: max-content minmax(2.25rem, fit-content) auto;
+    grid-template-areas:
+      'heading heading'
+      'addresses cta'
+      'addresses form'
+    ;
+  }
+
+  .footerHeading {
+    margin: 0 0 3.125rem 0;
   }
 }

@@ -1,7 +1,88 @@
 .contactFormContainer {
+  gap: 3rem;
+  width: 100%;
+  display: flex;
+  max-width: 100%;
+  grid-area: form;
+  flex-direction: column;
+}
+
+.fieldsContainer {
+  width: 100%;
+  gap: 1.75rem;
+  display: flex;
+  max-width: 100%;
+  flex-direction: column;
+}
+
+.submitDetails {
   gap: 1.5rem;
   width: 100%;
   display: flex;
   max-width: 100%;
   flex-direction: column;
+
+  button {
+    min-width: 100%;
+  }
+
+  p {
+    width: 100%;
+    max-width: 100%;
+    font-size: var(--font-h7);
+    color: var(--typography-dark);
+    font-weight: var(--font-regular);
+  }
+}
+
+@media (min-width: 768px) {
+  .fieldsContainer {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    :global(.form-field) {
+      flex: 1 0 100%;
+      flex-wrap: nowrap;
+      flex-direction: column;
+
+      &:nth-of-type(5),
+      &:nth-of-type(6) {
+        flex: 1 1 20%;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .submitDetails {
+    gap: 1.5rem;
+    flex-direction: row;
+
+    button {
+      min-width: 14.063rem;
+      max-width: 14.063rem;
+    }
+
+    p {
+      flex-grow: 1;
+      text-align: end;
+    }
+  }
+}
+
+@media (min-width: 1170px) {
+  .fieldsContainer {
+    :global(.form-field) {
+      &:nth-of-type(1),
+      &:nth-of-type(2),
+      &:nth-of-type(3),
+      &:nth-of-type(4) {
+        flex: 1 1 40%;
+      }
+
+      &:nth-of-type(7) {
+        flex: 1 1 20%;
+      }
+    }
+  }
 }
