@@ -192,7 +192,9 @@
   },
   "Projects": {
     "title": "Projetos",
-    "sectionDescription": "Estes são alguns dos projetos que desenvolvi, cada um projetado para unir funcionalidade a uma excelente experiência do usuário."
+    "sectionDescription": "Estes são alguns dos projetos que desenvolvi, cada um projetado para unir funcionalidade a uma excelente experiência do usuário.",
+    "viewFullProject": "Ver Projeto Completo",
+    "viewAllProjects": "Ver Todos Os Projetos"
   },
   "Contact": {
     "headingPrimary": "Uma idéia brilhante surgiu?",

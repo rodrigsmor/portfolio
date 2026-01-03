@@ -192,7 +192,9 @@
   },
   "Projects": {
     "title": "Projects",
-    "sectionDescription": "Here are some of the projects I’ve built, each designed to combine functionality with great user experience."
+    "sectionDescription": "Here are some of the projects I’ve built, each designed to combine functionality with great user experience.",
+    "viewFullProject": "View Full Project",
+    "viewAllProjects": "View All Projects"
   },
   "Contact": {
     "headingPrimary": "Got a brilliant idea?",
