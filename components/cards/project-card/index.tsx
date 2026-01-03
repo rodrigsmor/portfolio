@@ -3,12 +3,14 @@ import styles from './project-card.module.css';
 import Image from 'next/image';
 import { Button } from '@/components/buttons/button';
 import { ArrowUpRight } from 'phosphor-react';
+import { useTranslate } from '@/hooks/useTranslate';
 
 interface ProjectCardProps {
   project: ProjectSummary;
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
+  const { t } = useTranslate();
   const id = `${project.id}_title`;
 
   return (
@@ -34,7 +36,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </ul>
       </header>
       <Button type="button" theme="outline">
-        View Full Project
+        {t('Projects.viewFullProject')}
         <ArrowUpRight size={24} aria-hidden weight="bold" />
       </Button>
     </article>
