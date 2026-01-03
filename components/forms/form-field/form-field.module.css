@@ -1,0 +1,127 @@
+.formFieldContainer {
+  width: 100%;
+  display: flex;
+  max-width: 100%;
+  flex-wrap: nowrap;
+  position: relative;
+  gap: .25rem 0.875rem;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-content: baseline;
+
+  span {
+    bottom: 0;
+    width: 0px;
+    height: .063rem;
+    position: absolute;
+    transition: all .3s ease;
+    background-color: var(--primary-light);
+  }
+
+  &::before,
+  &::after {
+    z-index: 2;
+    bottom: -0.063rem;
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: .25rem;
+    height: .25rem;
+    min-height: .25rem;
+    min-width: .25rem;
+    border-radius: 100%;
+    background: color-mix(in srgb, var(--typography-extralight) 20%, transparent);
+  }
+
+  &::before {
+    left: -0.063rem;
+  }
+
+  &::after {
+    right: -0.063rem;
+  }
+
+  &:focus-within {
+    span {
+      width: 100%;
+    }
+
+    &::before,
+    &::after {
+      background: var(--primary-light);
+    }
+  }
+}
+
+.fieldHeader {
+  width: 100%;
+  overflow: hidden;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  gap: .25rem 0.875rem;
+
+  p {
+    flex-shrink: 2;
+    flex-grow: 1;
+    min-width: 0;
+    
+    text-align: end;
+    color: crimson;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: var(--font-h7);
+    font-weight: var(--font-medium);
+  }
+}
+
+.formLabel {
+  min-width: fit-content;
+  flex-shrink: 0;
+  font-size: var(--font-h7);
+  color: var(--primary-light);
+  font-weight: var(--font-medium);
+}
+
+.formInput {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 .5rem;
+  outline: none;
+  flex-basis: 100%;
+  flex-shrink: 0;
+  background: transparent;
+  border: 0px solid transparent;
+  min-height: 2.75rem;
+  max-height: 2.75rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: var(--font-h6);
+  font-weight: var(--font-regular);
+  color: var(--typography-light);
+  border-bottom: .063rem solid color-mix(in srgb, var(--typography-extralight) 20%, transparent);
+
+  &::placeholder {
+    font-size: var(--font-h6);
+    font-weight: var(--font-light);
+    color: var(--typography-extradark);
+  }
+
+  option {
+    color: var(--background-extradark);
+  }
+}
+
+textarea.formInput {
+  padding: .5rem;
+  min-height: 6.75rem;
+}
+
+.placeHolder {
+  font-size: var(--font-h6);
+  font-weight: var(--font-light);
+  color: var(--typography-extradark);
+}

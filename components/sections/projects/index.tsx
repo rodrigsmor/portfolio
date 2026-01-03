@@ -31,7 +31,7 @@ function ProjectsSectionContent() {
         })}
       </ul>
       <Button type="button" theme="outline">
-        View All Projects
+        {t('Projects.viewAllProjects')}
         <ArrowUpRight size={24} aria-hidden weight="bold" />
       </Button>
       <span aria-hidden className="sectionTransition"></span>
