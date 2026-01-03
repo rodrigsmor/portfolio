@@ -3,6 +3,8 @@
   display: flex;
   width: 100dvw;
   max-width: 100dvw;
+  position: relative;
+  overflow: hidden;
   align-items: center;
   flex-direction: column;
   justify-content: center;
@@ -10,7 +12,38 @@
   background-color: var(--background-extradark);
 
   > * {
-    max-width: 100%;
+    &:not(svg) {
+      z-index: 3;
+      max-width: 100%;
+    }
+  }
+
+  :global(.bg-ellipse) {
+    z-index: 1;
+    filter: blur(180px);
+    position: absolute;
+
+    &:global(.bg-ellipse-bottom) {
+      left: 50%;
+      bottom: -4%;
+      height: auto;
+      width: 155dvw;
+      max-width: 38.188rem;
+      transform: translateX(-50%);
+    }
+
+    &:global(.bg-ellipse-left) {
+      left: 50%;
+      opacity: .4;
+      height: auto;
+      bottom: 28rem;
+      width: 46.75rem;
+      transform: translateX(-50%);
+    }
+
+    &:global(.bg-ellipse-right) {
+      display: none;
+    }
   }
 }
 
@@ -184,6 +217,30 @@
       'addresses form'
       'footer footer'
     ;
+
+    :global(.bg-ellipse) {
+      &:global(.bg-ellipse-bottom) {
+        bottom: -20%;
+        width: 38.188rem;
+        max-width: 38.188rem;
+      }
+
+      &:global(.bg-ellipse-left) {
+        opacity: 1;
+        height: 15.5rem;
+        left: -11rem;
+        bottom: 28rem;
+        width: 46.25rem;
+      }
+
+      &:global(.bg-ellipse-right) {
+        width: auto;
+        right: -4rem;
+        top: 17.375rem;
+        display: block;
+        height: 13.625rem;
+      }
+    }
   }
 
   .footerHeading {
