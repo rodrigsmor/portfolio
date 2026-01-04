@@ -1,3 +1,5 @@
+'use client';
+
 import { ImLinkedin2 } from 'react-icons/im';
 import styles from './social-links.module.css';
 import { AiOutlineGithub } from 'react-icons/ai';
@@ -17,22 +19,22 @@ export function SocialLinks() {
     {
       name: 'linkedin',
       label: 'string',
-      url: 'https://www.linkedin.com/in/psrodrigomoreira/',
+      url: process.env.NEXT_PUBLIC_SOCIAL_LINK_LINKEDIN ?? '',
       Icon: <ImLinkedin2 size={20} />
     }, {
       name: 'github',
       label: 'GitHub',
-      url: 'https://github.com/rodrigsmor',
+      url: process.env.NEXT_PUBLIC_SOCIAL_LINK_GITHUB ?? '',
       Icon: <AiOutlineGithub size={20} />
     }, {
       name: 'behance',
       label: 'Behance',
-      url: 'https://www.behance.net/rodrigsmor',
+      url: process.env.NEXT_PUBLIC_SOCIAL_LINK_BEHANCE ?? '',
       Icon: <SiBehance size={20} />
     }, {
       name: 'devto',
       label: 'DevTo',
-      url: 'http://dev.to/psrodrigs',
+      url: process.env.NEXT_PUBLIC_SOCIAL_LINK_DEVTO ?? '',
       Icon: <SiDevdotto size={20} />
     },
   ];

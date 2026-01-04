@@ -17,35 +17,36 @@ interface ContactItem {
   anchorLabel: PathToDot<Dictionary>;
 }
 
-const contactItems: ContactItem[] = [
-  {
-    name: 'phone',
-    Icon: <Phone size={24} />,
-    href: 'tel:+5511992944712',
-    title: 'Contact.AddressLabels.phone',
-    address: '+55 (11) 99294-4712',
-    anchorLabel: 'Accessibility.callPhone'
-  },
-  {
-    name: 'email',
-    Icon: <EnvelopeSimple size={24} />,
-    href: 'mailto:rodrigsmor.pf@gmail.com',
-    title: 'Contact.AddressLabels.email',
-    address: 'rodrigsmor.pf@gmail.com',
-    anchorLabel: 'Accessibility.sendEmail'
-  },
-  {
-    name: 'address',
-    Icon: <MapPin size={24} />,
-    href: 'https://maps.app.goo.gl/ckQjpUnXsYfUiZaW7',
-    title: 'Contact.AddressLabels.location',
-    address: 'Cubatão, SP - Brazil',
-    anchorLabel: 'Accessibility.viewMap'
-  },
-]
-
 export function Contact() {
   const { t } = useTranslate();
+
+  const contactItems: ContactItem[] = [
+    {
+      name: 'phone',
+      Icon: <Phone size={24} />,
+      href: process.env.NEXT_PUBLIC_CONTACT_PHONE_HREF ?? '',
+      title: 'Contact.AddressLabels.phone',
+      address: process.env.NEXT_PUBLIC_CONTACT_PHONE ?? '',
+      anchorLabel: 'Accessibility.callPhone'
+    },
+    {
+      name: 'email',
+      Icon: <EnvelopeSimple size={24} />,
+      href: process.env.NEXT_PUBLIC_CONTACT_EMAIL_HREF ?? '',
+      title: 'Contact.AddressLabels.email',
+      address: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? '',
+      anchorLabel: 'Accessibility.sendEmail'
+    },
+    {
+      name: 'address',
+      Icon: <MapPin size={24} />,
+      href: process.env.NEXT_PUBLIC_CONTACT_GOOGLE_MAPS_HREF ?? '',
+      title: 'Contact.AddressLabels.location',
+      address: process.env.NEXT_PUBLIC_CONTACT_GOOGLE_MAPS ?? '',
+      anchorLabel: 'Accessibility.viewMap'
+    },
+  ]
+
   return (
     <footer id="contact" className={styles.contactContainer} aria-labelledby="contact-heading">
       <p className={styles.footerHeading}>
@@ -87,7 +88,7 @@ export function Contact() {
       <footer className={styles.copyrightsFooter}>
         <SocialLinks />
         <small>
-          Copyrights &copy; {new Date().getFullYear()} <strong>Rodrigo</strong>. All Rights Reserved.
+          &copy; {new Date().getFullYear()} <strong>Rodrigo</strong>. All Rights Reserved.
         </small>
       </footer>
       <BottomBluredSvg />

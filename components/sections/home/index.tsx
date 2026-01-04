@@ -7,9 +7,11 @@ import { SocialLinks } from "@/components/layout/social-links";
 import { ScrollDownIndicator } from "@/components/textual/scroll-down-indicator";
 import { useTranslate } from "@/utils/hooks/useTranslate";
 import { memo } from "react";
+import { redirect, RedirectType } from "next/navigation";
 
 function HomeSectionContent() {
   const { t } = useTranslate();
+
   return (
     <section id="home" className={`${styles.home}`}>
       <header className={styles.homeContent}>
@@ -30,11 +32,33 @@ function HomeSectionContent() {
         </p>
       </header>
       <div className={styles.ctaGroup}>
-        <Button theme="gradient">
-          <RocketLaunch width={24} height={24} weight="bold" /> {t('Home.PrimaryButton')}
+        <Button
+          type="button"
+          theme="gradient"
+          onClick={() => {
+            redirect('#contact', RedirectType.push)
+          }}
+        >
+          <RocketLaunch
+            width={24}
+            height={24}
+            weight="bold"
+          />
+          {t('Home.PrimaryButton')}
         </Button>
-        <Button theme="outline">
-          {t('Home.SecondaryButton')}<ArrowUpRight width={24} height={24}weight="bold" />
+        <Button
+          type="button"
+          theme="outline"
+          onClick={() => {
+            redirect('#projects', RedirectType.push)
+          }}
+        >
+          {t('Home.SecondaryButton')}
+          <ArrowUpRight
+            width={24}
+            height={24}
+            weight="bold"
+          />
         </Button>
       </div>
       <footer className={styles.footerSocialMedia}>

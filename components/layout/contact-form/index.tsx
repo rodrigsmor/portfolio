@@ -8,6 +8,9 @@ import { Button } from '@/components/buttons/button';
 import { RocketLaunch } from 'phosphor-react';
 import { contactFormSchema } from '@/utils/validations/contact-form';
 import { LoadingSpinner } from '@/components/textual/loading-spinner';
+import { sendContactEmail } from '@/utils/requests/contact-email';
+import toast, { Toaster } from 'react-hot-toast';
+import { useState } from 'react';
 
 const initialValues: ContactFormData = {
   firstName: '',
@@ -16,9 +19,18 @@ const initialValues: ContactFormData = {
   projectDescription: ''
 }
 
-function ContactFormContent() {
+function ContactFormContent({ wasSubmitted }: { wasSubmitted: boolean }) {
   const { t } = useTranslate()
-  const { touched, errors, values, setValues, setFieldTouched, isSubmitting, dirty, isValid } = useFormikContext<ContactFormData>();
+  const { 
+    touched,
+    errors,
+    values,
+    setValues,
+    setFieldTouched,
+    isSubmitting,
+    dirty,
+    isValid
+  } = useFormikContext<ContactFormData>();
 
   function handleChange<K extends keyof ContactFormData>(
     key: K,
@@ -199,6 +211,7 @@ function ContactFormContent() {
       <footer className={styles.submitDetails}>
         <Button
           theme="gradient"
+          type="submit"
           disabled={!dirty || isSubmitting || (dirty && !isValid)}
         >
           {isSubmitting ? (
@@ -211,27 +224,49 @@ function ContactFormContent() {
             : t('Contact.Form.submitLabel')
           }
         </Button>
-        <p>{t('Contact.Form.submittedMessage')}</p>
+        {wasSubmitted && <p>{t('Contact.Form.submittedMessage')}</p>}
       </footer>
     </Form>
   );
 }
 
 export function ContactForm() {
+  const { t } = useTranslate();
+
+  const [wasSubmitted, setWasSubmitted] = useState<boolean>(false);
+
   return (
-    <Formik
-      validationSchema={contactFormSchema}
-      initialValues={initialValues}
-      validateOnMount={true}
-      validateOnBlur={true}
-      onSubmit={(values, { setSubmitting }) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 400);
-      }}
-    >
-      {() => <ContactFormContent />}
-    </Formik>
+    <>
+      <Formik
+        validationSchema={contactFormSchema}
+        initialValues={initialValues}
+        validateOnMount={true}
+        validateOnBlur={true}
+        onSubmit={async (values, { resetForm }) => {
+          return await toast.promise(
+            async () => {
+              try {
+                await sendContactEmail(values);
+                setWasSubmitted(true);
+                resetForm();
+              } catch (error) {
+                console.error(error);
+              }
+            },
+            {
+              loading: t('Contact.Form.ToasterStatus.loading'),
+              success: t('Contact.Form.ToasterStatus.success'),
+              error: t('Contact.Form.ToasterStatus.error'),
+            }
+          );
+        }}
+      >
+        {() => <ContactFormContent wasSubmitted={wasSubmitted} />}
+      </Formik>
+      <Toaster
+        position="bottom-right"
+        reverseOrder={false}
+      />
+    </>
   );
 }

@@ -252,9 +252,45 @@
         "GBP": "Libra Esterlina (£)",
         "Other": "Otra moneda (especifícala luego)"
       },
+      "ToasterStatus": {
+        "loading": "¡Un momento! Enviando tu mensaje...",
+        "success": "¡Listo! ¡Tu mensaje ha sido recibido con éxito!",
+        "error": "¡Uy! Algo salió mal. Por favor, inténtalo de nuevo más tarde..."
+      },
       "submitLabel": "Enviar Mensaje",
       "submittingLabel": "Enviando...",
       "submittedMessage": "¡Me alegra mucho que quieras trabajar conmigo! Estoy seguro de que haremos un gran equipo. ¡Me pondré en contacto contigo muy pronto! ¡Nos vemos! 👋🏽"
+    }
+  },
+  "ErrorMessages": {
+    "Form": {
+      "FirstName": {
+        "min": "¿Podrías usar al menos 5 letras?",
+        "required": "Por favor, escribe tu nombre. ¡Necesito saber cómo llamarte!"
+      },
+      "LastName": {
+        "min": "¿Podrías completar el apellido?"
+      },
+      "Email": {
+        "email": "Ese correo no parece estar bien.",
+        "required": "Necesito tu correo para responderte."
+      },
+      "PhoneNumber": {
+        "isValidPhone": "Algo anda mal con el número."
+      },
+      "BudgetRange": {
+        "required": "Por favor, elige un rango de presupuesto que se ajuste a tu plan."
+      },
+      "Currency": {
+        "required": "¿Podrías decirme qué moneda prefieres para el presupuesto?"
+      },
+      "EstimatedDuration": {
+        "required": "¡Por favor, elige un plazo!"
+      },
+      "ProjectDescription": {
+        "min": "¿Podrías contarme un poco más? Solo unas palabras más...",
+        "required": "¡Me encantaría conocer los detalles de lo que tienes en mente!"
+      }
     }
   },
   "Accessibility": {
