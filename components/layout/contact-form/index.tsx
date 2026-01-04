@@ -9,6 +9,8 @@ import { RocketLaunch } from 'phosphor-react';
 import { contactFormSchema } from '@/utils/validations/contact-form';
 import { LoadingSpinner } from '@/components/textual/loading-spinner';
 import { sendContactEmail } from '@/utils/requests/contact-email';
+import toast, { Toaster } from 'react-hot-toast';
+import { useState } from 'react';
 
 const initialValues: ContactFormData = {
   firstName: '',
@@ -17,7 +19,7 @@ const initialValues: ContactFormData = {
   projectDescription: ''
 }
 
-function ContactFormContent() {
+function ContactFormContent({ wasSubmitted }: { wasSubmitted: boolean }) {
   const { t } = useTranslate()
   const { 
     touched,
@@ -222,30 +224,49 @@ function ContactFormContent() {
             : t('Contact.Form.submitLabel')
           }
         </Button>
-        <p>{t('Contact.Form.submittedMessage')}</p>
+        {wasSubmitted && <p>{t('Contact.Form.submittedMessage')}</p>}
       </footer>
     </Form>
   );
 }
 
 export function ContactForm() {
+  const { t } = useTranslate();
+
+  const [wasSubmitted, setWasSubmitted] = useState<boolean>(false);
+
   return (
-    <Formik
-      validationSchema={contactFormSchema}
-      initialValues={initialValues}
-      validateOnMount={true}
-      validateOnBlur={true}
-      onSubmit={async (values, { resetForm }) => {
-        try {
-          await sendContactEmail(values);
-          // toaster mostrando mensagem de acerto
-          resetForm();
-        } catch (error) {
-          console.error(error);
-        }
-      }}
-    >
-      {() => <ContactFormContent />}
-    </Formik>
+    <>
+      <Formik
+        validationSchema={contactFormSchema}
+        initialValues={initialValues}
+        validateOnMount={true}
+        validateOnBlur={true}
+        onSubmit={async (values, { resetForm }) => {
+          return await toast.promise(
+            async () => {
+              try {
+                await sendContactEmail(values);
+                setWasSubmitted(true);
+                resetForm();
+              } catch (error) {
+                console.error(error);
+              }
+            },
+            {
+              loading: t('Contact.Form.ToasterStatus.loading'),
+              success: t('Contact.Form.ToasterStatus.success'),
+              error: t('Contact.Form.ToasterStatus.error'),
+            }
+          );
+        }}
+      >
+        {() => <ContactFormContent wasSubmitted={wasSubmitted} />}
+      </Formik>
+      <Toaster
+        position="bottom-right"
+        reverseOrder={false}
+      />
+    </>
   );
 }
