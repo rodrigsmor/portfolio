@@ -252,6 +252,11 @@
         "GBP": "Libra Esterlina (£)",
         "Other": "Otra moneda (especifícala luego)"
       },
+      "ToasterStatus": {
+        "loading": "¡Un momento! Enviando tu mensaje...",
+        "success": "¡Listo! ¡Tu mensaje ha sido recibido con éxito!",
+        "error": "¡Uy! Algo salió mal. Por favor, inténtalo de nuevo más tarde..."
+      },
       "submitLabel": "Enviar Mensaje",
       "submittingLabel": "Enviando...",
       "submittedMessage": "¡Me alegra mucho que quieras trabajar conmigo! Estoy seguro de que haremos un gran equipo. ¡Me pondré en contacto contigo muy pronto! ¡Nos vemos! 👋🏽"
