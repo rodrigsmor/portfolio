@@ -8,6 +8,7 @@ import { Button } from '@/components/buttons/button';
 import { RocketLaunch } from 'phosphor-react';
 import { contactFormSchema } from '@/utils/validations/contact-form';
 import { LoadingSpinner } from '@/components/textual/loading-spinner';
+import { sendContactEmail } from '@/utils/requests/contact-email';
 
 const initialValues: ContactFormData = {
   firstName: '',
@@ -18,7 +19,16 @@ const initialValues: ContactFormData = {
 
 function ContactFormContent() {
   const { t } = useTranslate()
-  const { touched, errors, values, setValues, setFieldTouched, isSubmitting, dirty, isValid } = useFormikContext<ContactFormData>();
+  const { 
+    touched,
+    errors,
+    values,
+    setValues,
+    setFieldTouched,
+    isSubmitting,
+    dirty,
+    isValid
+  } = useFormikContext<ContactFormData>();
 
   function handleChange<K extends keyof ContactFormData>(
     key: K,
@@ -199,6 +209,7 @@ function ContactFormContent() {
       <footer className={styles.submitDetails}>
         <Button
           theme="gradient"
+          type="submit"
           disabled={!dirty || isSubmitting || (dirty && !isValid)}
         >
           {isSubmitting ? (
@@ -224,11 +235,14 @@ export function ContactForm() {
       initialValues={initialValues}
       validateOnMount={true}
       validateOnBlur={true}
-      onSubmit={(values, { setSubmitting }) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 400);
+      onSubmit={async (values, { resetForm }) => {
+        try {
+          await sendContactEmail(values);
+          // toaster mostrando mensagem de acerto
+          resetForm();
+        } catch (error) {
+          console.error(error);
+        }
       }}
     >
       {() => <ContactFormContent />}
