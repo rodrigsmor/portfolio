@@ -257,6 +257,37 @@
       "submittedMessage": "I’m glad that you want to work with me! I hope we’ll do a great job together. I’m going to reach you out soon! See you later! 👋🏽"
     }
   },
+  "ErrorMessages": {
+    "Form": {
+      "FirstName": {
+        "min": "Could you use at least 5 letters?",
+        "required": "Please enter your name. I need to know what to call you!"
+      },
+      "LastName": {
+        "min": "Could you complete the last name?"
+      },
+      "Email": {
+        "email": "That email doesn’t look right.",
+        "required": "I need your email to reply."
+      },
+      "PhoneNumber": {
+        "isValidPhone": "Something is wrong with the number."
+      },
+      "BudgetRange": {
+        "required": "Please pick a budget range that fits your project plan."
+      },
+      "Currency": {
+        "required": "Please tell me which currency would you prefer for the estimate?"
+      },
+      "EstimatedDuration": {
+        "required": "Please pick a duration!"
+      },
+      "ProjectDescription": {
+        "min": "Could you tell me a bit more? Just a few more words...",
+        "required": "I’d love to hear the details of what you have in mind!"
+      }
+    }
+  },
   "Accessibility": {
     "languageLevelLabel": "Level: ",
     "ProficiencyLevel": "Proficiency on ",
