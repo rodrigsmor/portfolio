@@ -40,7 +40,7 @@ export function Contact() {
     {
       name: 'address',
       Icon: <MapPin size={24} />,
-      href: process.env.NEXT_PUBLIC_CONTACT_GOOGLE_MAPS ?? '',
+      href: process.env.NEXT_PUBLIC_CONTACT_GOOGLE_MAPS_HREF ?? '',
       title: 'Contact.AddressLabels.location',
       address: process.env.NEXT_PUBLIC_CONTACT_GOOGLE_MAPS ?? '',
       anchorLabel: 'Accessibility.viewMap'

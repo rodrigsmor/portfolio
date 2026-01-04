@@ -1,8 +1,11 @@
-import { useTranslate } from '@/hooks/useTranslate';
 import styles from './form-field.module.css';
 import { FormFieldProps } from '@/types/form-field';
+import { Dictionary } from '@/functions/dictionaries';
+import { PathToDot, useTranslate } from '@/hooks/useTranslate';
 
 export function FormField<K extends string | number>(props: FormFieldProps<K>) {
+  const { t } = useTranslate();
+
   return (
     <div className={`form-field ${styles.formFieldContainer}`}>
       <div className={styles.fieldHeader}>
@@ -12,7 +15,7 @@ export function FormField<K extends string | number>(props: FormFieldProps<K>) {
         >
           {props.label}
         </label>
-        {props.error && <p className="error">{props.error}</p>}
+        {props.error && <p className="error">{t(props.error as PathToDot<Dictionary>)}</p>}
       </div>
       <Input {...props} />
       <span aria-hidden></span>
