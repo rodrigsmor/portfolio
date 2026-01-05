@@ -231,7 +231,7 @@ function ContactFormContent({ wasSubmitted }: { wasSubmitted: boolean }) {
 }
 
 export function ContactForm() {
-  const { t } = useTranslate();
+  const { t, locale } = useTranslate();
 
   const [wasSubmitted, setWasSubmitted] = useState<boolean>(false);
 
@@ -246,7 +246,7 @@ export function ContactForm() {
           return await toast.promise(
             async () => {
               try {
-                await sendContactEmail(values);
+                await sendContactEmail({ data: values, lang: locale  });
                 setWasSubmitted(true);
                 resetForm();
               } catch (error) {

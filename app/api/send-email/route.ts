@@ -1,13 +1,18 @@
 import nodemailer from 'nodemailer';
 import { render } from '@react-email/render';
 import { ContactFormData } from '@/types/contact';
-import { ServiceEmail } from '@/utils/templates/service-email';
+import ServiceEmail from '@/utils/templates/service-email';
+import { LanguageCode } from '@/types/lang';
+
+export type SendEmailProps = {
+  data: ContactFormData;
+  lang: LanguageCode;
+}
 
 export async function POST(req: Request) {
-  const body = await req.json();
-  const { firstName, projectDescription } = body as ContactFormData;
+  const requestData = await req.json() as SendEmailProps;
 
-  const emailHtml = await render(ServiceEmail({ firstName, description: projectDescription }));
+  const emailHtml = await render(ServiceEmail(requestData));
 
   try {
     const transporter = nodemailer.createTransport({
@@ -19,7 +24,7 @@ export async function POST(req: Request) {
     });
 
     await transporter.sendMail({
-      from: `"${firstName}" <${process.env.NODEMAILER_EMAIL_USER}>`,
+      from: `"${requestData.data.firstName}" <${process.env.NODEMAILER_EMAIL_USER}>`,
       to: process.env.NODEMAILER_EMAIL_RECIPIENT,
       subject: "🚀 Novo Projeto - Portfólio",
       html: emailHtml,
