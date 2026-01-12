@@ -7,7 +7,9 @@ import { Check, DownloadSimple, StarFour } from "phosphor-react";
 import ProfileImage from "@/assets/MyProfile.png";
 
 export function CareerOverview() {
-  const { t, getObject } = useTranslate();
+  const { t, locale, getObject } = useTranslate();
+
+  const resumeDirectory = locale === 'pt-BR' ? 'cv' : 'resume';
 
   const achievementsObject = getObject('AboutMe.Achievements.Items') as { [s: string]: { title: string; description: string }; };
   const achievements = Object.values(achievementsObject);
@@ -59,7 +61,12 @@ export function CareerOverview() {
             {t('AboutMe.conclusiveText')}
           </p>
         </div>
-        <Button>
+        <Button
+          component="a"
+          target="_blank"
+          rel="noopener noreferrer"
+          href={`/${resumeDirectory}`}
+        >
           <DownloadSimple weight="bold" height={24} width={24} />
           {t('AboutMe.downloadButton')}
         </Button>
