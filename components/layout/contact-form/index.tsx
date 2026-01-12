@@ -10,9 +10,12 @@ import { contactFormSchema } from '@/utils/validations/contact-form';
 import { LoadingSpinner } from '@/components/textual/loading-spinner';
 import { sendContactEmail } from '@/utils/requests/contact-email';
 import toast, { Toaster } from 'react-hot-toast';
-import { useEffect, useState } from 'react';
-import { useSearchParams } from 'next/navigation';
-import { ServicesType } from '@/types/services';
+import { Suspense, useState } from 'react';
+import dynamic from 'next/dynamic';
+
+const URLSyncHandler = dynamic(() => import('@/components/uses/url-sync-handler').then(mod => mod.UrlSyncHandler), {
+  ssr: false,
+});
 
 const initialValues: ContactFormData = {
   firstName: '',
@@ -28,41 +31,11 @@ function ContactFormContent({ wasSubmitted }: { wasSubmitted: boolean }) {
     errors,
     values,
     setValues,
-    setFieldValue,
     setFieldTouched,
     isSubmitting,
     dirty,
     isValid
   } = useFormikContext<ContactFormData>();
-
-  const searchParams = useSearchParams();
-
-  useEffect(() => {
-    const quote = searchParams.get('quote') as ServicesType;
-    if (!quote) return;
-
-    const serviceTitle = t(`Services.items.${quote}.title`);
-
-    const currentDescription = values.projectDescription.trim();
-    const hasDescription = currentDescription.length > 0;
-
-    const translationKey = hasDescription
-      ? 'Contact.Form.autoFillAddon'
-      : 'Contact.Form.autoFillMessage';
-
-    const textTemplate = t(translationKey).replace('{service}', serviceTitle);
-
-    const alreadyHasTerm = [serviceTitle, textTemplate].some((term) => currentDescription.includes(term));
-
-    if (alreadyHasTerm) return;
-
-    if (hasDescription) {
-      setFieldValue('projectDescription', `${currentDescription}\n\n${textTemplate}`);
-    } else {
-      setFieldValue('projectDescription', textTemplate);
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [searchParams, setFieldValue, t]);
 
   function handleChange<K extends keyof ContactFormData>(
     key: K,
@@ -80,6 +53,9 @@ function ContactFormContent({ wasSubmitted }: { wasSubmitted: boolean }) {
 
   return (
     <Form className={styles.contactFormContainer}>
+      <Suspense fallback={null}>
+        <URLSyncHandler />
+      </Suspense>
       <div className={styles.fieldsContainer}>
         <FormField
           variant="input"
