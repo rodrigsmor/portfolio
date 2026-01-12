@@ -259,7 +259,9 @@
       },
       "submitLabel": "Send Your Message",
       "submittingLabel": "Sending Message...",
-      "submittedMessage": "I’m glad that you want to work with me! I hope we’ll do a great job together. I’m going to reach you out soon! See you later! 👋🏽"
+      "submittedMessage": "I’m glad that you want to work with me! I hope we’ll do a great job together. I’m going to reach you out soon! See you later! 👋🏽",
+      "autoFillMessage": "Hi Rodrigo! I’d like a quote for a {service} solution. Here are the details:",
+      "autoFillAddon": "Interested in: {service}"
     }
   },
   "ErrorMessages": {

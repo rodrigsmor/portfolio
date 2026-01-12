@@ -259,7 +259,9 @@
       },
       "submitLabel": "Enviar Mensagem",
       "submittingLabel": "Enviando...",
-      "submittedMessage": "Fico muito feliz com seu interesse em trabalharmos juntos! Tenho certeza que faremos um ótimo trabalho. Entrarei em contato com você em breve. Até logo! 👋🏽"
+      "submittedMessage": "Fico muito feliz com seu interesse em trabalharmos juntos! Tenho certeza que faremos um ótimo trabalho. Entrarei em contato com você em breve. Até logo! 👋🏽",
+      "autoFillMessage": "Olá, Rodrigo! Gostaria de um orçamento para uma solução em {service}. Seguem os detalhes:",
+      "autoFillAddon": "Interesse em: {service}"
     }
   },
   "ErrorMessages": {

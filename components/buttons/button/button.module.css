@@ -14,6 +14,7 @@
   border: 0 solid transparent;
   font-weight: var(--font-medium);
   background: transparent;
+  text-decoration: none;
   color: var(--typography-extralight);
   
   &:hover {

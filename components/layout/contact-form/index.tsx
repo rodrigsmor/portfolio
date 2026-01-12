@@ -10,7 +10,12 @@ import { contactFormSchema } from '@/utils/validations/contact-form';
 import { LoadingSpinner } from '@/components/textual/loading-spinner';
 import { sendContactEmail } from '@/utils/requests/contact-email';
 import toast, { Toaster } from 'react-hot-toast';
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
+import dynamic from 'next/dynamic';
+
+const URLSyncHandler = dynamic(() => import('@/components/uses/url-sync-handler').then(mod => mod.UrlSyncHandler), {
+  ssr: false,
+});
 
 const initialValues: ContactFormData = {
   firstName: '',
@@ -48,6 +53,9 @@ function ContactFormContent({ wasSubmitted }: { wasSubmitted: boolean }) {
 
   return (
     <Form className={styles.contactFormContainer}>
+      <Suspense fallback={null}>
+        <URLSyncHandler />
+      </Suspense>
       <div className={styles.fieldsContainer}>
         <FormField
           variant="input"

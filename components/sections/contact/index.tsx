@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ReactNode } from 'react';
+import { memo, ReactNode } from 'react';
 import styles from './contact.module.css';
 import { Dictionary } from '@/functions/dictionaries';
 import { EnvelopeSimple, MapPin, Phone } from 'phosphor-react';
@@ -17,7 +17,7 @@ interface ContactItem {
   anchorLabel: PathToDot<Dictionary>;
 }
 
-export function Contact() {
+function ContactSection() {
   const { t } = useTranslate();
 
   const contactItems: ContactItem[] = [
@@ -97,3 +97,5 @@ export function Contact() {
     </footer>
   );
 }
+
+export const Contact = memo(ContactSection);
