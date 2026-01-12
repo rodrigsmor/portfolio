@@ -1,13 +1,12 @@
 'use client';
 
+import { memo } from "react";
 import styles from "./home.module.css";
 import { Button } from "@/components/buttons/button";
 import { ArrowUpRight, RocketLaunch } from "phosphor-react";
 import { SocialLinks } from "@/components/layout/social-links";
-import { ScrollDownIndicator } from "@/components/textual/scroll-down-indicator";
 import { useTranslate } from "@/utils/hooks/useTranslate";
-import { memo } from "react";
-import { redirect, RedirectType } from "next/navigation";
+import { ScrollDownIndicator } from "@/components/textual/scroll-down-indicator";
 
 function HomeSectionContent() {
   const { t } = useTranslate();
@@ -35,9 +34,8 @@ function HomeSectionContent() {
         <Button
           type="button"
           theme="gradient"
-          onClick={() => {
-            redirect('#contact', RedirectType.push)
-          }}
+          component="a"
+          href="#contact"
         >
           <RocketLaunch
             width={24}
@@ -48,10 +46,9 @@ function HomeSectionContent() {
         </Button>
         <Button
           type="button"
+          component="a"
           theme="outline"
-          onClick={() => {
-            redirect('#projects', RedirectType.push)
-          }}
+          href="#projects"
         >
           {t('Home.SecondaryButton')}
           <ArrowUpRight
