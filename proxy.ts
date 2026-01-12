@@ -25,6 +25,12 @@ function getLocale(request: NextRequest): LanguageCode {
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl
+
+  const excludedRoutes = ['/cv', '/resume']
+  if (excludedRoutes.some(route => pathname === route || pathname.startsWith(`${route}/`))) {
+    return
+  }
+
   const pathnameHasLocale = langCodes.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   )
@@ -39,7 +45,8 @@ export function proxy(request: NextRequest) {
 export const config = {
   matcher: [
     // '/((?!_next).*)',
-    '/((?!api|_next|_vercel|.*\\..*).*)',
+    // '/((?!api|_next|_vercel|.*\\..*).*)',
+    '/((?!api|_next|_vercel|.*\\..*|cv|resume).*)',
     '/'
   ],
 }
