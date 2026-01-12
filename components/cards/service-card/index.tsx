@@ -1,8 +1,10 @@
-import { ServicesType } from '@/utils/@types/services';
-import styles from './service-card.module.css';
-import { useTranslate } from '@/utils/hooks/useTranslate';
 import Image from 'next/image';
+import { useCallback } from 'react';
 import { ArrowRight } from 'phosphor-react';
+import styles from './service-card.module.css';
+import { ServicesType } from '@/types/services';
+import { useTranslate } from '@/hooks/useTranslate';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 interface ServiceCardProps {
   type: ServicesType;
@@ -21,6 +23,23 @@ const SVGElement = () => {
 export function ServiceCard({ icon, type }: ServiceCardProps) {
   const { t } = useTranslate();
 
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  const createQueryString = useCallback(
+    (name: string, value: string) => {
+      const params = new URLSearchParams(searchParams.toString());
+      params.set(name, value);
+      return params.toString();
+    },
+    [searchParams]
+  );
+
+  const handleRequestQuote = () => {
+    router.push(pathname + '?' + createQueryString('quote', type) + '#contact');
+  };
+
   return (
     <article
       className={styles.serviceCard}
@@ -38,6 +57,7 @@ export function ServiceCard({ icon, type }: ServiceCardProps) {
         </p>
 
         <button
+          onClick={handleRequestQuote}
           className={styles.ctaButton}
         >
           {t('Services.requestQuoteLabel')}
