@@ -17,9 +17,9 @@ export enum Platform {
 }
 
 export enum ProjectNature {
-  ACADEMIC = 'Academic',       // Faculdade, cursos, bootcamps
-  PERSONAL = 'Personal',       // Laboratório, estudos, "pôr em prática"
-  COMMERCIAL = 'Commercial',   // Aplicações reais, Freelas, Projetos Open Source ativos
+  ACADEMIC = 'academic',       // Faculdade, cursos, bootcamps
+  PERSONAL = 'personal',       // Laboratório, estudos, "pôr em prática"
+  COMMERCIAL = 'commercial',   // Aplicações reais, Freelas, Projetos Open Source ativos
 }
 
 export enum ProjectSlug {
@@ -34,9 +34,9 @@ export enum ProjectSlug {
 }
 
 export type MediaContent =
-  | { type: 'video'; url: string; poster?: string }
+  | { type: 'video'; url: string; alt: string; poster: string }
   | { type: 'image'; url: string; alt: string }
-  | { type: 'embed'; url: string; provider: 'youtube' | 'vimeo' | 'codepen' };
+  | { type: 'embed'; url: string; alt: string; provider: 'youtube' | 'vimeo' | 'codepen' };
 
 export type ProjectLink = {
   url: string;
@@ -52,7 +52,8 @@ export interface Project {
   readingTime?: number;
   nature: ProjectNature;
   origin?: string;
-  status: 'In Production' | 'Archived' | 'Ongoing';
+  size: 'short' | 'long' | 'medium';
+  status: 'in_production' | 'archived' | 'ongoing';
   shortDescription: string;
   fullDescription: string;
   categories: ProjectCategory[];
