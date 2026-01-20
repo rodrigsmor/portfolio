@@ -21,6 +21,7 @@ import { useTranslate } from '@/hooks/useTranslate';
 import { Button } from '@/components/buttons/button';
 import styles from './project-overview-section.module.css';
 import { TechnologyCard } from '@/components/cards/technology-card';
+import { ProjectMediaLink } from '@/components/textual/project-media-link';
 import { ProjectSectionTitle } from '@/components/textual/project-section-title';
 
 import ReactJSLogo from '@/assets/logos/ReactJS.svg';
@@ -33,7 +34,6 @@ import JavaLogo from '@/assets/logos/Java.svg';
 import SpringLogo from '@/assets/logos/Spring.svg';
 import AngularLogo from '@/assets/logos/Angularjs.svg';
 import NextJSLogo from '@/assets/logos/Next.js.svg';
-import { ProjectMediaLink } from '@/components/textual/project-media-link';
 
 type ProjectDetail = {
   label: string;
