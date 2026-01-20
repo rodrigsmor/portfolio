@@ -1,9 +1,9 @@
 export const dynamic = 'force-dynamic'
 
-import { Metadata } from "next";
-import Portfolio from "@/views/portfolio"
-import { LanguageCode } from "@/types/lang";
-import { getDictionary } from "../../utils/functions/dictionaries";
+import { Metadata } from 'next';
+import Portfolio from '@/views/portfolio'
+import { LanguageCode } from '@/types/lang';
+import { getDictionary } from '@/functions/dictionaries';
 
 export type LangPageProps = {
   params: Promise<{ lang: string }>;

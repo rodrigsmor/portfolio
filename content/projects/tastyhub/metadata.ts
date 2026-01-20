@@ -1,5 +1,5 @@
 import { tastyhub } from './summary';
-import { Project, Platform, ProjectCategory, ProjectNature } from '@/types/project';
+import { Project, ProjectCategory, ProjectNature } from '@/types/project';
 
 export const fullTastyhub: Project = {
   ...tastyhub,
