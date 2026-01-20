@@ -22,6 +22,17 @@ export enum ProjectNature {
   COMMERCIAL = 'Commercial',   // Aplicações reais, Freelas, Projetos Open Source ativos
 }
 
+export enum ProjectSlug {
+  AION_TIMER = 'aion-timer',
+  CALCULATOR = 'calculator',
+  DIATASK = 'diatask',
+  TASTYHUB = 'tastyhub',
+  MARKETLIFY = 'marketlify',
+  MYNOTES = 'mynotes',
+  PERU_TRAVELL = 'peru-travell',
+  CURRENCY_CONVERTER = 'currency-converter',
+}
+
 export type MediaContent =
   | { type: 'video'; url: string; poster?: string }
   | { type: 'image'; url: string; alt: string }
@@ -35,7 +46,7 @@ export type ProjectLink = {
 
 export interface Project {
   id: string;
-  slug: string;
+  slug: ProjectSlug;
   title: string;
   content?: string;
   readingTime?: number;
