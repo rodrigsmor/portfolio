@@ -1,9 +1,9 @@
-import { ProjectSummary } from '@/types/project';
+import { ProjectSlug, ProjectSummary } from '@/types/project';
 import Cover from '@/public/covers/Marketlify.png';
 
 export const marketlify: ProjectSummary = {
   id: 'marketlify',
-  slug: 'marketlify',
+  slug: ProjectSlug.MARKETLIFY,
   title: 'Marketlify - Marketplace Landing Page',
   technologies: [
     'React.js',

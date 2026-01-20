@@ -1,9 +1,9 @@
-import { ProjectSummary } from '@/types/project';
+import { ProjectSlug, ProjectSummary } from '@/types/project';
 import Cover from '@/public/covers/MyNotes.png';
 
 export const myNotes: ProjectSummary = {
   id: 'my_notes',
-  slug: 'my-notes',
+  slug: ProjectSlug.MYNOTES,
   title: 'MyNotes - Notes App',
   technologies: [
     'React.js',

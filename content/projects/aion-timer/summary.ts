@@ -1,9 +1,9 @@
-import { ProjectSummary } from '@/types/project';
+import { ProjectSlug, ProjectSummary } from '@/types/project';
 import Cover from '@/public/covers/AionTimer.png';
 
 export const aionTimer: ProjectSummary = {
   id: 'aion_timer',
-  slug: 'aion-timer',
+  slug: ProjectSlug.CALCULATOR,
   title: 'Aion Timer - Temporizador',
   technologies: [
     'Figma',

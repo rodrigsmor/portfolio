@@ -1,9 +1,9 @@
-import { ProjectSummary } from '@/types/project';
+import { ProjectSlug, ProjectSummary } from '@/types/project';
 import Cover from '@/public/covers/Calculadora.png';
 
 export const calculator: ProjectSummary = {
   id: 'calculator',
-  slug: 'calculator',
+  slug: ProjectSlug.CALCULATOR,
   title: 'Calculator',
   technologies: [
     'HTML',
