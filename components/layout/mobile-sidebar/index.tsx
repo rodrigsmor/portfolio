@@ -1,4 +1,4 @@
-import { X } from 'phosphor-react';
+import { XIcon } from '@phosphor-icons/react';
 import { SocialLinks } from '../social-links';
 import styles from './mobile-sidebar.module.css';
 import { navbarSections } from '@/consts/sections';
@@ -41,7 +41,7 @@ export function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
             onClick={onClose}
             aria-label={t('Accessibility.closeMenu')}
           >
-            <X size={24} aria-hidden="true" weight="bold" />
+            <XIcon size={24} aria-hidden="true" weight="bold" />
           </IconButton>
         </header>
 

@@ -5,7 +5,7 @@ import { FormField } from '@/components/forms/form-field';
 import { budgetRangeOptions, currencyOptions, durationOptions } from '@/consts/contact-form';
 import { useTranslate } from '@/hooks/useTranslate';
 import { Button } from '@/components/buttons/button';
-import { RocketLaunch } from 'phosphor-react';
+import { RocketLaunchIcon } from '@phosphor-icons/react';
 import { contactFormSchema } from '@/utils/validations/contact-form';
 import { LoadingSpinner } from '@/components/textual/loading-spinner';
 import { sendContactEmail } from '@/utils/requests/contact-email';
@@ -26,7 +26,7 @@ const initialValues: ContactFormData = {
 
 function ContactFormContent({ wasSubmitted }: { wasSubmitted: boolean }) {
   const { t } = useTranslate()
-  const { 
+  const {
     touched,
     errors,
     values,
@@ -70,10 +70,10 @@ function ContactFormContent({ wasSubmitted }: { wasSubmitted: boolean }) {
           }}
           placeholder={t('Contact.Form.Placeholders.firstName')}
           {...
-            (touched.firstName && errors.firstName
-              ? { error: errors.firstName }
-              : {}
-            )
+          (touched.firstName && errors.firstName
+            ? { error: errors.firstName }
+            : {}
+          )
           }
         />
         <FormField
@@ -89,10 +89,10 @@ function ContactFormContent({ wasSubmitted }: { wasSubmitted: boolean }) {
           }}
           placeholder={t('Contact.Form.Placeholders.lastName')}
           {...
-            (touched.lastName && errors.lastName
-              ? { error: errors.lastName }
-              : {}
-            )
+          (touched.lastName && errors.lastName
+            ? { error: errors.lastName }
+            : {}
+          )
           }
         />
         <FormField
@@ -108,10 +108,10 @@ function ContactFormContent({ wasSubmitted }: { wasSubmitted: boolean }) {
           value={values.email ?? ''}
           placeholder={t('Contact.Form.Placeholders.email')}
           {...
-            (touched.email && errors.email
-              ? { error: errors.email }
-              : {}
-            )
+          (touched.email && errors.email
+            ? { error: errors.email }
+            : {}
+          )
           }
         />
         <FormField
@@ -127,10 +127,10 @@ function ContactFormContent({ wasSubmitted }: { wasSubmitted: boolean }) {
           }}
           placeholder={t('Contact.Form.Placeholders.phoneNumber')}
           {...
-            (touched.phoneNumber && errors.phoneNumber
-              ? { error: errors.phoneNumber }
-              : {}
-            )
+          (touched.phoneNumber && errors.phoneNumber
+            ? { error: errors.phoneNumber }
+            : {}
+          )
           }
         />
         <FormField
@@ -148,10 +148,10 @@ function ContactFormContent({ wasSubmitted }: { wasSubmitted: boolean }) {
           options={budgetRangeOptions}
           placeholder={t('Contact.Form.Placeholders.budgetRange')}
           {...
-            (touched.budgetRange && errors.budgetRange
-              ? { error: errors.budgetRange }
-              : {}
-            )
+          (touched.budgetRange && errors.budgetRange
+            ? { error: errors.budgetRange }
+            : {}
+          )
           }
         />
         <FormField
@@ -169,10 +169,10 @@ function ContactFormContent({ wasSubmitted }: { wasSubmitted: boolean }) {
           options={currencyOptions}
           placeholder={t('Contact.Form.Placeholders.currency')}
           {...
-            (touched.currency && errors.currency
-              ? { error: errors.currency }
-              : {}
-            )
+          (touched.currency && errors.currency
+            ? { error: errors.currency }
+            : {}
+          )
           }
         />
         <FormField
@@ -190,10 +190,10 @@ function ContactFormContent({ wasSubmitted }: { wasSubmitted: boolean }) {
           options={durationOptions}
           placeholder={t('Contact.Form.Placeholders.estimatedDuration')}
           {...
-            (touched.estimatedDuration && errors.estimatedDuration
-              ? { error: errors.estimatedDuration }
-              : {}
-            )
+          (touched.estimatedDuration && errors.estimatedDuration
+            ? { error: errors.estimatedDuration }
+            : {}
+          )
           }
         />
         <FormField
@@ -209,10 +209,10 @@ function ContactFormContent({ wasSubmitted }: { wasSubmitted: boolean }) {
           }}
           placeholder={t('Contact.Form.Placeholders.projectDescription')}
           {...
-            (touched.projectDescription && errors.projectDescription
-              ? { error: errors.projectDescription }
-              : {}
-            )
+          (touched.projectDescription && errors.projectDescription
+            ? { error: errors.projectDescription }
+            : {}
+          )
           }
         />
       </div>
@@ -225,7 +225,7 @@ function ContactFormContent({ wasSubmitted }: { wasSubmitted: boolean }) {
           {isSubmitting ? (
             <LoadingSpinner />
           ) : (
-            <RocketLaunch size={24} />
+            <RocketLaunchIcon size={24} />
           )}
           {isSubmitting
             ? t('Contact.Form.submittingLabel')
@@ -254,7 +254,7 @@ export function ContactForm() {
           return await toast.promise(
             async () => {
               try {
-                await sendContactEmail({ data: values, lang: locale  });
+                await sendContactEmail({ data: values, lang: locale });
                 setWasSubmitted(true);
                 resetForm();
               } catch (error) {

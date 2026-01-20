@@ -2,7 +2,7 @@ import { ProjectSummary } from '@/types/project';
 import styles from './project-card.module.css';
 import Image from 'next/image';
 import { Button } from '@/components/buttons/button';
-import { ArrowUpRight } from 'phosphor-react';
+import { ArrowUpRightIcon } from '@phosphor-icons/react';
 import { useTranslate } from '@/hooks/useTranslate';
 
 interface ProjectCardProps {
@@ -37,7 +37,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
       </header>
       <Button component="a" href={`/${locale}/projects/${project.slug}`} theme="outline">
         {t('Projects.viewFullProject')}
-        <ArrowUpRight size={24} aria-hidden weight="bold" />
+        <ArrowUpRightIcon size={24} aria-hidden weight="bold" />
       </Button>
     </article>
   );

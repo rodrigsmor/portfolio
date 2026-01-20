@@ -3,7 +3,7 @@
 import { memo } from "react";
 import styles from "./home.module.css";
 import { Button } from "@/components/buttons/button";
-import { ArrowUpRight, RocketLaunch } from "phosphor-react";
+import { ArrowUpRightIcon, RocketLaunchIcon } from "@phosphor-icons/react";
 import { SocialLinks } from "@/components/layout/social-links";
 import { useTranslate } from "@/utils/hooks/useTranslate";
 import { ScrollDownIndicator } from "@/components/textual/scroll-down-indicator";
@@ -37,7 +37,7 @@ function HomeSectionContent() {
           component="a"
           href="#contact"
         >
-          <RocketLaunch
+          <RocketLaunchIcon
             width={24}
             height={24}
             weight="bold"
@@ -51,7 +51,7 @@ function HomeSectionContent() {
           href="#projects"
         >
           {t('Home.SecondaryButton')}
-          <ArrowUpRight
+          <ArrowUpRightIcon
             width={24}
             height={24}
             weight="bold"

@@ -1,7 +1,7 @@
 'use client';
 
 import styles from './header.module.css'
-import { List } from 'phosphor-react';
+import { ListIcon } from '@phosphor-icons/react';
 import { Logo } from '@/components/textual/logo';
 import { IconButton } from '@/components/buttons/icon-button';
 import { OutlineSelect } from '../../forms/outline-select/index';
@@ -13,7 +13,11 @@ import { MobileSidebar } from '../mobile-sidebar';
 import { useTransition } from '@/hooks/useTransition';
 import { useTranslate } from '@/hooks/useTranslate';
 
-export function Header() {
+interface HeaderProps {
+  showFullHeader?: boolean;
+}
+
+export function Header({ showFullHeader = true }: HeaderProps) {
   const { t } = useTranslate();
   const { activeSection, isSticky } = useScroll();
 
@@ -32,21 +36,23 @@ export function Header() {
           aria-expanded={shouldRenderSidebar}
           aria-haspopup="true"
         >
-          <List size={24} weight="bold" aria-hidden />
+          <ListIcon size={24} weight="bold" aria-hidden />
         </IconButton>
-        <nav className={`navbar ${styles.navbar}`}>
-          <ul>
-            {navbarSections.map((item) => (
-              <li key={item.value}>
-                <NavbarTab
-                  isCurrent={activeSection === item.value}
-                  label={item.label}
-                  value={item.value}
-                />
-              </li>
-            ))}
-          </ul>
-        </nav>
+        {showFullHeader && (
+          <nav className={`navbar ${styles.navbar}`}>
+            <ul>
+              {navbarSections.map((item) => (
+                <li key={item.value}>
+                  <NavbarTab
+                    isCurrent={activeSection === item.value}
+                    label={item.label}
+                    value={item.value}
+                  />
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
         <OutlineSelect />
       </header>
       {shouldRenderSidebar && (
