@@ -264,6 +264,41 @@
       "autoFillAddon": "Interés en: {service}"
     }
   },
+  "ProjectPage": {
+    "Sections": {
+      "overview": "Visión General",
+      "technologies": "Tecnologías",
+      "medias": "Medios",
+      "links": "Enlaces",
+      "caseStudies": "Casos de Estudio"
+    },
+    "Status": {
+      "in_production": "En Producción",
+      "archived": "Archivado",
+      "ongoing": "En Curso"
+    },
+    "Purpose": {
+      "academic": "Académico",
+      "personal": "Personal",
+      "commercial": "Comercial"
+    },
+    "Date": {
+      "not_finished": "No finalizado",
+      "around": "Alrededor de {date}"
+    },
+    "Size": {
+      "short": "Pequeña Envergadura",
+      "medium": "Mediana Envergadura",
+      "long": "Gran Envergadura"
+    },
+    "purposeLabel": "Propósito",
+    "statusLabel": "Estado",
+    "scopeLabel": "Alcance",
+    "startedAtLabel": "Iniciado en",
+    "finishedAtLabel": "Finalizado en",
+    "linkButtonLabel": "Ver Proyecto",
+    "readingTime": "{time} min de lectura"
+  },
   "ErrorMessages": {
     "Form": {
       "FirstName": {
