@@ -6,7 +6,7 @@ export const fullTastyhub: Project = {
   content: '',
   readingTime: 10,
   nature: ProjectNature.PERSONAL,
-  status: 'Ongoing',
+  status: 'ongoing',
   shortDescription: '',
   fullDescription: '',
   categories: [
@@ -15,8 +15,7 @@ export const fullTastyhub: Project = {
     ProjectCategory.FRONTEND,
     ProjectCategory.UI_UX
   ],
-  links: [
-  ],
+  links: [],
   media: [
     {
       type: 'image',
@@ -27,4 +26,5 @@ export const fullTastyhub: Project = {
   featured: true,
   createdAt: '2023-09-10T00:00:00.000Z',
   finishedAt: '',
+  size: 'long'
 };

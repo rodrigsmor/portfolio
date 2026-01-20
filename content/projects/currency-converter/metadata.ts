@@ -6,7 +6,7 @@ export const fullCurrencyConverter: Project = {
   content: '',
   readingTime: 10,
   nature: ProjectNature.PERSONAL,
-  status: 'Ongoing',
+  status: 'ongoing',
   shortDescription: 'A currency converter featuring 100+ supported currencies, multilingual support in English and Portuguese. Built using Next.js for the frontend and styled with Styled Components, complemented by a Nest.js backend. It integrates with the ExchangeRate api and is containerized with Docker.',
   fullDescription: 'This is a simple currency converter application that supports over 160 currencies. You can easily perform currency conversions based on your preferences and access exchange rates for various other options. The core of the application was built in TypeScript, with a backend in Nest.js and a frontend in Next.js, also implementing Docker for container management and environment manipulation.',
   categories: [
@@ -40,4 +40,5 @@ export const fullCurrencyConverter: Project = {
   featured: true,
   createdAt: '2023-09-10T00:00:00.000Z',
   finishedAt: '',
+  size: 'long'
 };
