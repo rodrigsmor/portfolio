@@ -1,9 +1,9 @@
-import { ProjectSummary } from '@/types/project';
+import { ProjectSlug, ProjectSummary } from '@/types/project';
 import Cover from '@/public/covers/CurrencyConverter.png';
 
 export const currencyConverter: ProjectSummary = {
   id: 'currency_converter',
-  slug: 'currency-converter',
+  slug: ProjectSlug.CURRENCY_CONVERTER,
   title: 'Currency Converter',
   technologies: [
     'Next.js',

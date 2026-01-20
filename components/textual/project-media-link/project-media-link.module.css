@@ -1,0 +1,23 @@
+.projectLinkContainer {
+  height: 3rem;
+  min-height: 3rem;
+  width: 3rem;
+  min-width: 3rem;
+  border-radius: 100%;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  transition: all .3s ease;
+  border: 1px solid color-mix(in srgb, var(--typography-extralight) 20%, transparent);
+
+  &:hover {
+    background: color-mix(in srgb, var(--typography-extralight) 10%, transparent);
+  }
+
+  img {
+    width: 1.5rem;
+    height: 1.5rem;
+    max-width: 1.5rem;
+    max-height: 1.5rem;
+  }
+}

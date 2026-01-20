@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "./career-overview.module.css";
 import { useTranslate } from "@/utils/hooks/useTranslate";
 import { Button } from "@/components/buttons/button";
-import { Check, DownloadSimple, StarFour } from "phosphor-react";
+import { CheckIcon, DownloadSimpleIcon, StarFourIcon } from "@phosphor-icons/react";
 
 import ProfileImage from "@/assets/MyProfile.png";
 
@@ -44,7 +44,7 @@ export function CareerOverview() {
           <ul className={styles.achievements}>
             {achievements.map((achievement) => (
               <li key={achievement.title} className={styles.achievementItem}>
-                <span aria-hidden><Check width={16} height={16} weight="bold" /></span>
+                <span aria-hidden><CheckIcon width={16} height={16} weight="bold" /></span>
                 <p className={`${styles.profileDescription} achievement-item`}>
                   <strong>{achievement.title}</strong>
                   {' '}– {achievement.description}
@@ -56,7 +56,7 @@ export function CareerOverview() {
       </div>
       <div className={styles.sideInfo} aria-label={t('AboutMe.closingParagraph')}>
         <div aria-describedby="conclusive-text">
-          <span aria-hidden><StarFour width={18} height={18} weight="fill" /></span>
+          <span aria-hidden><StarFourIcon width={18} height={18} weight="fill" /></span>
           <p id="conclusive-text" className={styles.profileDescription}>
             {t('AboutMe.conclusiveText')}
           </p>
@@ -67,7 +67,7 @@ export function CareerOverview() {
           rel="noopener noreferrer"
           href={`/${resumeDirectory}`}
         >
-          <DownloadSimple weight="bold" height={24} width={24} />
+          <DownloadSimpleIcon weight="bold" height={24} width={24} />
           {t('AboutMe.downloadButton')}
         </Button>
       </div>

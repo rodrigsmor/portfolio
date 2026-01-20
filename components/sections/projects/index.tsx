@@ -7,7 +7,7 @@ import { useTranslate } from '@/hooks/useTranslate';
 import { ProjectCard } from '@/components/cards/project-card';
 import { SectionTitle } from '@/components/layout/section-title';
 import { Button } from '@/components/buttons/button';
-import { ArrowUpRight } from 'phosphor-react';
+import { ArrowUpRightIcon } from '@phosphor-icons/react';
 
 function ProjectsSectionContent() {
   const { t } = useTranslate();
@@ -32,7 +32,7 @@ function ProjectsSectionContent() {
       </ul>
       <Button type="button" theme="outline">
         {t('Projects.viewAllProjects')}
-        <ArrowUpRight size={24} aria-hidden weight="bold" />
+        <ArrowUpRightIcon size={24} aria-hidden weight="bold" />
       </Button>
       <span aria-hidden className="sectionTransition"></span>
       <span aria-hidden className="sectionTransition bottom"></span>

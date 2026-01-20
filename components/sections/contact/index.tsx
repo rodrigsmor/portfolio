@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { memo, ReactNode } from 'react';
 import styles from './contact.module.css';
 import { Dictionary } from '@/functions/dictionaries';
-import { EnvelopeSimple, MapPin, Phone } from 'phosphor-react';
+import { EnvelopeSimpleIcon, MapPinIcon, PhoneIcon } from '@phosphor-icons/react';
 import { PathToDot, useTranslate } from '@/hooks/useTranslate';
 import { ContactForm } from '@/components/layout/contact-form';
 import { SocialLinks } from '@/components/layout/social-links';
@@ -23,7 +23,7 @@ function ContactSection() {
   const contactItems: ContactItem[] = [
     {
       name: 'phone',
-      Icon: <Phone size={24} />,
+      Icon: <PhoneIcon size={24} />,
       href: process.env.NEXT_PUBLIC_CONTACT_PHONE_HREF ?? '',
       title: 'Contact.AddressLabels.phone',
       address: process.env.NEXT_PUBLIC_CONTACT_PHONE ?? '',
@@ -31,7 +31,7 @@ function ContactSection() {
     },
     {
       name: 'email',
-      Icon: <EnvelopeSimple size={24} />,
+      Icon: <EnvelopeSimpleIcon size={24} />,
       href: process.env.NEXT_PUBLIC_CONTACT_EMAIL_HREF ?? '',
       title: 'Contact.AddressLabels.email',
       address: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? '',
@@ -39,7 +39,7 @@ function ContactSection() {
     },
     {
       name: 'address',
-      Icon: <MapPin size={24} />,
+      Icon: <MapPinIcon size={24} />,
       href: process.env.NEXT_PUBLIC_CONTACT_GOOGLE_MAPS_HREF ?? '',
       title: 'Contact.AddressLabels.location',
       address: process.env.NEXT_PUBLIC_CONTACT_GOOGLE_MAPS ?? '',
@@ -92,8 +92,8 @@ function ContactSection() {
         </small>
       </footer>
       <BottomBluredSvg />
-      <LeftBluredSvg/>
-      <RightBluredSvg/>
+      <LeftBluredSvg />
+      <RightBluredSvg />
     </footer>
   );
 }

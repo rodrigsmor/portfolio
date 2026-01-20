@@ -1,17 +1,31 @@
 export const dynamic = 'force-dynamic'
 
 import { Metadata } from 'next';
-import Portfolio from '@/views/portfolio'
 import { LanguageCode } from '@/types/lang';
 import { getDictionary } from '@/functions/dictionaries';
+import { ProjectSlug } from '@/types/project';
+import { langCodes } from '@/consts/languages';
+import { Project } from '@/views/project';
 
 export type LangPageProps = {
-  params: Promise<{ lang: string }>;
+  params: Promise<{ lang: string, project: string }>;
 };
+
+export async function generateStaticParams() {
+  const slugs = Object.values(ProjectSlug);
+
+  const paths = langCodes.flatMap((lang) =>
+    slugs.map((slug) => ({
+      lang: lang,
+      project: slug,
+    }))
+  );
+
+  return paths;
+}
 
 export async function generateMetadata({ params }: LangPageProps): Promise<Metadata> {
   const { lang } = await params;
-  const baseUrl = process.env.BASE_URL;
 
   const dict = await getDictionary(lang as LanguageCode);
 
@@ -23,20 +37,11 @@ export async function generateMetadata({ params }: LangPageProps): Promise<Metad
       description: dict.Metadata.description,
       locale: lang,
     },
-    alternates: {
-      canonical: `${baseUrl}/${baseUrl}`,
-      languages: {
-        'en-US': `${baseUrl}/en-US`,
-        'pt-BR': `${baseUrl}/pt-BR`,
-        'es-419': `${baseUrl}/es-419`,
-        'x-default': `${baseUrl}/en-US`,
-      },
-    },
   };
 }
 
 export default async function Page() {
   return (
-    <Portfolio />
+    <Project />
   );
 }

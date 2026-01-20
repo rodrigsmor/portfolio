@@ -17,15 +17,26 @@ export enum Platform {
 }
 
 export enum ProjectNature {
-  ACADEMIC = 'Academic',       // Faculdade, cursos, bootcamps
-  PERSONAL = 'Personal',       // Laboratório, estudos, "pôr em prática"
-  COMMERCIAL = 'Commercial',   // Aplicações reais, Freelas, Projetos Open Source ativos
+  ACADEMIC = 'academic',       // Faculdade, cursos, bootcamps
+  PERSONAL = 'personal',       // Laboratório, estudos, "pôr em prática"
+  COMMERCIAL = 'commercial',   // Aplicações reais, Freelas, Projetos Open Source ativos
+}
+
+export enum ProjectSlug {
+  AION_TIMER = 'aion-timer',
+  CALCULATOR = 'calculator',
+  DIATASK = 'diatask',
+  TASTYHUB = 'tastyhub',
+  MARKETLIFY = 'marketlify',
+  MYNOTES = 'mynotes',
+  PERU_TRAVELL = 'peru-travell',
+  CURRENCY_CONVERTER = 'currency-converter',
 }
 
 export type MediaContent =
-  | { type: 'video'; url: string; poster?: string }
+  | { type: 'video'; url: string; alt: string; poster: string }
   | { type: 'image'; url: string; alt: string }
-  | { type: 'embed'; url: string; provider: 'youtube' | 'vimeo' | 'codepen' };
+  | { type: 'embed'; url: string; alt: string; provider: 'youtube' | 'vimeo' | 'codepen' };
 
 export type ProjectLink = {
   url: string;
@@ -35,13 +46,14 @@ export type ProjectLink = {
 
 export interface Project {
   id: string;
-  slug: string;
+  slug: ProjectSlug;
   title: string;
   content?: string;
   readingTime?: number;
   nature: ProjectNature;
   origin?: string;
-  status: 'In Production' | 'Archived' | 'Ongoing';
+  size: 'short' | 'long' | 'medium';
+  status: 'in_production' | 'archived' | 'ongoing';
   shortDescription: string;
   fullDescription: string;
   categories: ProjectCategory[];

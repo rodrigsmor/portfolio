@@ -1,0 +1,129 @@
+.technologyCard {
+  display: flex;
+  gap: 0 .875rem;
+  position: relative;
+  min-width: max-content;
+  position: relative;
+  align-items: center;
+  overflow: hidden;
+  padding: .5rem 1rem;
+  border-radius: 1.5rem;
+  background: var(--gradient-typographyToOpacity-d);
+
+  > * {
+    z-index: 2;
+  }
+
+  img {
+    grid-area: icon;
+    width: 1.45rem;
+    height: 1.45rem;
+    min-width: 1.45rem;
+    min-height: 1.45rem;
+  }
+  
+  :global(.outlineBackground) {
+    inset: 0 0 0 0;
+    border-radius: 1.5rem;
+    position: absolute;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    border: 2px solid transparent;
+    background: var(--gradient-opacityToTypography-d) border-box;
+    mask:
+      linear-gradient(#000 0 0) padding-box, 
+      linear-gradient(#000 0 0);
+    mask-composite: exclude;
+  }
+
+  &::after,
+  &::before {
+    z-index: 1;
+    content: '';
+    height: 3rem;
+    width: 3rem;
+    position: absolute;
+    border-radius: 3rem;
+    filter: blur(30px);
+    inset: -1.125rem auto auto -.5rem;
+    background-color: var(--primary-light);
+  }
+
+  &::after {
+    inset: auto 0 -2.375rem auto;
+  }
+}
+
+.summary {
+  display: none;
+  gap: .375rem;
+  grid-area: summary;
+  min-width: max-content;
+  align-items: center;
+
+  :global(.summaryLabel) {
+    min-width: fit-content;
+    font-size: var(--font-h7);
+    font-weight: var(--font-light);
+    color: var(--typography-main);
+
+    > :global(.sr-only) {
+      opacity: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+  }
+
+  :global(.dot) {
+    height: .375rem;
+    width: .375rem;
+    border-radius: .375rem;
+    background: color-mix(in srgb, var(--typography-extralight) 30%, transparent);
+  }
+}
+
+.technologyTitle {
+  grid-area: title;
+  font-size: var(--font-h6);
+  color: var(--typography-main);
+  font-weight: var(--font-semibold);
+}
+
+@media (min-width: 768px) {
+  .technologyCard {
+    &:not(:global(.minimized)) {
+      img {
+        grid-area: icon;
+        width: 1.75rem;
+        height: 1.75rem;
+        min-width: 1.75rem;
+        min-height: 1.75rem;
+      }
+    }
+  }
+
+  .summary {
+    display: flex;
+  }
+
+  .technologyTitle {
+    &:not(:global(.minimized)) {
+      font-size: var(--font-h5);
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .technologyCard {
+    &:not(:global(.minimized)) {
+      display: grid;
+      grid-template-rows: 1.5rem 1.313rem;
+      grid-template-columns: 1.75rem fit-content;
+      grid-template-areas:
+        'icon title'
+        'icon summary'
+      ;
+    }
+  }
+}

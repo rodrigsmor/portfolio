@@ -1,9 +1,9 @@
-import { ProjectSummary } from '@/types/project';
+import { ProjectSlug, ProjectSummary } from '@/types/project';
 import Cover from '@/public/covers/DiaTask.png';
 
 export const diaTask: ProjectSummary = {
   id: 'dia_task',
-  slug: 'dia-task',
+  slug: ProjectSlug.DIATASK,
   title: 'DiaTask - Organizador de tarefas e projetos',
   technologies: [
     'Figma',

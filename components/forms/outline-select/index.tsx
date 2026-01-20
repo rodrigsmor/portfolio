@@ -5,7 +5,7 @@ import styles from './outline-select.module.css';
 import { ComponentPropsWithoutRef } from 'react';
 import { languages } from '@/consts/languages';
 import { LanguageCode, LanguageData } from '@/types/lang';
-import { CaretDown } from 'phosphor-react';
+import { CaretDownIcon } from '@phosphor-icons/react';
 import { useTranslate } from '@/hooks/useTranslate';
 
 type HTMLSelectProps = ComponentPropsWithoutRef<'select'>;
@@ -46,7 +46,7 @@ export function OutlineSelect({ }: OutlineSelectProps) {
         </span>
         {label}
       </p>
-      <CaretDown size={20} weight="bold" />
+      <CaretDownIcon size={20} weight="bold" />
     </div>
   );
 }

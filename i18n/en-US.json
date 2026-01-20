@@ -264,6 +264,41 @@
       "autoFillAddon": "Interested in: {service}"
     }
   },
+  "ProjectPage": {
+    "Sections": {
+      "overview": "Overview",
+      "technologies": "Technologies",
+      "medias": "Medias",
+      "links": "Links",
+      "caseStudies": "Case Studies"
+    },
+    "Status": {
+      "in_production": "In Production",
+      "archived": "Archived",
+      "ongoing": "Ongoing"
+    },
+    "Purpose": {
+      "academic": "Academic",
+      "personal": "Personal",
+      "commercial": "Commercial"
+    },
+    "Size": {
+      "short": "Small Project",
+      "medium": "Medium Project",
+      "long": "Enterprise-level Project"
+    },
+    "Date": {
+      "not_finished": "Not finished",
+      "around": "Around {date}"
+    },
+    "purposeLabel": "Purpose",
+    "statusLabel": "Status",
+    "scopeLabel": "Scope",
+    "startedAtLabel": "Started At",
+    "finishedAtLabel": "Finished At", 
+    "linkButtonLabel": "View Project",
+    "readingTime": "{time} min of reading"
+  },
   "ErrorMessages": {
     "Form": {
       "FirstName": {

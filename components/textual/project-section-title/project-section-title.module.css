@@ -1,0 +1,16 @@
+.projectSectionTitle {
+  gap: .625rem;
+  display: flex;
+  align-items: center;
+  font-size: var(--font-h3);
+  color: var(--typography-light);
+  font-weight: var(--font-semibold);
+  
+  svg {
+    fill: var(--primary-light);
+  }
+
+  &:global(.h5) {
+    font-size: var(--font-h5);
+  }
+}

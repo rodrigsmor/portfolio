@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { useCallback } from 'react';
-import { ArrowRight } from 'phosphor-react';
+import { ArrowRightIcon } from '@phosphor-icons/react';
 import styles from './service-card.module.css';
 import { ServicesType } from '@/types/services';
 import { useTranslate } from '@/hooks/useTranslate';
@@ -61,7 +61,7 @@ export function ServiceCard({ icon, type }: ServiceCardProps) {
           className={styles.ctaButton}
         >
           {t('Services.requestQuoteLabel')}
-          <ArrowRight size={18} />
+          <ArrowRightIcon size={18} />
         </button>
       </div>
       <span aria-hidden className="outlineBackground"></span>

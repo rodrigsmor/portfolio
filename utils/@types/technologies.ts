@@ -11,7 +11,7 @@ export enum SkillLevel {
 export type Skill = {
   name: string;
   iconSrc: string; 
-  level: SkillLevel;
+  level?: SkillLevel;
   yearsOfExperience: number;
 };
 
