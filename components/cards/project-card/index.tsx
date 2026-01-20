@@ -10,7 +10,7 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
-  const { t } = useTranslate();
+  const { t, locale } = useTranslate();
   const id = `${project.id}_title`;
 
   return (
@@ -35,7 +35,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           ))}
         </ul>
       </header>
-      <Button type="button" theme="outline">
+      <Button component="a" href={`/${locale}/projects/${project.slug}`} theme="outline">
         {t('Projects.viewFullProject')}
         <ArrowUpRight size={24} aria-hidden weight="bold" />
       </Button>
