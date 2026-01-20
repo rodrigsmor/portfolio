@@ -81,10 +81,11 @@
     border: .1rem solid color-mix(in srgb, var(--typography-extralight) 30%, transparent);
 
     img {
-      height: 100%;
-      width: auto;
-      max-height: 100%;
+      height: auto;
+      width: 100%;
+      max-width: 100%;
       overflow: hidden;
+      min-height: 100%;
     }
 
     :global(.last-media) {

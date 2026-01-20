@@ -141,27 +141,17 @@ export function ProjectOverviewSection() {
   const medias: MediaContent[] = [
     {
       type: 'image',
-      url: 'https://imgs.search.brave.com/2e_2p7_zUvq3-AGxs8OJA0xvGkX1fw_eecnVqcvvtJ8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS12ZWN0/b3IvZnVybml0dXJl/LWFwcC11aS1raXQt/cmVzcG9uc2l2ZS1t/b2JpbGUtYXBwLXdl/YnNpdGUtd2l0aC1t/dWx0aXBsZS1zY3Jl/ZW5zLWFzLWxvZy1j/cmVhdGUtYWNjb3Vu/dC1wcm9maWxlLW9y/ZGVyLXBheW1lbnRf/MTMwMi0yMTc0Ni5q/cGc_c2VtdD1haXNf/aHlicmlkJnc9NzQw/JnE9ODA',
+      url: 'https://res.cloudinary.com/dbrvgleaj/image/upload/v1768929047/AionTimer-Dashboard_pjiztu.png',
       alt: ''
     },
     {
       type: 'image',
-      url: 'https://imgs.search.brave.com/3KdFZ0OyZTFhQ2-rdOsmZhRuy9iQ3WjcHPj_5N0Nuow/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/ZHJpYmJibGUuY29t/L3VzZXJ1cGxvYWQv/MTc3NzAyMDgvZmls/ZS9vcmlnaW5hbC04/MWYxMDVlMjYxMDk2/ZTIyY2RjOGQyYmMy/MGJhODE3NC5wbmc_/Zm9ybWF0PXdlYnAm/cmVzaXplPTQwMHgz/MDAmdmVydGljYWw9/Y2VudGVy',
+      url: 'https://res.cloudinary.com/dbrvgleaj/image/upload/v1768929047/Timer_-__Playing_cv6nqz.png',
       alt: ''
     },
     {
       type: 'image',
-      url: 'https://imgs.search.brave.com/UHmZKF4VsO6p8fIMqBlBmPuXPZJ80XHCwAtqVW7HP00/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS12ZWN0b3Iv/Z3JhZGllbnQtY29s/b3JlZC11aS11eC1i/YWNrZ3JvdW5kXzUy/NjgzLTcwMDA1Lmpw/Zz9zZW10PWFpc19o/eWJyaWQmdz03NDAm/cT04MA',
-      alt: ''
-    },
-    {
-      type: 'image',
-      url: 'https://imgs.search.brave.com/HdllkFaN8u-5vmt_9bWwmiSdAeS1XiL8dLsQ3RegV6Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1wc2Qv/dWktdXgtY291cnNl/LWFkLXRlbXBsYXRl/XzY3OTk5Ny0zLmpw/Zz9zZW10PWFpc19o/eWJyaWQmdz03NDAm/cT04MA',
-      alt: ''
-    },
-    {
-      type: 'image',
-      url: 'https://imgs.search.brave.com/HdllkFaN8u-5vmt_9bWwmiSdAeS1XiL8dLsQ3RegV6Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1wc2Qv/dWktdXgtY291cnNl/LWFkLXRlbXBsYXRl/XzY3OTk5Ny0zLmpw/Zz9zZW10PWFpc19o/eWJyaWQmdz03NDAm/cT04MA',
+      url: 'https://res.cloudinary.com/dbrvgleaj/image/upload/v1768929402/AionMobile_j312r4.png',
       alt: ''
     },
   ];
@@ -237,12 +227,14 @@ export function ProjectOverviewSection() {
                 <Image
                   alt={media?.alt} 
                   src={media.type === 'video' ? media.poster : media.url}
-                  fill
+                  // fill
+                  width={240}
+                  height={240}
                   quality={70}
                   loading="lazy"
                   placeholder="empty"
                 />
-                {index === 2 && (
+                {(medias.length > 3 && index === 2) && (
                   <span className="last-media">
                     +{medias.length - 3} {t('ProjectPage.Sections.medias')}
                   </span>
