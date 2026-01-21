@@ -14,6 +14,7 @@ import { fullCalculator } from "@/content/projects/calculator/metadata";
 import { fullAionTimer } from "@/content/projects/aion-timer/metadata";
 import { fullDiaTask } from "@/content/projects/dia-task/metadata";
 import { fullMarketlify } from "@/content/projects/marketlify/metadata";
+import { fullMyNotes } from "@/content/projects/my-notes/metadata";
 
 export const projects: ProjectSummary[] = [
   currencyConverter,
@@ -39,6 +40,6 @@ export const projectsData: ProjectData = {
   'diatask': fullDiaTask,
   'peru-travell': fullPeruTravel,
   marketlify: fullMarketlify,
-  mynotes: fullTastyhub,
+  mynotes: fullMyNotes,
   tastyhub: fullTastyhub
 }

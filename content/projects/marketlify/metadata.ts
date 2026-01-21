@@ -6,6 +6,7 @@ import {
   HTMLSkill,
   JavaScriptSkill,
   ReactJSSkill,
+  StyledComponentsSkill,
 } from '@/consts/project-skills';
 
 export const fullMarketlify: Project = {
@@ -13,6 +14,7 @@ export const fullMarketlify: Project = {
   technologies: [
     ReactJSSkill,
     JavaScriptSkill,
+    StyledComponentsSkill,
     CSSSkill,
     HTMLSkill,
   ],

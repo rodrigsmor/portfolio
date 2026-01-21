@@ -40,9 +40,11 @@ import TailwindCSSLogo from '@/assets/logos/TailwindCSS.svg';
 import MaterialUILogo from '@/assets/logos/MaterialUI.svg';
 import HTMLLogo from '@/assets/logos/html5.svg';
 import CSSLogo from '@/assets/logos/CSS3.svg';
+import StyledComponentsLogo from '@/assets/logos/StyledComponents.svg';
 
 import RabbitMQLogo from '@/assets/logos/RabbitMQ.svg';
 import KafkaLogo from '@/assets/logos/ApacheKafka.svg';
+import WebSocketsLogo from '@/assets/logos/WebSocket.svg';
 
 import ReactNativeLogo from '@/assets/logos/ReactNative.svg';
 
@@ -105,6 +107,7 @@ export const TailwindCSSSkill: Skill = { iconSrc: TailwindCSSLogo, name: 'Tailwi
 export const MaterialUISkill: Skill = { iconSrc: MaterialUILogo, name: 'Material UI', yearsOfExperience: 1 };
 export const HTMLSkill: Skill = { iconSrc: HTMLLogo, name: 'HTML', yearsOfExperience: 3 };
 export const CSSSkill: Skill = { iconSrc: CSSLogo, name: 'CSS', yearsOfExperience: 3 };
+export const StyledComponentsSkill: Skill = { iconSrc: StyledComponentsLogo, name: 'Styled Components', yearsOfExperience: 1 };
 
 // --- Messaging & Others ---
 export const RabbitMQSkill: Skill = { iconSrc: RabbitMQLogo, name: 'RabbitMQ', yearsOfExperience: 1 };
@@ -113,6 +116,7 @@ export const ReactNativeSkill: Skill = { iconSrc: ReactNativeLogo, name: 'React 
 export const SwaggerSkill: Skill = { iconSrc: SwaggerLogo, name: 'Swagger', yearsOfExperience: 1 };
 export const JWTSkill: Skill = { iconSrc: JWTLogo, name: 'JWT', yearsOfExperience: 1 };
 export const GitSkill: Skill = { iconSrc: GitLogo, name: 'Git', yearsOfExperience: 3 };
+export const WebSocketsSkill: Skill = { iconSrc: WebSocketsLogo, name: 'WebSockets', yearsOfExperience: 1 };
 
 export const SKILLS = {
   JAVA: JavaSkill,
