@@ -98,6 +98,9 @@ export function ProjectOverviewSection(props: ProjectOverviewSectionProps) {
   const links: ProjectLink[] = project.links.filter((project) => project.platform !== Platform.WEB);
   const webLink: ProjectLink | undefined = project.links.filter((project) => project.platform === Platform.WEB)?.at(0);
 
+  const projectMedias = project.media;
+  const slicedMedias = project.media.slice(0, 3);
+
   return (
     <section {...props} id="ProjectOverview_Section" aria-labelledby="ProjectOverview_Title" aria-describedby="ProjectShortDescription" className={styles.overviewSectionContainer}>
       <div className={styles.detailsGroup}>
@@ -135,24 +138,24 @@ export function ProjectOverviewSection(props: ProjectOverviewSectionProps) {
       <div className={styles.detailsGroup}>
         <ProjectSectionTitle title={t('ProjectPage.Sections.medias')} Icon={ImagesSquareIcon} weight='fill' />
         <ul className={styles.mediaGroup}>
-          {project.media.slice(0, 3).map((media, index) => {
+          {slicedMedias.slice(0, 3).map((media, index) => {
             return (
               <li key={index}>
                 <Image
                   alt={media?.alt} 
                   src={media.type === 'video' ? media.poster : media.url}
-                  // fill
                   width={240}
                   height={240}
                   quality={70}
                   loading="lazy"
+                  unoptimized
                   placeholder="empty"
                 />
-                {(project.media.length > 3 && index === 2) && (
+                {(index === 2 && projectMedias.length > 3) ? (
                   <span className="last-media">
-                    +{project.media.length - 3} {t('ProjectPage.Sections.medias')}
+                    +{projectMedias.length - 3} {t('ProjectPage.Sections.medias')}
                   </span>
-                )}
+                ) : <></>}
               </li>
             );
           })}
