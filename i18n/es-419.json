@@ -270,12 +270,14 @@
       "technologies": "Tecnologías",
       "medias": "Medios",
       "links": "Enlaces",
-      "caseStudies": "Casos de Estudio"
+      "caseStudies": "Documentación",
+      "description": "Descripción"
     },
     "Status": {
       "in_production": "En Producción",
       "archived": "Archivado",
-      "ongoing": "En Curso"
+      "ongoing": "En Curso",
+      "finished": "Finalizado"
     },
     "Purpose": {
       "academic": "Académico",
