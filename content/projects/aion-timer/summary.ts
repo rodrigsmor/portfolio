@@ -3,7 +3,7 @@ import Cover from '@/public/covers/AionTimer.png';
 
 export const aionTimer: ProjectSummary = {
   id: 'aion_timer',
-  slug: ProjectSlug.CALCULATOR,
+  slug: ProjectSlug.AION_TIMER,
   title: 'Aion Timer - Focus & Flow Tracker',
   technologies: [
     'Figma',
