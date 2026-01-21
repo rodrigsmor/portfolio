@@ -1,4 +1,4 @@
-import { CSSSkill, CypressSkill, DockerSkill, HTMLSkill, JestSkill, NextJSSkill, NodeJSSkill, StorybookSkill, SwaggerSkill, TypescriptSkill } from '@/utils/consts/project-skills';
+import { CSSSkill, CypressSkill, DockerSkill, HTMLSkill, JestSkill, NextJSSkill, NodeJSSkill, SassSkill, StorybookSkill, SwaggerSkill, TypescriptSkill } from '@/utils/consts/project-skills';
 import { currencyConverter } from './summary';
 import { Project, Platform, ProjectCategory, ProjectNature } from '@/types/project';
 
@@ -15,6 +15,7 @@ export const fullCurrencyConverter: Project = {
     StorybookSkill,
     HTMLSkill,
     CSSSkill,
+    SassSkill,
     TypescriptSkill,
     JestSkill,
     DockerSkill

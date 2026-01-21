@@ -10,6 +10,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/dbrvgleaj/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'github.com',
+        port: '',
+        pathname: '/rodrigsmor/**',
+      },
     ],
   },
   async rewrites() {

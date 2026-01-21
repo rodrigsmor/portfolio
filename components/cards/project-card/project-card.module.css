@@ -19,7 +19,7 @@
 
   > * { z-index: 3; }
 
-  button {
+  a {
     flex-shrink: 0;
     min-width: fit-content;
   }

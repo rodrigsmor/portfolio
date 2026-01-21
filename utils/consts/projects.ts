@@ -10,6 +10,11 @@ import { aionTimer } from "@/content/projects/aion-timer/summary";
 import { fullTastyhub } from "@/content/projects/tastyhub/metadata";
 import { fullCurrencyConverter } from "@/content/projects/currency-converter/metadata";
 import { fullPeruTravel } from "@/content/projects/peru-travell/metadata";
+import { fullCalculator } from "@/content/projects/calculator/metadata";
+import { fullAionTimer } from "@/content/projects/aion-timer/metadata";
+import { fullDiaTask } from "@/content/projects/dia-task/metadata";
+import { fullMarketlify } from "@/content/projects/marketlify/metadata";
+import { fullMyNotes } from "@/content/projects/my-notes/metadata";
 
 export const projects: ProjectSummary[] = [
   currencyConverter,
@@ -29,12 +34,12 @@ type ProjectData = {
 }
 
 export const projectsData: ProjectData = {
-  'aion-timer': fullTastyhub,
-  'calculator': fullTastyhub,
+  'aion-timer': fullAionTimer,
+  'calculator': fullCalculator,
   'currency-converter': fullCurrencyConverter,
-  'diatask': fullTastyhub,
+  'diatask': fullDiaTask,
   'peru-travell': fullPeruTravel,
-  marketlify: fullTastyhub,
-  mynotes: fullTastyhub,
+  marketlify: fullMarketlify,
+  mynotes: fullMyNotes,
   tastyhub: fullTastyhub
 }
