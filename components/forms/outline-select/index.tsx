@@ -1,6 +1,6 @@
 'use client';
 
-import { useParams, useRouter } from 'next/navigation';
+import { useParams, usePathname, useRouter } from 'next/navigation';
 import styles from './outline-select.module.css';
 import { ComponentPropsWithoutRef } from 'react';
 import { languages } from '@/consts/languages';
@@ -15,6 +15,8 @@ type OutlineSelectProps = HTMLSelectProps;
 export function OutlineSelect({ }: OutlineSelectProps) {
   const router = useRouter();
   const { t } = useTranslate();
+  const pathname = usePathname();
+
   const params = useParams<{ lang: LanguageCode | undefined }>();
 
   const langSlug = params?.lang ?? 'en-US';
@@ -28,7 +30,7 @@ export function OutlineSelect({ }: OutlineSelectProps) {
         value={value}
         aria-label={t('Accessibility.languageSelector')}
         onChange={(event) => {
-          router.push(`/${event.target.value}`);
+          router.push(pathname.replaceAll(value, event.target.value));
         }}
       >
         {langKeys.map((lang) => (

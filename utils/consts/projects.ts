@@ -6,9 +6,10 @@ import { peruTravell } from "@/content/projects/peru-travell/summary";
 import { marketlify } from "@/content/projects/marketlify/summary";
 import { calculator } from "@/content/projects/calculator/summary";
 import { myNotes } from "@/content/projects/my-notes/summary";
-import { LanguageCode } from "@/types/lang";
 import { aionTimer } from "@/content/projects/aion-timer/summary";
 import { fullTastyhub } from "@/content/projects/tastyhub/metadata";
+import { fullCurrencyConverter } from "@/content/projects/currency-converter/metadata";
+import { fullPeruTravel } from "@/content/projects/peru-travell/metadata";
 
 export const projects: ProjectSummary[] = [
   currencyConverter,
@@ -24,40 +25,16 @@ export const projects: ProjectSummary[] = [
 ];
 
 type ProjectData = {
-  [key in LanguageCode]: {
-    [key in ProjectSlug]: Project;
-  }
+  [key in ProjectSlug]: Project;
 }
 
 export const projectsData: ProjectData = {
-  'en-US': {
-    'aion-timer': fullTastyhub,
-    'calculator': fullTastyhub,
-    'currency-converter': fullTastyhub,
-    'diatask': fullTastyhub,
-    'peru-travell': fullTastyhub,
-    marketlify: fullTastyhub,
-    mynotes: fullTastyhub,
-    tastyhub: fullTastyhub
-  },
-  'es-419': {
-    'aion-timer': fullTastyhub,
-    'calculator': fullTastyhub,
-    'currency-converter': fullTastyhub,
-    'diatask': fullTastyhub,
-    'peru-travell': fullTastyhub,
-    marketlify: fullTastyhub,
-    mynotes: fullTastyhub,
-    tastyhub: fullTastyhub
-  },
-  'pt-BR': {
-    'aion-timer': fullTastyhub,
-    'calculator': fullTastyhub,
-    'currency-converter': fullTastyhub,
-    'diatask': fullTastyhub,
-    'peru-travell': fullTastyhub,
-    marketlify: fullTastyhub,
-    mynotes: fullTastyhub,
-    tastyhub: fullTastyhub
-  }
+  'aion-timer': fullTastyhub,
+  'calculator': fullTastyhub,
+  'currency-converter': fullCurrencyConverter,
+  'diatask': fullTastyhub,
+  'peru-travell': fullPeruTravel,
+  marketlify: fullTastyhub,
+  mynotes: fullTastyhub,
+  tastyhub: fullTastyhub
 }

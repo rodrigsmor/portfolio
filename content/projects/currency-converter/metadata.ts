@@ -6,7 +6,7 @@ export const fullCurrencyConverter: Project = {
   ...currencyConverter,
   readingTime: 10,
   nature: ProjectNature.PERSONAL,
-  status: 'ongoing',
+  status: 'archived',
   technologies: [
     CypressSkill,
     SwaggerSkill,
@@ -25,48 +25,42 @@ export const fullCurrencyConverter: Project = {
     "pt-BR": 'Um conversor de moedas moderno com suporte a mais de 160 moedas e multi-idioma (inglês e português). Desenvolvido com Next.js no frontend e NestJS no backend, totalmente tipado com TypeScript, integrado à ExchangeRate API e conteinerizado com Docker.'
   },
   fullDescription: {
-    "en-US": `
-      This project is a full stack currency converter application designed to provide fast and reliable currency conversions across 160+ supported currencies, with multilingual support in English and Portuguese.
-      \n\n
+    "en-US": `This project is a full stack currency converter application designed to provide fast and reliable currency conversions across 160+ supported currencies, with multilingual support in English and Portuguese.
+      
       The application was developed entirely in TypeScript, using Next.js for the frontend and NestJS for the backend, following modern architectural and scalability best practices. It integrates with the ExchangeRate API to retrieve real-time exchange rates and ensures consistent environment management through Docker containerization.
-      \n\n
+      
       A strong focus was placed on code quality, documentation, and testing, including:
-      \n
-      - API documentation with Swagger;\n
-      - Component documentation with Storybook;\n
-      - Unit tests with Jest;\n
+      
+      - API documentation with Swagger;
+      - Component documentation with Storybook;
+      - Unit tests with Jest;
       - End-to-end tests with Cypress
-      \n\n
-      This project demonstrates proficiency in building well-documented, testable, and production-ready applications, combining clean architecture, strong typing, and modern DevOps practices.
-    `,
-    "pt-BR": `
-      Este projeto é uma aplicação full stack de conversão de moedas, projetada para fornecer conversões rápidas e confiáveis em mais de 160 moedas, com suporte multilíngue em inglês e português.
-      \n\n
+      
+      This project demonstrates proficiency in building well-documented, testable, and production-ready applications, combining clean architecture, strong typing, and modern DevOps practices.`,
+    "pt-BR": `Este projeto é uma aplicação full stack de conversão de moedas, projetada para fornecer conversões rápidas e confiáveis em mais de 160 moedas, com suporte multilíngue em inglês e português.
+      
       A aplicação foi desenvolvida inteiramente em TypeScript, utilizando Next.js para o frontend e NestJS para o backend, seguindo as melhores práticas modernas de arquitetura e escalabilidade. Integra-se com a ExchangeRate API para obter taxas de câmbio em tempo real e garante um gerenciamento de ambiente consistente através da conteinerização com Docker.
-      \n\n
+      
       Foi dado um forte foco à qualidade do código, documentação e testes, incluindo:
-      \n
-      - Documentação da API com Swagger;\n
-      - Documentação de componentes com Storybook;\n
-      - Testes unitários com Jest;\n
+      
+      - Documentação da API com Swagger;
+      - Documentação de componentes com Storybook;
+      - Testes unitários com Jest;
       - Testes de ponta a ponta (E2E) com Cypress.
-      \n\n
-      Este projeto demonstra proficiência na construção de aplicações bem documentadas, testáveis e prontas para produção, combinando arquitetura limpa, tipagem forte e práticas modernas de DevOps.
-    `,
-    "es-419": `
-      Este proyecto es una aplicación full stack de conversión de divisas diseñada para ofrecer conversiones rápidas y confiables en más de 160 monedas, con soporte multilingüe en inglés y portugués.
-      \n\n
+      
+      Este projeto demonstra proficiência na construção de aplicações bem documentadas, testáveis e prontas para produção, combinando arquitetura limpa, tipagem forte e práticas modernas de DevOps.`,
+    "es-419": `Este proyecto es una aplicación full stack de conversión de divisas diseñada para ofrecer conversiones rápidas y confiables en más de 160 monedas, con soporte multilingüe en inglés y portugués.
+      
       La aplicación fue desarrollada íntegramente en TypeScript, utilizando Next.js para el frontend y NestJS para el backend, siguiendo las mejores prácticas modernas de arquitectura y escalabilidad. Se integra con la ExchangeRate API para obtener tipos de cambio en tiempo real y garantiza una gestión de entorno consistente mediante la contenedorización con Docker.
-      \n\n
+      
       Se puso un gran énfasis en la calidad del código, la documentación y las pruebas, incluyendo:
-      \n
-      - Documentación de API con Swagger;\n
-      - Documentación de componentes con Storybook;\n
-      - Pruebas unitarias con Jest;\n
+      
+      - Documentación de API con Swagger;
+      - Documentación de componentes con Storybook;
+      - Pruebas unitarias con Jest;
       - Pruebas de extremo a extremo (E2E) con Cypress.
-      \n\n
-      Este proyecto demuestra competencia en la creación de aplicaciones bien documentadas, probables y listas para producción, combinando arquitectura limpia, tipado fuerte y prácticas modernas de DevOps.
-    `
+      
+      Este proyecto demuestra competencia en la creación de aplicaciones bien documentadas, probables y listas para producción, combinando arquitectura limpia, tipado fuerte y prácticas modernas de DevOps.`
   },
   categories: [
     ProjectCategory.FRONTEND,

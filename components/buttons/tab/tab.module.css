@@ -1,0 +1,30 @@
+.tabContainer {
+  height: 3rem;
+  display: flex;
+  gap: .625rem;
+  cursor: pointer;
+  min-width: 10.5rem;
+  align-items: center;
+  min-height: 3rem;
+  justify-content: center;
+  font-size: var(--font-h5);
+  font-weight: var(--font-regular);
+  background: transparent;
+  color: var(--typography-extradark);
+  border: 0px solid transparent;
+  transition: all .3s ease;
+  border-radius: .875rem .875rem 0px 0px;
+
+  &:not([aria-selected="true"]):hover {
+    background: color-mix(in srgb, var(--typography-extralight) 20%, transparent);
+  }
+
+  &[aria-selected="true"] {
+    font-weight: var(--font-semibold);
+    color: var(--typography-light);
+  }
+
+  svg {
+    color: var(--primary-light);
+  }
+}

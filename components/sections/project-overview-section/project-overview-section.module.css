@@ -115,6 +115,7 @@
   .overviewSectionContainer {
     padding: 1.5rem;
     border-radius: 1.5rem;
+    backdrop-filter: blur(240px);
     background: var(--gradient-typographyToOpacity-d);
 
     :global(.outlineBackground) {

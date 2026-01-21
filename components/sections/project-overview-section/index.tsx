@@ -14,26 +14,30 @@ import {
   ArrowUpRightIcon
 } from '@phosphor-icons/react';
 import Image from 'next/image';
-import { ReactNode } from 'react';
-import { Skill } from '@/types/technologies';
-import { MediaContent, Platform, ProjectLink } from '@/types/project';
+import { ComponentPropsWithoutRef, ReactNode } from 'react';
+import { useProject } from '@/hooks/useProject';
 import { useTranslate } from '@/hooks/useTranslate';
 import { Button } from '@/components/buttons/button';
 import styles from './project-overview-section.module.css';
 import { TechnologyCard } from '@/components/cards/technology-card';
+import { Platform, ProjectCategory, ProjectLink } from '@/types/project';
 import { ProjectMediaLink } from '@/components/textual/project-media-link';
 import { ProjectSectionTitle } from '@/components/textual/project-section-title';
 
-import ReactJSLogo from '@/assets/logos/ReactJS.svg';
-import JestLogo from '@/assets/logos/Jest.svg';
-import HTMLLogo from '@/assets/logos/html5.svg';
-import CSSLogo from '@/assets/logos/CSS3.svg';
-import FigmaLogo from '@/assets/logos/Figma.svg';
-import NodeJSLogo from '@/assets/logos/NodeJS.svg';
-import JavaLogo from '@/assets/logos/Java.svg';
-import SpringLogo from '@/assets/logos/Spring.svg';
-import AngularLogo from '@/assets/logos/Angularjs.svg';
-import NextJSLogo from '@/assets/logos/Next.js.svg';
+const formatScopeLabel = (scopes: ProjectCategory[]): string => {
+  const scopeLabels: { [key in ProjectCategory]: string } = {
+    [ProjectCategory.FULLSTACK]: 'Full Stack',
+    [ProjectCategory.BACKEND]: 'Back-end',
+    [ProjectCategory.DATABASE]: 'Database',
+    [ProjectCategory.FRONTEND]: 'Front-end',
+    [ProjectCategory.MOBILE]: 'Mobile',
+    [ProjectCategory.UI_UX]: 'UI/UX Design'
+  }
+
+  return scopes.map((scope) => {
+    return scopeLabels[scope];
+  }).join(', ')
+}
 
 type ProjectDetail = {
   label: string;
@@ -41,36 +45,42 @@ type ProjectDetail = {
   Icon: ReactNode;
 };
 
-export function ProjectOverviewSection() {
-  const { t, locale } = useTranslate();
+type ProjectOverviewSectionProps = ComponentPropsWithoutRef<'section'>;
 
-  const formatProjectDate = (date: Date, lang: string) => {
+export function ProjectOverviewSection(props: ProjectOverviewSectionProps) {
+  const { t, locale } = useTranslate();
+  const { project, getDescription } = useProject();
+
+  const formatProjectDate = (lang: string, date?: string): string => {
+    if (!date) return t(`ProjectPage.Date.not_finished`);
+
     const formatted = new Intl.DateTimeFormat(lang, {
       month: 'long',
       year: 'numeric',
-    }).format(date);
-
-    return formatted.replace(/ (de|of) /i, ', ');
+    })
+      .format(new Date(date))
+      .replace(/ (de|of) /i, ', ');
+    
+    return t(`ProjectPage.Date.around`).replaceAll('{date}', formatted);
   };
 
-  const dateValue = formatProjectDate(new Date('2022-12-01'), locale);
-  
-  const startedAtDate = t(`ProjectPage.Date.around`).replaceAll('{date}', dateValue)
+  const startedAtDate = formatProjectDate(locale, project.createdAt)
+  const finishedAtDate = formatProjectDate(locale, project.finishedAt)
 
   const projectDetails: ProjectDetail[] = [
     {
       label: t('ProjectPage.purposeLabel'),
-      value: t(`ProjectPage.Purpose.academic`),
+      value: t(`ProjectPage.Purpose.${project.nature}`),
       Icon: <CrosshairIcon />
     },
     {
       label: t('ProjectPage.statusLabel'),
-      value: t(`ProjectPage.Status.ongoing`),
+      value: t(`ProjectPage.Status.${project.status}`),
       Icon: <SpinnerIcon />
     },
     {
       label: t('ProjectPage.scopeLabel'),
-      value: 'Back-end, Front-end, UI Design',
+      value: formatScopeLabel(project.categories),
       Icon: <PencilRulerIcon />
     },
     {
@@ -80,116 +90,20 @@ export function ProjectOverviewSection() {
     },
     {
       label: t('ProjectPage.finishedAtLabel'),
-      value: t(`ProjectPage.Date.not_finished`),
+      value: finishedAtDate,
       Icon: <CalendarCheckIcon />
     },
   ];
 
-  const skills: Skill[] = [
-    {
-      iconSrc: JavaLogo,
-      name: 'Java',
-      yearsOfExperience: 0
-    },
-    {
-      iconSrc: AngularLogo,
-      name: 'Angular',
-      yearsOfExperience: 0
-    },
-    {
-      iconSrc: SpringLogo,
-      name: 'Spring',
-      yearsOfExperience: 0
-    },
-    {
-      iconSrc: NextJSLogo,
-      name: 'Next.js',
-      yearsOfExperience: 0
-    },
-    {
-      iconSrc: NodeJSLogo,
-      name: 'Node.js',
-      yearsOfExperience: 0
-    },
-    {
-      iconSrc: FigmaLogo,
-      name: 'Figma',
-      yearsOfExperience: 0
-    },
-    {
-      iconSrc: HTMLLogo,
-      name: 'HTML',
-      yearsOfExperience: 0
-    },
-    {
-      iconSrc: CSSLogo,
-      name: 'CSS',
-      yearsOfExperience: 0
-    },
-    {
-      iconSrc: JestLogo,
-      name: 'Jest',
-      yearsOfExperience: 0
-    },
-    {
-      iconSrc: ReactJSLogo,
-      name: 'React.js',
-      yearsOfExperience: 0
-    },
-  ]
-
-  const medias: MediaContent[] = [
-    {
-      type: 'image',
-      url: 'https://res.cloudinary.com/dbrvgleaj/image/upload/v1768929047/AionTimer-Dashboard_pjiztu.png',
-      alt: ''
-    },
-    {
-      type: 'image',
-      url: 'https://res.cloudinary.com/dbrvgleaj/image/upload/v1768929047/Timer_-__Playing_cv6nqz.png',
-      alt: ''
-    },
-    {
-      type: 'image',
-      url: 'https://res.cloudinary.com/dbrvgleaj/image/upload/v1768929402/AionMobile_j312r4.png',
-      alt: ''
-    },
-  ];
-
-  const links: ProjectLink[] = [
-    {
-      platform: Platform.APPLESTORE,
-      url: '',
-      label: 'Apple Store'
-    },
-    {
-      platform: Platform.BEHANCE,
-      url: '',
-      label: 'Behance'
-    },
-    {
-      platform: Platform.FIGMA,
-      url: '',
-      label: 'Figma'
-    },
-    {
-      platform: Platform.GITHUB,
-      url: '',
-      label: ''
-    },
-    {
-      platform: Platform.PLAYSTORE,
-      url: '',
-      label: 'Apple Store'
-    },
-  ]
+  const links: ProjectLink[] = project.links.filter((project) => project.platform !== Platform.WEB);
+  const webLink: ProjectLink | undefined = project.links.filter((project) => project.platform === Platform.WEB)?.at(0);
 
   return (
-    <section aria-labelledby="ProjectOverview" aria-describedby="ProjectShortDescription" className={styles.overviewSectionContainer}>
+    <section {...props} id="ProjectOverview_Section" aria-labelledby="ProjectOverview_Title" aria-describedby="ProjectShortDescription" className={styles.overviewSectionContainer}>
       <div className={styles.detailsGroup}>
-        <ProjectSectionTitle id="ProjectOverview" title={t('ProjectPage.Sections.overview')} Icon={SquaresFourIcon} size="h3" />
+        <ProjectSectionTitle id="ProjectOverview_Title" title={t('ProjectPage.Sections.overview')} Icon={SquaresFourIcon} size="h3" />
         <p id="ProjectShortDescription" className={styles.shortDescription}>
-          Suspendisse aliquet nisi sodales consequat magna ante condimentum. Euismod quam justo lectus commodo augue arcu dignissim. Venenatis ultrices proin libero feugiat tristique accumsan maecenas. Adipiscing elit quisque faucibus ex sapien vitae pellentesque. Nec metus bibendum egestas iaculis massa nisl malesuada.
+          {getDescription('shortDescription')}
         </p>
         <div className={styles.overviewDetails}>
           {projectDetails.map(({ label, value, Icon }) => {
@@ -215,13 +129,13 @@ export function ProjectOverviewSection() {
       <div className={styles.detailsGroup}>
         <ProjectSectionTitle title={t('ProjectPage.Sections.technologies')} Icon={CodeIcon} weight='bold' />
         <ul className={styles.technologiesList}>
-          {skills.map((skill) => (<TechnologyCard key={skill.name} isSummary skill={skill} />))}
+          {project.technologies.map((skill) => (<TechnologyCard key={skill.name} isSummary skill={skill} />))}
         </ul>
       </div>
       <div className={styles.detailsGroup}>
         <ProjectSectionTitle title={t('ProjectPage.Sections.medias')} Icon={ImagesSquareIcon} weight='fill' />
         <ul className={styles.mediaGroup}>
-          {medias.slice(0, 3).map((media, index) => {
+          {project.media.slice(0, 3).map((media, index) => {
             return (
               <li key={index}>
                 <Image
@@ -234,9 +148,9 @@ export function ProjectOverviewSection() {
                   loading="lazy"
                   placeholder="empty"
                 />
-                {(medias.length > 3 && index === 2) && (
+                {(project.media.length > 3 && index === 2) && (
                   <span className="last-media">
-                    +{medias.length - 3} {t('ProjectPage.Sections.medias')}
+                    +{project.media.length - 3} {t('ProjectPage.Sections.medias')}
                   </span>
                 )}
               </li>
@@ -247,14 +161,18 @@ export function ProjectOverviewSection() {
       <div className={styles.detailsGroup}>
         <ProjectSectionTitle title={t('ProjectPage.Sections.links')} Icon={LinkSimpleIcon} weight='bold' />
         <ul className={styles.linksGroup}>
-          {links.map((link) => <ProjectMediaLink key={link.platform} link={link} />)}
+          {links.map((link) => <ProjectMediaLink key={link.url} link={link} />)}
         </ul>
       </div>
-      <span className="gradientDivider"></span>
-      <Button component="a" href={`/`} theme="outline">
-        {t('ProjectPage.linkButtonLabel')}
-        <ArrowUpRightIcon size={24} aria-hidden weight="bold" />
-      </Button>
+      {webLink && (
+        <>
+          <span className="gradientDivider"></span>
+          <Button component="a" href={webLink.url} theme="outline">
+            {t('ProjectPage.linkButtonLabel')}
+            <ArrowUpRightIcon size={24} aria-hidden weight="bold" />
+          </Button>
+        </>
+      )}
       <span className="outlineBackground" aria-hidden></span>
     </section>
   )
