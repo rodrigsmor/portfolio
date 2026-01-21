@@ -1,3 +1,6 @@
+import { LanguageCode } from "./lang";
+import { Skill } from "./technologies";
+
 export enum ProjectCategory {
   BACKEND = 'BACKEND',
   MOBILE = 'MOBILE',
@@ -17,9 +20,9 @@ export enum Platform {
 }
 
 export enum ProjectNature {
-  ACADEMIC = 'academic',       // Faculdade, cursos, bootcamps
-  PERSONAL = 'personal',       // Laboratório, estudos, "pôr em prática"
-  COMMERCIAL = 'commercial',   // Aplicações reais, Freelas, Projetos Open Source ativos
+  ACADEMIC = 'academic',
+  PERSONAL = 'personal',
+  COMMERCIAL = 'commercial',
 }
 
 export enum ProjectSlug {
@@ -44,20 +47,23 @@ export type ProjectLink = {
   label?: string;
 }
 
+export type ProjectDescription = {
+  [key in LanguageCode]: string;
+}
+
 export interface Project {
   id: string;
   slug: ProjectSlug;
   title: string;
-  content?: string;
   readingTime?: number;
   nature: ProjectNature;
   origin?: string;
   size: 'short' | 'long' | 'medium';
-  status: 'in_production' | 'archived' | 'ongoing';
-  shortDescription: string;
-  fullDescription: string;
+  status: 'in_production' | 'archived' | 'ongoing' | 'finished';
+  shortDescription: ProjectDescription;
+  fullDescription: ProjectDescription;
   categories: ProjectCategory[];
-  technologies: string[];
+  technologies: Skill[];
   coverImage: {
     url: string;
     alt: string;
@@ -69,4 +75,6 @@ export interface Project {
   finishedAt: string;
 }
 
-export type ProjectSummary = Pick<Project, 'id' | 'title' | 'slug' | 'coverImage' | 'technologies'>;
+export type ProjectSummary = Pick<Project, 'id' | 'title' | 'slug' | 'coverImage'> & {
+  technologies: string[];
+};

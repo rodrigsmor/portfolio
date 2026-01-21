@@ -53,12 +53,11 @@ export function ProjectMediaLink({ link }: ProjectMediaLinkProps) {
   return (
     <Link
       href={link.url}
-      title={linkContent.label}
-      aria-label={linkContent.label}
+      title={link.label ?? linkContent.label}
       className={styles.projectLinkContainer}
     >
       <Image
-        alt={link.label ?? ''}
+        alt={link.label ?? linkContent.label}
         src={linkContent.Icon}
         width={24}
         height={24}

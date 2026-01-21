@@ -53,8 +53,6 @@
 
 
   &:disabled {
-    /* background-color: var(--typography-extradark);
-    color: var(--background-extradark); */
     cursor: not-allowed;
     color: color-mix(in srgb, var(--typography-extradark) 60%, transparent);
     background: color-mix(in srgb, var(--typography-extradark) 20%, transparent);

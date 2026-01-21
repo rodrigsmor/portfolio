@@ -12,6 +12,6 @@ export const currencyConverter: ProjectSummary = {
   ],
   coverImage: {
     url: Cover.src,
-    alt: 'Interface do conversor de moedas'
+    alt: 'Currency Converter Cover'
   },
 };

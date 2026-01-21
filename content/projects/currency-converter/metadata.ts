@@ -1,14 +1,67 @@
+import { CSSSkill, CypressSkill, DockerSkill, HTMLSkill, JestSkill, NextJSSkill, NodeJSSkill, StorybookSkill, SwaggerSkill, TypescriptSkill } from '@/utils/consts/project-skills';
 import { currencyConverter } from './summary';
 import { Project, Platform, ProjectCategory, ProjectNature } from '@/types/project';
 
 export const fullCurrencyConverter: Project = {
   ...currencyConverter,
-  content: '',
   readingTime: 10,
   nature: ProjectNature.PERSONAL,
-  status: 'ongoing',
-  shortDescription: 'A currency converter featuring 100+ supported currencies, multilingual support in English and Portuguese. Built using Next.js for the frontend and styled with Styled Components, complemented by a Nest.js backend. It integrates with the ExchangeRate api and is containerized with Docker.',
-  fullDescription: 'This is a simple currency converter application that supports over 160 currencies. You can easily perform currency conversions based on your preferences and access exchange rates for various other options. The core of the application was built in TypeScript, with a backend in Nest.js and a frontend in Next.js, also implementing Docker for container management and environment manipulation.',
+  status: 'archived',
+  technologies: [
+    CypressSkill,
+    SwaggerSkill,
+    NextJSSkill,
+    NodeJSSkill,
+    StorybookSkill,
+    HTMLSkill,
+    CSSSkill,
+    TypescriptSkill,
+    JestSkill,
+    DockerSkill
+  ],
+  shortDescription: {
+    "en-US": 'A modern currency converter supporting 160+ currencies with multilingual support (English and Portuguese). Built with Next.js on the frontend and NestJS on the backend, fully typed with TypeScript, integrated with the ExchangeRate API, and containerized using Docker.',
+    "es-419": 'Un conversor de divisas moderno con soporte para más de 160 monedas y multilingüe (inglés y portugués). Desarrollado con Next.js en el frontend y NestJS en el backend, totalmente tipado con TypeScript, integrado con la ExchangeRate API y contenedorizado con Docker.',
+    "pt-BR": 'Um conversor de moedas moderno com suporte a mais de 160 moedas e multi-idioma (inglês e português). Desenvolvido com Next.js no frontend e NestJS no backend, totalmente tipado com TypeScript, integrado à ExchangeRate API e conteinerizado com Docker.'
+  },
+  fullDescription: {
+    "en-US": `This project is a full stack currency converter application designed to provide fast and reliable currency conversions across 160+ supported currencies, with multilingual support in English and Portuguese.
+      
+      The application was developed entirely in TypeScript, using Next.js for the frontend and NestJS for the backend, following modern architectural and scalability best practices. It integrates with the ExchangeRate API to retrieve real-time exchange rates and ensures consistent environment management through Docker containerization.
+      
+      A strong focus was placed on code quality, documentation, and testing, including:
+      
+      - API documentation with Swagger;
+      - Component documentation with Storybook;
+      - Unit tests with Jest;
+      - End-to-end tests with Cypress
+      
+      This project demonstrates proficiency in building well-documented, testable, and production-ready applications, combining clean architecture, strong typing, and modern DevOps practices.`,
+    "pt-BR": `Este projeto é uma aplicação full stack de conversão de moedas, projetada para fornecer conversões rápidas e confiáveis em mais de 160 moedas, com suporte multilíngue em inglês e português.
+      
+      A aplicação foi desenvolvida inteiramente em TypeScript, utilizando Next.js para o frontend e NestJS para o backend, seguindo as melhores práticas modernas de arquitetura e escalabilidade. Integra-se com a ExchangeRate API para obter taxas de câmbio em tempo real e garante um gerenciamento de ambiente consistente através da conteinerização com Docker.
+      
+      Foi dado um forte foco à qualidade do código, documentação e testes, incluindo:
+      
+      - Documentação da API com Swagger;
+      - Documentação de componentes com Storybook;
+      - Testes unitários com Jest;
+      - Testes de ponta a ponta (E2E) com Cypress.
+      
+      Este projeto demonstra proficiência na construção de aplicações bem documentadas, testáveis e prontas para produção, combinando arquitetura limpa, tipagem forte e práticas modernas de DevOps.`,
+    "es-419": `Este proyecto es una aplicación full stack de conversión de divisas diseñada para ofrecer conversiones rápidas y confiables en más de 160 monedas, con soporte multilingüe en inglés y portugués.
+      
+      La aplicación fue desarrollada íntegramente en TypeScript, utilizando Next.js para el frontend y NestJS para el backend, siguiendo las mejores prácticas modernas de arquitectura y escalabilidad. Se integra con la ExchangeRate API para obtener tipos de cambio en tiempo real y garantiza una gestión de entorno consistente mediante la contenedorización con Docker.
+      
+      Se puso un gran énfasis en la calidad del código, la documentación y las pruebas, incluyendo:
+      
+      - Documentación de API con Swagger;
+      - Documentación de componentes con Storybook;
+      - Pruebas unitarias con Jest;
+      - Pruebas de extremo a extremo (E2E) con Cypress.
+      
+      Este proyecto demuestra competencia en la creación de aplicaciones bien documentadas, probables y listas para producción, combinando arquitectura limpia, tipado fuerte y prácticas modernas de DevOps.`
+  },
   categories: [
     ProjectCategory.FRONTEND,
     ProjectCategory.UI_UX
@@ -33,12 +86,42 @@ export const fullCurrencyConverter: Project = {
   media: [
     {
       type: 'image',
-      alt: '',
-      url: '',
-    }
+      alt: currencyConverter.coverImage.alt,
+      url: currencyConverter.coverImage.url,
+    },
+    {
+      type: 'image',
+      alt: 'Currency Converter Home Page',
+      url: 'https://res.cloudinary.com/dbrvgleaj/image/upload/v1768940429/Currency_Converter_qmfjs1.png'
+    },
+    {
+      type: 'image',
+      alt: 'Currency Converter Home Page',
+      url: 'https://res.cloudinary.com/dbrvgleaj/image/upload/v1768940429/Currency_Converter_qmfjs1.png'
+    },
+    {
+      type: 'image',
+      alt: 'Currency Converter Search Page',
+      url: 'https://res.cloudinary.com/dbrvgleaj/image/upload/v1768940454/Search_Page_e0lxjl.png'
+    },
+    {
+      type: 'image',
+      alt: 'Currency Converter - Mobile',
+      url: 'https://res.cloudinary.com/dbrvgleaj/image/upload/v1768940424/Currency_Converter-mobile_pgaqjh.png'
+    },
+    {
+      type: 'image',
+      alt: 'Currency Converter Home Page - Mobile',
+      url: 'https://res.cloudinary.com/dbrvgleaj/image/upload/v1768940422/Home_page_aauda2.png'
+    },
+    {
+      type: 'image',
+      alt: 'Currency Converter Exchange Rage - Mobile',
+      url: 'https://res.cloudinary.com/dbrvgleaj/image/upload/v1768940422/Exchange_Rates_dn2ayj.png'
+    },
   ],
   featured: true,
   createdAt: '2023-09-10T00:00:00.000Z',
   finishedAt: '',
-  size: 'long'
+  size: 'short'
 };
