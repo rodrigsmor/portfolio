@@ -48,7 +48,7 @@ export const fullTastyhub: Project = {
   ],
   readingTime: 10,
   nature: ProjectNature.PERSONAL,
-  status: 'archived',
+  status: 'ongoing',
   shortDescription: {
     "en-US": "Tastyhub is a social recipe-sharing platform created to connect chefs, cooks, and food enthusiasts. Users can publish recipes, rate them, interact with the community, and build connections, turning every meal into a more collaborative and tasty experience.",
     "pt-BR": 'Tastyhub é uma plataforma social de compartilhamento de receitas criada para conectar chefs, cozinheiros e entusiastas da gastronomia. Nela, usuários podem publicar receitas, avaliá-las, interagir com a comunidade e criar conexões, transformando cada refeição em uma experiência mais colaborativa e saborosa.',
