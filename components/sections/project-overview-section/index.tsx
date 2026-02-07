@@ -49,7 +49,7 @@ type ProjectOverviewSectionProps = ComponentPropsWithoutRef<'section'>;
 
 export function ProjectOverviewSection(props: ProjectOverviewSectionProps) {
   const { t, locale } = useTranslate();
-  const { project, getDescription } = useProject();
+  const { project, getDescription, openMediaPreview } = useProject();
 
   const formatProjectDate = (lang: string, date?: string): string => {
     if (!date) return t(`ProjectPage.Date.not_finished`);
@@ -140,7 +140,7 @@ export function ProjectOverviewSection(props: ProjectOverviewSectionProps) {
         <ul className={styles.mediaGroup}>
           {slicedMedias.slice(0, 3).map((media, index) => {
             return (
-              <li key={index}>
+              <li key={index} onClick={() => openMediaPreview(index)}>
                 <Image
                   alt={media?.alt} 
                   src={media.type === 'video' ? media.poster : media.url}

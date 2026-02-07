@@ -86,7 +86,7 @@
         },
         "en-US": {
           "name": "Inglés",
-          "level": "Intermedio alto (B2)"
+          "level": "Intermedio (B1)"
         },
         "es-419": {
           "name": "Español",
@@ -346,6 +346,9 @@
     "currentLanguage": "Idioma actual:",
     "callPhone": "Llamar a Rodrigo: {replace}",
     "sendEmail": "Enviar correo electrónico a {replace}",
-    "viewMap": "Ver ubicación de {replace} en Google Maps"
+    "viewMap": "Ver ubicación de {replace} en Google Maps",
+    "nextMediaButton": "Siguiente multimedia",
+    "prevMediaButton": "Multimedia anterior",
+    "closePreviewButton": "Cerrar vista previa"
   }
 }

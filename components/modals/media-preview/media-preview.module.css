@@ -1,0 +1,80 @@
+.mediaDialogContainer {
+  z-index: 11;
+  width: 100dvw;
+  height: 100dvh;
+  position: fixed;
+  backdrop-filter: blur(20px);
+  background: color-mix(in srgb, var(--background-extradark) 20%, transparent);
+
+  > :global(.embla) {
+    height: 100dvh;
+    width: 100dvw;
+    background-color: blue;
+  }
+}
+
+.mediaPreviewHeader {
+  width: 100%;
+  z-index: 12;
+  position: fixed;
+  display: flex;
+  max-width: 100%;
+  height: 4.625rem;
+  padding: 0 1.75rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.mainImage {
+  max-width: 100%;
+  max-height: 100%;
+  width: max-content;
+  height: max-content;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.carouselButton {
+  top: 0;
+  z-index: 12;
+  height: 100%;
+  width: 3.625rem;
+  min-height: 100%;
+  position: absolute;
+  min-width: 3.625rem;
+  display: grid;
+  cursor: pointer;
+  place-items: center;
+  position: fixed;
+  transition: all .3s ease;
+  background-color: transparent;
+  border: 0px solid transparent;
+  color: var(--typography-extralight);
+
+  &:global(.next) {
+    right: 0;
+  }
+
+  &:disabled {
+    opacity: .2;
+  }
+
+  &:hover {
+    & > * {
+      transform: scale(1.2);
+      transition: all .3s ease;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .mediaPreviewHeader {
+    padding: 0 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mediaPreviewHeader {
+    padding: 0 7.84dvw;
+  }
+}

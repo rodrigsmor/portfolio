@@ -31,6 +31,7 @@ export function CareerOverview() {
           priority
           width={382}
           height={430}
+          quality={75}
         />
       </figure>
       <div className={styles.introductionText} aria-describedby="AboutMe-description">
