@@ -346,6 +346,9 @@
     "currentLanguage": "Idioma atual:",
     "callPhone": "Ligar para Rodrigo: {replace}",
     "sendEmail": "Enviar e-mail para {replace}",
-    "viewMap": "Ver localização de {replace} no Google Maps"
+    "viewMap": "Ver localização de {replace} no Google Maps",
+    "nextMediaButton": "Próxima mídia",
+    "prevMediaButton": "Mídia anterior",
+    "closePreviewButton": "Fechar visualização"
   }
 }
