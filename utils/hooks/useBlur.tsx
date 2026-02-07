@@ -1,27 +1,48 @@
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
-export function useBlur<T extends HTMLElement>(onClose: () => void) {
+export function useBlur<T extends HTMLElement>(
+  onClose: () => void,
+  safetyList: string[] = []
+) {
   const ref = useRef<T>(null);
 
-  useEffect(() => {
-    const listener = (event: MouseEvent | TouchEvent) => {
+  const listener = useCallback(
+    (event: MouseEvent | TouchEvent) => {
       const element = ref.current;
+      const target = event.target as Node;
 
-      if (!element || element.contains(event.target as Node)) {
-        return;
-      }
+      if (!element || !target) return;
+
+      if (!document.contains(target)) return;
+
+      if (element.contains(target)) return;
+
+      const isSafe = safetyList.some((selector) => {
+        if (!selector) return false;
+
+        const s = selector.startsWith('.') || selector.startsWith('#')
+          ? selector
+          : `.${selector}, #${selector}`;
+
+        return (target as Element).closest?.(s);
+      });
+
+      if (isSafe) return;
 
       onClose();
-    };
+    },
+    [onClose, safetyList]
+  );
 
-    document.addEventListener('mousedown', listener);
+  useEffect(() => {
+    document.addEventListener('click', listener);
     document.addEventListener('touchstart', listener);
 
     return () => {
-      document.removeEventListener('mousedown', listener);
+      document.removeEventListener('click', listener);
       document.removeEventListener('touchstart', listener);
     };
-  }, [onClose]);
+  }, [listener]);
 
   return ref;
 }
