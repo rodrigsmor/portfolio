@@ -12,6 +12,7 @@ import { ArrowUpRightIcon, ArticleNyTimesIcon, BooksIcon, GridFourIcon, Icon } f
 import { Tab } from '@/components/buttons/tab';
 import { Button } from '@/components/buttons/button';
 import { Platform, ProjectLink } from '@/types/project';
+import { MediaPreview } from '@/components/modals/media-preview';
 
 type TabOption = 'overview' | 'caseStudies' | 'description';
 
@@ -108,6 +109,7 @@ export function Project() {
         <ProjectOverviewSection />
         <CaseStudySection />
       </main>
+      <MediaPreview />
     </>
   )
 }
