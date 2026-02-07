@@ -127,8 +127,8 @@ const backEndTechnologies: Skill[] = [
   {
     name: 'Spring',
     iconSrc: SpringLogo,
-    level: SkillLevel.BASIC,
-    yearsOfExperience: 2.2,
+    level: SkillLevel.INTERMEDIATE,
+    yearsOfExperience: 3.2,
   },
   {
     name: 'FastAPI',

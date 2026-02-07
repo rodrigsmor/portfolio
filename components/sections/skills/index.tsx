@@ -25,7 +25,7 @@ export function Skills() {
     },
     {
       title: 'english',
-      percentage: 70,
+      percentage: 50,
       name: 'AboutMe.Skills.Languages.en-US.name',
       level: 'AboutMe.Skills.Languages.en-US.level',
     },
