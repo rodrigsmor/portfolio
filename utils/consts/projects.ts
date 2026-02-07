@@ -18,13 +18,13 @@ import { fullMyNotes } from "@/content/projects/my-notes/metadata";
 
 export const projects: ProjectSummary[] = [
   currencyConverter,
-  aionTimer,
-  calculator,
-  diaTask,
   tastyhub,
-  marketlify,
-  myNotes,
+  calculator,
   peruTravell,
+  marketlify,
+  aionTimer,
+  myNotes,
+  diaTask,
   // Iris Mobile
   // Ruma - Kanban App
 ];
