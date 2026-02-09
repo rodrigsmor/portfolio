@@ -5,8 +5,9 @@ import styles from "./home.module.css";
 import { Button } from "@/components/buttons/button";
 import { ArrowUpRightIcon, RocketLaunchIcon } from "@phosphor-icons/react";
 import { SocialLinks } from "@/components/layout/social-links";
-import { useTranslate } from "@/utils/hooks/useTranslate";
+import { useTranslate } from "@/hooks/useTranslate";
 import { ScrollDownIndicator } from "@/components/textual/scroll-down-indicator";
+import { HomeBackground } from "@/components/animations/home-background";
 
 function HomeSectionContent() {
   const { t } = useTranslate();
@@ -66,6 +67,7 @@ function HomeSectionContent() {
         <span className="particlesLayer"></span>
         <span className="blurLayer"></span>
       </span>
+      <HomeBackground />
     </section>
   );
 }
