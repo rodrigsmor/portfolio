@@ -15,7 +15,7 @@ For this project and my daily workflow, I use the following technologies:
 * **Framework:** Next.js (React) ⚛️
 * **Language:** TypeScript 📘
 * **Styling:** CSS Modules 🎨
-* **Animations:** Embla Carousel / Framer Motion ✨
+* **Animations:** Embla Carousel / Particles.js ✨
 * **Internationalization:** Next.js 🌐
 
 ---
@@ -28,6 +28,7 @@ This portfolio is more than just a website; it’s an environment where I apply 
 * **Responsiveness:** Adaptive design for any screen size, from mobile to ultra-wide. 📱💻
 * **Performance:** Optimized images and lightning-fast loading times. ⚡
 * **Accessibility:** Keyboard-friendly navigation and screen reader support (A11y). ♿
+* **Internationalization:** Fully localized in English, Portuguese, and Spanish using i18next for a global user experience. 🌎
 
 ---
 
@@ -52,7 +53,7 @@ npm run dev
 ```
 
 
--  **Open in your browser:** http://localhost:3000
+-  **🌐 Open in your browser:** http://localhost:3000
 
 ---
 
