@@ -9,7 +9,6 @@
   > :global(.embla) {
     height: 100dvh;
     width: 100dvw;
-    background-color: blue;
   }
 }
 
@@ -51,18 +50,26 @@
   border: 0px solid transparent;
   color: var(--typography-extralight);
 
+  > *,
+  > * > * {
+    pointer-events: none;
+  }
+
   &:global(.next) {
     right: 0;
   }
 
   &:disabled {
     opacity: .2;
+    cursor: not-allowed;
   }
 
-  &:hover {
-    & > * {
-      transform: scale(1.2);
-      transition: all .3s ease;
+  &:not(:disabled) {
+    &:hover {
+      & > * {
+        transform: scale(1.2);
+        transition: all .3s ease;
+      }
     }
   }
 }

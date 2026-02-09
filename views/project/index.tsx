@@ -25,7 +25,7 @@ type MobileTabButton = {
 
 export function Project() {
   const { t } = useTranslate();
-  const { project, getDescription } = useProject();
+  const { project, getDescription, showMediaPreview } = useProject();
 
   const [selectedTab, setSelectedTab] = useState<TabOption>('description');
 
@@ -62,6 +62,7 @@ export function Project() {
           src={project.coverImage.url ?? ''}
           alt="cover"
           fill
+          loading="eager"
           placeholder="empty"
           sizes="(max-width: 768px) 100vw, auto"
           priority={true}
@@ -109,7 +110,7 @@ export function Project() {
         <ProjectOverviewSection />
         <CaseStudySection />
       </main>
-      <MediaPreview />
+      {showMediaPreview && <MediaPreview />}
     </>
   )
 }

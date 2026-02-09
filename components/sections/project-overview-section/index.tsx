@@ -140,13 +140,13 @@ export function ProjectOverviewSection(props: ProjectOverviewSectionProps) {
         <ul className={styles.mediaGroup}>
           {slicedMedias.slice(0, 3).map((media, index) => {
             return (
-              <li key={index} onClick={() => openMediaPreview(index)}>
+              <li key={index}>
                 <Image
                   alt={media?.alt} 
                   src={media.type === 'video' ? media.poster : media.url}
                   width={240}
                   height={240}
-                  quality={70}
+                  quality={50}
                   loading="lazy"
                   unoptimized
                   placeholder="empty"
@@ -156,6 +156,12 @@ export function ProjectOverviewSection(props: ProjectOverviewSectionProps) {
                     +{projectMedias.length - 3} {t('ProjectPage.Sections.medias')}
                   </span>
                 ) : <></>}
+                <button
+                  type="button"
+                  onClick={() => openMediaPreview(index)}
+                  className={styles.mediaPreviewButton}
+                  aria-label="Open Media Preview Menu"
+                ></button>
               </li>
             );
           })}

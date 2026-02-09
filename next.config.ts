@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    qualities: [70, 75, 80, 100],
+    qualities: [50, 70, 75, 80, 100],
     remotePatterns: [
       {
         protocol: 'https',
@@ -15,6 +15,12 @@ const nextConfig: NextConfig = {
         hostname: 'github.com',
         port: '',
         pathname: '/rodrigsmor/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'camo.githubusercontent.com',
+        port: '',
+        pathname: '/**',
       },
     ],
   },

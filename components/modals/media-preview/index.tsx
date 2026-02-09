@@ -12,50 +12,49 @@ import { useTranslate } from '@/hooks/useTranslate';
 
 export function MediaPreview() {
   const { t } = useTranslate();
-  const { project, setMediaPreviewId, initialId,  mediaPreviewId, showMediaPreview, closeMediaPreview,  } = useProject();
+  const { project, setMediaPreviewId, initialId, mediaPreviewId, showMediaPreview, closeMediaPreview } = useProject();
+
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    startIndex: initialId ?? 0
+  });
+
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    const onSelect = () => {
+      setMediaPreviewId(emblaApi.selectedScrollSnap());
+    };
+
+    emblaApi.on('select', onSelect);
+    emblaApi.on('reInit', onSelect);
+
+    return () => {
+      emblaApi.off('select', onSelect);
+      emblaApi.off('reInit', onSelect);
+    };
+  }, [emblaApi, setMediaPreviewId]);
 
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === 'Escape') closeMediaPreview();
     };
-
     if (showMediaPreview) {
       window.addEventListener('keydown', handleEsc);
       document.body.style.overflow = 'hidden';
     }
-
     return () => {
       window.removeEventListener('keydown', handleEsc);
       document.body.style.overflow = 'unset';
     };
   }, [showMediaPreview, closeMediaPreview]);
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    startIndex: initialId
-  });
+  if (mediaPreviewId === null) return null;
 
-  const dialogRef = useBlur<HTMLImageElement>(closeMediaPreview, ['media-preview-controllers']);
+  const hasNext = emblaApi?.canScrollNext() ?? false;
+  const hasPrevious = emblaApi?.canScrollPrev() ?? false;
 
-  const hasNext = mediaPreviewId !== project.media.length;
-  const hasPrevious = mediaPreviewId !== 0;
-
-  if (mediaPreviewId === null) return <></>;
-
-  const goToPrev = () => {
-    setMediaPreviewId((currentId) => {
-      if (currentId) return currentId - 1;
-      return null;
-    });
-    emblaApi?.scrollPrev();
-  }
-
-  const goToNext = () => {
-    setMediaPreviewId((currentId) => {
-      if (currentId) return currentId + 1;
-      return null;
-    });
-    emblaApi?.scrollNext();
-  }
+  const goToPrev = () => emblaApi?.scrollPrev();
+  const goToNext = () => emblaApi?.scrollNext();
  
   return (
     <dialog
@@ -79,16 +78,11 @@ export function MediaPreview() {
                   <div>
                     <Image
                       src={media.url}
-                      alt="Project Preview"
-                      priority
+                      alt={media.alt ?? `Media Preview: ${index}`}
                       width={1200}
                       height={800}
-                      {...(
-                        mediaPreviewId === index
-                          ? { ref: dialogRef }
-                          : {}
-                        )
-                      }
+                      priority={index === initialId}
+                      loading={index === initialId ? undefined : "lazy"}
                       className={styles.mainImage}
                     />
                   </div>
@@ -102,17 +96,17 @@ export function MediaPreview() {
         onClick={goToPrev}
         disabled={!hasPrevious}
         aria-label={t('Accessibility.prevMediaButton')}
-        className={`media-preview-controllers ${styles.carouselButton}`}
+        className={`PreviewButton_Controllers ${styles.carouselButton}`}
       >
-        <CaretLeftIcon aria-hidden className="media-preview-controllers" size={48} weight="bold" />
+        <CaretLeftIcon aria-hidden className="PreviewButton_Controllers" size={48} weight="bold" />
       </button>
       <button
         onClick={goToNext}
         disabled={!hasNext}
         aria-label={t('Accessibility.nextMediaButton')}
-        className={`media-preview-controllers ${styles.carouselButton} next`}
+        className={`PreviewButton_Controllers ${styles.carouselButton} next`}
       >
-        <CaretRightIcon aria-hidden data-safe="true" className="media-preview-controllers" size={48} weight="bold" />
+        <CaretRightIcon aria-hidden data-safe="true" className="PreviewButton_Controllers" size={48} weight="bold" />
       </button>
     </dialog>
   );
