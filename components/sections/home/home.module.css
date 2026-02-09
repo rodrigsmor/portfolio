@@ -10,6 +10,7 @@
   max-height: 100dvh;
   align-items: center;
   padding: 0 1.75rem;
+  position: relative;
   flex-direction: column;
   justify-content: center;
 }
