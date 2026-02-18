@@ -36,7 +36,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </ul>
       </header>
       <Button component="a" href={`/${locale}/projects/${project.slug}`} theme="outline">
-        {t('Projects.viewFullProject')}
+        {t('Projects.viewFullProject')}<span className="sr-only">({project.title})</span>
         <ArrowUpRightIcon size={24} aria-hidden weight="bold" />
       </Button>
     </article>
