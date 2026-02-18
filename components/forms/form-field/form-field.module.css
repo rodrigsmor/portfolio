@@ -81,7 +81,7 @@
   min-width: fit-content;
   flex-shrink: 0;
   font-size: var(--font-h7);
-  color: var(--primary-light);
+  color: var(--primary-extralight);
   font-weight: var(--font-medium);
 }
 
