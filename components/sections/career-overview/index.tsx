@@ -32,6 +32,7 @@ export function CareerOverview() {
           width={382}
           height={430}
           quality={75}
+          sizes="(max-width: 768px) 100vw, 382px"
         />
       </figure>
       <div className={styles.introductionText} aria-describedby="AboutMe-description">
