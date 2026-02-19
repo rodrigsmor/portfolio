@@ -4,9 +4,9 @@ import { ReactNode } from "react";
 import { LangPageProps } from "./page";
 import { notFound } from "next/navigation";
 import { Prompt, Turret_Road } from "next/font/google";
-import { LanguageProvider } from "@/utils/hooks/useTranslate";
-import { getDictionary, hasLocale } from "@/utils/functions/dictionaries";
-import { ScrollProvider } from "@/utils/hooks/useScrollNavigation";
+import { LanguageProvider } from "@/hooks/useTranslate";
+import { ScrollProvider } from "@/hooks/useScrollNavigation";
+import { getDictionary, hasLocale } from "@/functions/dictionaries";
 
 const prompt = Prompt({
   variable: '--font-prompt',
