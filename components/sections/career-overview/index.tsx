@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./career-overview.module.css";
-import { useTranslate } from "@/utils/hooks/useTranslate";
 import { Button } from "@/components/buttons/button";
+import { useTranslate } from "@/utils/hooks/useTranslate";
 import { CheckIcon, DownloadSimpleIcon, StarFourIcon } from "@phosphor-icons/react";
 
 import ProfileImage from "@/assets/MyProfile.png";
@@ -27,12 +27,11 @@ export function CareerOverview() {
         <Image
           src={ProfileImage}
           alt={t('AboutMe.altText')}
-          placeholder="blur"
           priority
-          width={382}
-          height={430}
-          quality={75}
-          sizes="(max-width: 768px) 100vw, 382px"
+          width={527}
+          height={596}
+          sizes="(max-width: 768px) 90vw, 527px"
+          quality={65}
         />
       </figure>
       <div className={styles.introductionText} aria-describedby="AboutMe-description">
