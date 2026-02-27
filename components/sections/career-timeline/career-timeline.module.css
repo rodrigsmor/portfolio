@@ -63,12 +63,6 @@
     font-weight: var(--font-regular);
     color: var(--typography-extradark);
     position: relative;
-
-    :global(.sr-only) {
-      position: absolute;
-      opacity: 0;
-      pointer-events: none;
-    }
   }
 }
 
@@ -95,12 +89,6 @@
     text-transform: capitalize;
     font-size: var(--font-h7);
     font-weight: var(--font-semibold);
-  }
-
-  :global(.sr-only) {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
   }
 }
 

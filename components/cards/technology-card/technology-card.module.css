@@ -67,12 +67,6 @@
     font-size: var(--font-h7);
     font-weight: var(--font-light);
     color: var(--typography-main);
-
-    > :global(.sr-only) {
-      opacity: 0;
-      position: absolute;
-      pointer-events: none;
-    }
   }
 
   :global(.dot) {
