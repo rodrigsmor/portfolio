@@ -11,7 +11,7 @@ import { getDictionary, hasLocale } from "@/functions/dictionaries";
 const prompt = Prompt({
   variable: '--font-prompt',
   subsets: ["latin"],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
+  weight: ['200', '300', '400', '500', '600', '700']
 });
 
 const turret = Turret_Road({
