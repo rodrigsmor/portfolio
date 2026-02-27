@@ -44,8 +44,6 @@ export function proxy(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // '/((?!_next).*)',
-    // '/((?!api|_next|_vercel|.*\\..*).*)',
     '/((?!api|_next|_vercel|.*\\..*|cv|resume).*)',
     '/'
   ],
