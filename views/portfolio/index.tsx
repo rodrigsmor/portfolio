@@ -1,7 +1,6 @@
 'use client';
 
 import { Home } from "@/sections/home";
-import styles from "./portfolio.module.css";
 import { AboutMe } from "@/sections/about-me";
 import { Projects } from "@/sections/projects";
 import { Contact } from "@/sections/contact";
@@ -13,7 +12,7 @@ export default function Portfolio() {
   return (
     <>
       <Header />
-      <main className={styles.mainPageLayout}>
+      <main style={{ width: '100dvw', maxWidth: '100dvw' }}>
         <Home />
         <CarouselDivider/>
         <AboutMe />

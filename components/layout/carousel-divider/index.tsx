@@ -1,11 +1,11 @@
 'use client';
 
-import React from 'react';
+import React, { memo } from 'react';
 import styles from './carousel-divider.module.css';
-import { Dictionary } from '@/utils/functions/dictionaries';
+import { Dictionary } from '@/functions/dictionaries';
 import { PathToDot, useTranslate } from '@/hooks/useTranslate';
 
-export function CarouselDivider() {
+function CarouselDividerContent() {
   const { t } = useTranslate();
 
   const carouselItems: PathToDot<Dictionary>[] = [
@@ -50,3 +50,5 @@ export function CarouselDivider() {
     </section>
   );
 }
+
+export const CarouselDivider = memo(CarouselDividerContent);
