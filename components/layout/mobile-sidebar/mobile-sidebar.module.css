@@ -85,11 +85,6 @@
   > div {
     min-width: 100%;
   }
-
-  :global(.sr-only) {
-    visibility: hidden;
-    position: absolute;
-  }
 }
 
 @media (min-width: 1024px) {

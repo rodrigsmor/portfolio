@@ -1,13 +1,11 @@
-import { ImgHTMLAttributes, useEffect } from 'react';
+import Image from 'next/image';
+import { useEffect } from 'react';
 import styles from './media-preview.module.css';
 import { useProject } from '@/hooks/useProject';
-import Image from 'next/image';
-import emblaStyles from './embla.module.css';
+import { useTranslate } from '@/hooks/useTranslate';
+import useEmblaCarousel from 'embla-carousel-react';
 import { IconButton } from '@/components/buttons/icon-button';
 import { CaretLeftIcon, CaretRightIcon, XIcon } from '@phosphor-icons/react';
-import { useBlur } from '@/hooks/useBlur';
-import useEmblaCarousel from 'embla-carousel-react';
-import { useTranslate } from '@/hooks/useTranslate';
 
 
 export function MediaPreview() {
@@ -69,12 +67,12 @@ export function MediaPreview() {
           <XIcon size={24} aria-hidden="true" weight="bold" />
         </IconButton>
       </header>
-      <div className={`${emblaStyles.embla}`}>  
-        <div ref={emblaRef} className={`${emblaStyles.embla__viewport}`}>
-          <div className={`${emblaStyles.embla__container}`}>
+      <div className={`${styles.embla}`}>  
+        <div ref={emblaRef} className={`${styles.embla__viewport}`}>
+          <div className={`${styles.embla__container}`}>
             {project.media.map((media, index) => {
               return (
-                <div key={media.url} className={`${emblaStyles.embla__slide}`}>
+                <div key={media.url} className={`${styles.embla__slide}`}>
                   <div>
                     <Image
                       src={media.url}
