@@ -1,12 +1,23 @@
 'use client';
 
+import dynamic from "next/dynamic";
+
 import { Home } from "@/sections/home";
 import { AboutMe } from "@/sections/about-me";
-import { Projects } from "@/sections/projects";
-import { Contact } from "@/sections/contact";
+// import { Projects } from "@/sections/projects";
 import { Header } from "@/components/layout/header";
 import { MyServices } from "@/sections/my-services";
 import { CarouselDivider } from "@/components/layout/carousel-divider";
+
+const Contact = dynamic(() => import('@/sections/contact').then(mod => mod.Contact), {
+  ssr: false,
+  loading: () => <div className="h-20" />
+});
+
+const Projects = dynamic(() => import('@/sections/projects').then(mod => mod.Projects), {
+  ssr: false,
+  loading: () => <div className="h-20" />
+});
 
 export default function Portfolio() {
   return (
