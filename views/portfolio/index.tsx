@@ -3,11 +3,13 @@
 import dynamic from "next/dynamic";
 
 import { Home } from "@/sections/home";
-import { AboutMe } from "@/sections/about-me";
-// import { Projects } from "@/sections/projects";
 import { Header } from "@/components/layout/header";
-import { MyServices } from "@/sections/my-services";
 import { CarouselDivider } from "@/components/layout/carousel-divider";
+
+const AboutMe = dynamic(() => import('@/sections/about-me').then(mod => mod.AboutMe), {
+  ssr: false,
+  loading: () => <div className="h-20" />
+});
 
 const Contact = dynamic(() => import('@/sections/contact').then(mod => mod.Contact), {
   ssr: false,
@@ -15,6 +17,11 @@ const Contact = dynamic(() => import('@/sections/contact').then(mod => mod.Conta
 });
 
 const Projects = dynamic(() => import('@/sections/projects').then(mod => mod.Projects), {
+  ssr: false,
+  loading: () => <div className="h-20" />
+});
+
+const MyServices = dynamic(() => import('@/sections/my-services').then(mod => mod.MyServices), {
   ssr: false,
   loading: () => <div className="h-20" />
 });

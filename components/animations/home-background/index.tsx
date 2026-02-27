@@ -1,8 +1,8 @@
+import { loadSlim } from "@tsparticles/slim";
+import styles from './home-background.module.css';
 import { useEffect, useMemo, useState, useCallback } from 'react';
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { loadSlim } from "@tsparticles/slim";
 import type { Container, Engine, ISourceOptions } from "@tsparticles/engine";
-import styles from './home-background.module.css';
 
 export function HomeBackground() {
   const [init, setInit] = useState(false);
@@ -77,7 +77,7 @@ export function HomeBackground() {
   if (!init) return null;
 
   return (
-    <div aria-hidden className={styles.homeBackgroundContainer}>
+    <div aria-hidden className="homeBackgroundContainer">
       <Particles
         id="tsparticles"
         particlesLoaded={particlesLoaded}

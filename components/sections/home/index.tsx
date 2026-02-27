@@ -1,13 +1,17 @@
 'use client';
 
 import { memo } from "react";
+import dynamic from "next/dynamic";
 import styles from "./home.module.css";
 import { useTranslate } from "@/hooks/useTranslate";
 import { Button } from "@/components/buttons/button";
 import { SocialLinks } from "@/components/layout/social-links";
-import { HomeBackground } from "@/components/animations/home-background";
 import { ArrowUpRightIcon, RocketLaunchIcon } from "@phosphor-icons/react";
 import { ScrollDownIndicator } from "@/components/textual/scroll-down-indicator";
+
+const HomeBackground = dynamic(() => import('@/components/animations/home-background').then(mod => mod.HomeBackground), {
+  ssr: false,
+});
 
 function HomeSectionContent() {
   const { t } = useTranslate();

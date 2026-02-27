@@ -44,8 +44,6 @@ export default async function LangLayout({
   const dictionary = await getDictionary(lang);
 
   preconnect('https://res.cloudinary.com', { crossOrigin: 'anonymous' });
-  preconnect('https://github.com');
-  preconnect('https://camo.githubusercontent.com');
 
   prefetchDNS('https://res.cloudinary.com');
   prefetchDNS('https://github.com');
