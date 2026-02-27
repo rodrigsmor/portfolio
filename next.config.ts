@@ -24,6 +24,11 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  modularizeImports: {
+    lodash: {
+      transform: 'lodash/{{member}}',
+    },
+  },
   async rewrites() {
     return [
       {
