@@ -1,3 +1,15 @@
-last 2 versions
-not dead
-> 0.5%
+{
+  "browserslist": {
+    "production": [
+      "chrome >= 100",
+      "edge >= 100",
+      "firefox >= 100",
+      "safari >= 15.3"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
