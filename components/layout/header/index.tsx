@@ -1,23 +1,23 @@
 'use client';
 
+import { memo } from 'react';
 import styles from './header.module.css'
 import { ListIcon } from '@phosphor-icons/react';
 import { Logo } from '@/components/textual/logo';
+import { MobileSidebar } from '../mobile-sidebar';
+import { navbarSections } from '@/consts/sections';
+import { useTranslate } from '@/hooks/useTranslate';
+import { useTransition } from '@/hooks/useTransition';
+import { useScroll } from '@/hooks/useScrollNavigation';
+import { NavbarTab } from '@/components/textual/navbar-tab';
 import { IconButton } from '@/components/buttons/icon-button';
 import { OutlineSelect } from '../../forms/outline-select/index';
-import { navbarSections } from '@/consts/sections';
-import { NavbarTab } from '@/components/textual/navbar-tab';
-import { useScroll } from '@/hooks/useScrollNavigation';
-import { MobileSidebar } from '../mobile-sidebar';
-
-import { useTransition } from '@/hooks/useTransition';
-import { useTranslate } from '@/hooks/useTranslate';
 
 interface HeaderProps {
   showFullHeader?: boolean;
 }
 
-export function Header({ showFullHeader = true }: HeaderProps) {
+function HeaderContent({ showFullHeader = true }: HeaderProps) {
   const { t } = useTranslate();
   const { activeSection, isSticky } = useScroll();
 
@@ -64,3 +64,5 @@ export function Header({ showFullHeader = true }: HeaderProps) {
     </>
   );
 }
+
+export const Header = memo(HeaderContent);
