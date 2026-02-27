@@ -1,7 +1,7 @@
-import { PathToDot, useTranslate } from '@/utils/hooks/useTranslate';
+import { SectionsKey } from '@/types/sections';
 import styles from './section-title.module.css';
-import { Dictionary } from '@/utils/functions/dictionaries';
-import { SectionsKey } from '@/utils/@types/sections';
+import { Dictionary } from '@/functions/dictionaries';
+import { PathToDot, useTranslate } from '@/hooks/useTranslate';
 
 interface SectionTitleProps {
   title: PathToDot<Dictionary>;
