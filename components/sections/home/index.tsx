@@ -2,12 +2,12 @@
 
 import { memo } from "react";
 import styles from "./home.module.css";
-import { Button } from "@/components/buttons/button";
-import { ArrowUpRightIcon, RocketLaunchIcon } from "@phosphor-icons/react";
-import { SocialLinks } from "@/components/layout/social-links";
 import { useTranslate } from "@/hooks/useTranslate";
-import { ScrollDownIndicator } from "@/components/textual/scroll-down-indicator";
+import { Button } from "@/components/buttons/button";
+import { SocialLinks } from "@/components/layout/social-links";
 import { HomeBackground } from "@/components/animations/home-background";
+import { ArrowUpRightIcon, RocketLaunchIcon } from "@phosphor-icons/react";
+import { ScrollDownIndicator } from "@/components/textual/scroll-down-indicator";
 
 function HomeSectionContent() {
   const { t } = useTranslate();

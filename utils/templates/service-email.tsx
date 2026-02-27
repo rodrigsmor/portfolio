@@ -103,15 +103,6 @@ export default function ServiceEmail({ data, lang }: { data: ContactFormData, la
   );
 }
 
-// firstName: string;
-// lastName: string;
-// email: string;
-// phoneNumber?: string;
-// budgetRange?: BudgetRange;
-// currency?: Currency;
-// estimatedDuration?: ProjectDuration;
-// projectDescription: string;
-
 const main = {
   padding: '3rem 0',
   backgroundColor: '#0C0816',
@@ -122,10 +113,8 @@ const container = {
   width: '89dvw',
   maxWidth: '89dvw',
   overflow: 'hidden',
-  // padding: '8dvw',
   color: '#F0ECF8',
   backgroundColor: '#0C0816',
-  // border: '1px solid rgba(240, 240, 240, 0.1)',
 };
 
 const h1 = {
