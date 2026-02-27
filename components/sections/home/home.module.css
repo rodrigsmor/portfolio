@@ -37,25 +37,25 @@
   font-size: var(--font-h5);
   color: var(--typography-main);
   font-weight: var(--font-regular);
+}
 
-  > :global(.uppercaseText) {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    text-transform: uppercase;
-    font-size: var(--font-h1);
-    line-height: var(--font-h1);
-    font-weight: var(--font-extrabold);
-    color: var(--typography-extralight);
-  
-    > span {
-      background: var(--gradient-primaryToSecondary-x-main);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: var(--text-shadow-primary-main);
-    }
-  }
+.uppercaseText {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-transform: uppercase;
+  font-size: var(--font-h1);
+  line-height: var(--font-h1);
+  font-weight: var(--font-extrabold);
+  color: var(--typography-extralight);
+}
+
+.highlightRoleGradient {
+  background: var(--gradient-primaryToSecondary-x-main);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: var(--text-shadow-primary-main);
 }
 
 .secondaryRoleWrapper {
@@ -180,11 +180,11 @@
 
   .homeGreetings {
     font-size: var(--font-h5);
+  }
 
-    > :global(.uppercaseText) {
-      font-size: 5rem;
-      line-height: 5rem;
-    }
+  .uppercaseText {
+    font-size: 5rem;
+    line-height: 5rem;
   }
 
   .homeDescription {
@@ -217,11 +217,11 @@
 
   .homeGreetings {
     font-size: var(--font-h4);
+  }
 
-    > :global(.uppercaseText) {
-      font-size: 6.75rem;
-      line-height: 6.75rem;
-    }
+  .uppercaseText {
+    font-size: 6.75rem;
+    line-height: 6.75rem;
   }
 
   .secondaryRoleWrapper {

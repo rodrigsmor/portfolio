@@ -17,9 +17,11 @@ function HomeSectionContent() {
       <header className={styles.homeContent}>
         <h1 className={styles.homeGreetings}>
           {t('Home.Title.greetings')}
-          <strong className="uppercaseText">
+          <strong className={styles.uppercaseText}>
             {t('Home.Title.role')}
-            <span>{t('Home.Title.highlightRole')}</span>
+            <span className={styles.highlightRoleGradient}>
+              {t('Home.Title.highlightRole')}
+            </span>
           </strong>
           <span className={styles.secondaryRoleWrapper}>
             <span className="minorCoordinating">&amp; </span>
