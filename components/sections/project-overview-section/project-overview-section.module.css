@@ -40,7 +40,6 @@
   > span {
     gap: .375rem;
     display: flex;
-    /* align-items: center; */
     flex-direction: row;
     align-items: flex-start;
 
