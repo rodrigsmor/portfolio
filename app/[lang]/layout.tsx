@@ -3,6 +3,7 @@ import "./globals.css";
 import { ReactNode } from "react";
 import { LangPageProps } from "./page";
 import { notFound } from "next/navigation";
+import { preconnect, prefetchDNS } from 'react-dom';
 import { Prompt, Turret_Road } from "next/font/google";
 import { LanguageProvider } from "@/hooks/useTranslate";
 import { ScrollProvider } from "@/hooks/useScrollNavigation";
@@ -12,12 +13,15 @@ const prompt = Prompt({
   variable: '--font-prompt',
   subsets: ["latin"],
   display: 'swap',
+  preload: true,
   weight: ['200', '300', '400', '500', '600', '700']
 });
 
 const turret = Turret_Road({
   variable: '--font-turret_road',
   subsets: ["latin"],
+  display: 'swap',
+  preload: true,
   weight: ['400']
 });
 
@@ -38,6 +42,13 @@ export default async function LangLayout({
   if (!hasLocale(lang)) notFound()
   
   const dictionary = await getDictionary(lang);
+
+  preconnect('https://res.cloudinary.com', { crossOrigin: 'anonymous' });
+  preconnect('https://github.com');
+  preconnect('https://camo.githubusercontent.com');
+
+  prefetchDNS('https://res.cloudinary.com');
+  prefetchDNS('https://github.com');
 
   return (
     <html lang={lang}>
