@@ -2,6 +2,14 @@ import { ProfessionalExperience } from '../@types/professional';
 
 export const professionalExperiences: ProfessionalExperience[] = [
   {
+    position: 'ProfessionalJourney.Experiences.IliaFullTime.position',
+    description: 'ProfessionalJourney.Experiences.IliaFullTime.description',
+    company: 2,
+    startDate: '2026-04',
+    endDate: 'currently',
+    technologies: 'Java / Spring Boot / JPA / Spring Security / MySQL / PostgreSQL / JUnit / Docker / Kubernetes / Kafka / HTML / CSS / Styled Components / Next.js / TypeScript / JavaScript / Jest / Cypress / Swagger'
+  },
+  {
     position: 'ProfessionalJourney.Experiences.LoanOfficerEngineer.position',
     description: 'ProfessionalJourney.Experiences.LoanOfficerEngineer.description',
     company: 'LoanOfficer.ai',
@@ -32,5 +40,5 @@ export const professionalExperiences: ProfessionalExperience[] = [
     startDate: '2020-03',
     endDate: '2022-01',
     technologies: 'Java / Spring Boot / JPA / Spring Security / MySQL / PostgreSQL / JUnit / Docker / Kubernetes / Kafka / HTML / CSS / Styled Components / Next.js / TypeScript / JavaScript / Jest / Cypress / Swagger'
-  },
+  }
 ];
