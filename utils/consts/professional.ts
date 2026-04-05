@@ -3,7 +3,6 @@ import { ProfessionalExperience } from '../@types/professional';
 export const professionalExperiences: ProfessionalExperience[] = [
   {
     position: 'ProfessionalJourney.Experiences.IliaFullTime.position',
-    
     description: 'ProfessionalJourney.Experiences.IliaFullTime.description',
     company: 2,
     startDate: '2026-04',
